@@ -1,0 +1,130 @@
+\documentclass[10pt, oneside]{article}
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry, cite}
+\geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Cdot}{\boldsymbol{\cdot}}
+\newcommand{\F}{\mathfrak{F}}
+\newcommand{\O}{\mathcal{O}}
+\newcommand{\O}{\mathcal{M}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{conv}{Convention}
+\newtheorem{rem}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{exe}{Exercise}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{remark}{Remark}
+\newtheorem{Terminology}{Terminology}
+\title{Notes From Fredric Schuller's Lectures on Relativity}
+\author{[Drew Remmenga]}
+
+
+
+\begin{document}
+
+
+\maketitle
+\begin{abstract}
+    Notes on Fredric Schuller's Relativity lectures. "Spacetime is a four-dimensional topolgical manifold with a smooth atlas carrying a torsion free connection compatible with a Lorentzian metric and time orientation satisfying the Einstein Equations."
+\end{abstract}
+\section*{Lecture 1: Topological Spaces}
+   @ the coursest level spacetime is a set. This is not enough to talk about conintuity of maps. In classical physics there are no jumps. Sets are not enough alone to talk about continuity. We are interested in establishing the weakest possible structure on a set to talk about continuity of maps.
+   The mathematician knows the weakest structurenecessary to do this is a topology.
+   \begin{Definition}
+       Let $\mathcal{M}$ be a set. A topology $\mathcal{O}$ is a subset of the powerset of $\mathcal{M}$ denoted $\mathcal{O} \subseteq \mathcal{P}(\mathcal{M})$ satisfying three axioms: 
+      \begin{itemize}
+         \item $\emptyset \subset \mathcal{O}$, $\mathcal{M} \subset \mathcal{O}$
+         \item For arbitrary $U, V \in \mathcal{O} \implies U \cap V \in \mathcal{O}$
+         \item For arbitrary $U_\alpha \in \matthcal{O} \implies (\bigcap_{\alpha \in A} U_\alpha) \in \mathcal{O}$ where $\alpha$ is an index of the set $A$.
+      \end{itemize}
+   \end{Definition}
+   \begin{Example}
+      \begin{itemize}
+         \item Let $\mathcal{M} = \{1,2,3\}$
+         \begin{itemize}
+            \item Let $\mathcal{O}_1 = \{\emptyset, \{1,2,3\} \}$ then $\mathcal{O}_1$ is a topology for $\mathcal{M}$.
+            \item Let $\O_2 = \{ \emptyset, \{1\}, \{2\}, \{1,2,3\} \}$ then $\O_2$ is not a topology for $\M$ because $\{1,2\} \not \in \O_2$.
+         \end{itemize}
+         \item Let $\M$ be any set.
+         \begin{itemize}
+            \item $\O_{chaotic} = \{\emptyset, \M \}$ is a topology
+            \item $\O_{discrete} = \mathcal{P}(\M)$ is a topology
+         \end{itemize}
+         \item $\M = \R^d$ (tuples of dimenions $d$ from $\R$) then $\O_{standard} \subseteq \mathcal{P}(\M)$ is a topology for $\M$ defined as follows.
+         \begin{Definition}
+            $\O_{standard}$ defined in two steps.
+            \begin{itemize}
+               \item $B_r(p) := \{q_1, \cdots, q_d \} | \sum_{i=1}^d (q_i - p)^2 < r, r \in \R^+, q_i \in \R, p \in \R^d$
+               \item $\mathcal{U} \in \O_{standard} \iff \forall p \in \mathcal{U}, \exists r \in \R^+ : B_r(p) \subseteq \mathcal{U}$
+            \end{itemize}
+         \end{Definition}
+      \end{itemize}
+   \end{Example}
+   We want $\M$ to be spacetime and we want to equip it with an apropriate topology $\O$ to be able to talk about it.
+   We want to make the implicit assumptions of spacetime to be explicit.
+   \begin{Terminology}
+      Let $\M$ be a set defined from (ZFC) then $\O$ is the topology on $\M$ and it a collection of open sets. $(\M,\O)$ is a topological space. 
+      \begin{itemize}
+         \item $\mathcal{U} \in \O \iff \mathcal{U} \subseteq \M$ is an open set.
+         \item $M\A \in \O$ $\iff A \subseteq \M$ is closed.
+      \end{itemize}
+      $\not$ open $\not \implies$ closed
+      $\not$ closed $\not \implies$ open 
+   \end{Terminology}
+   \begin{Definition}
+      A map $f: M \to N$ takes all elements $m \in M$ to an element $n \in N$. $M$ is the domain. $N$ is the target.
+      If $\exists m_1, m_2 \in M$ such that $f(m_1) = f(m_2) = n \in N$ then $f$ is $\not$ injective.
+      If $\exists n \in N$ such that $\forall m \in M : f(m) \neq n$ then $f$ is not surjective.
+      Is a map $f$ continuous? Depends by definition on topologies $\O_M$ on $M$ and $\O_N$ on $N$. 
+      \begin{Definition}
+         A map $f$ is called continuous between $(M,\O_M)$ and $(N,\O_N)$. Then a map $f$ is called continuous with respect to these topologies if for every open $V \in \O_N$ the preimage of $V$ is open in $\O_M$.
+         $\forall V \in O_N : \text{preim}_f(V) \in \O_M$, $\text{preim}_f(V) := \{m \in M \} | f(m) \in V$.
+      \end{Definition}
+   \end{Definition}
+   \begin{Example}
+      $M = {1,2}, \O_M = {\emptyset, {1}, {2}, {1,2}} \\$
+      $N = {1,2}, \O_N = {\emptyset, {1,2}} \\$
+      $f: M \to N | f(1) = 2, f(2) = 1 \\$
+      Is $f$ continuous? $\\$
+      $\text{preim}_f (\emptyset) = \emptyset \in \O_M \\$
+      $\text{preim}_f ({1,2}) = M \in \O_M \\$
+      Therefore $f$ is continuous.
+   \end{Example}
+   \begin{Example}
+      $g: N \to M$ or $f^{-1}$ then $\text{preim}_g ({1}) = {2} \not\in \O_N$ so $g$ is not continuous.
+   \end{Example}
+   \subsection*{Composition of Maps}
+      $M \xrightarros{f} N \xrightarros{g} P$ so $g \circ f: M \to P$ by $m \to (g \circ f)(m) := g(f(m))$.
+      \begin{Theorem}
+         Composition of continuous maps is continuous.
+      \end{Theorem}
+      \begin{Proof}
+         Let $V \in \O_P$ then 
+         \begin{align*}
+            \text{preim}_{g \circ f}(V) &:= {m \in M | (g \circ f)(m) \in V} \\
+               &= {m \in M | f(m) \in \text{preim}_g(V)} \\
+               &= \text{preim}_f(\text{preim}_g(V) \in \O_N) \in \O_M \\
+         \end{align*}
+      \end{Proof}
+   \subsection*{Inheritance of a Topology}
+      Many useful ways to inherit a topology from another topological space or set of topological spaces. Of particular importance for spacetime physics is $S \subseteq M$ where $M$ has topology $\O_M$.
+      Can we construct a topology $\O_S$ from $\O_M$. Yes. 
+      \begin{Definition}
+         $\O |_S \subseteq \mathcal{P}(S) \\$
+         $\O|_S := {\mathcal{U} \cap S | \mathcal{U} \in \O_M} \\$
+         This is a topology called the subset topology.
+      \end{Definition}
+      Use of this specific way to inherit a topology from a super set. Let it be easy to say a map $f$ is continuous. Then a subset $S$ of a set $M$ with a inherited topology then the restriction of the map $f|_S: S \to N$ it can be easy to show this restriction is continuous.
+\bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
+\bibliography{references.bib}  % the name of the .bib file
+\end{document}

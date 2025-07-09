@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex relativity-schuller"] 0 "relativity-schuller.aux" "relativity-schuller.bbl" "relativity-schuller" 1751743189.25109 0
+["bibtex relativity-schuller"] 0 "relativity-schuller.aux" "relativity-schuller.bbl" "relativity-schuller" 1752003034.16467 0
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "references.bib" 0 -1 0 ""
   "relativity-schuller.aux" 0 -1 0 "pdflatex"
@@ -7,8 +7,8 @@
   "relativity-schuller.bbl"
   "relativity-schuller.blg"
   (rewritten before read)
-["pdflatex"] 1751743188.72284 "/home/drew/Documents/schuller-relativity/relativity-schuller.tex" "relativity-schuller.pdf" "relativity-schuller" 1751743189.25123 0
-  "/home/drew/Documents/schuller-relativity/relativity-schuller.tex" 1751743188.55835 7161 96920fd969cb366286de6f16ad80db87 ""
+["pdflatex"] 1752003033.57731 "/home/drew/Documents/schuller-relativity/relativity-schuller.tex" "relativity-schuller.pdf" "relativity-schuller" 1752003034.16482 0
+  "/home/drew/Documents/schuller-relativity/relativity-schuller.tex" 1752003033.41101 16124 d2af5eeb1c0f54985843d4c41ae340fe ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -59,9 +59,11 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb" 1229303445 16077 4737ac34f0fb5608550f3780a0202c22 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb" 1229303445 16298 9554724f0623cd7d7c296a3e720f08a8 ""
   "/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty" 1734129479 7984 7dbb9280f03c0a315425f1b4f35d43ee ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
@@ -100,9 +102,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1743017093 5496777 dfac5a65ccd1b178961f799dec0d389d ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1743017200 3345754 aaf435fcdfc94e675b7472152a660ba2 ""
   "/usr/local/texlive/2025/texmf.cnf" 1743017089.25792 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "relativity-schuller.aux" 1751743189.00134 74 c77496300424de1c729235597f920e27 "pdflatex"
+  "relativity-schuller.aux" 1752003033.884 74 7d56ebba4d7bdbafc0f50a35c9896a56 "pdflatex"
   "relativity-schuller.bbl" 0 -1 0 "bibtex relativity-schuller"
-  "relativity-schuller.tex" 1751743188.55835 7161 96920fd969cb366286de6f16ad80db87 ""
+  "relativity-schuller.tex" 1752003033.41101 16124 d2af5eeb1c0f54985843d4c41ae340fe ""
   (generated)
   "relativity-schuller.aux"
   "relativity-schuller.log"

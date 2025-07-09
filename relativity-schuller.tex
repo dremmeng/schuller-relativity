@@ -77,7 +77,7 @@
          \item $\mathcal{U} \in \mathcal{O} \iff \mathcal{U} \subseteq \M$ is an open set.
          \item $M \slash A \in \mathcal{O}$ $\iff A \subseteq \M$ is closed.
       \end{itemize}
-      $\not$ open $\not \implies$ closed
+      $\not$ open $\not \implies$ closed and 
       $\not$ closed $\not \implies$ open 
    \end{Terminology}
    \begin{defn}
@@ -124,6 +124,146 @@
          This is a topology called the subset topology.
       \end{defn}
       Use of this specific way to inherit a topology from a super set. Let it be easy to say a map $f$ is continuous. Then a subset $S$ of a set $M$ with a inherited topology then the restriction of the map $f|_S: S \to N$ it can be easy to show this restriction is continuous.
-\bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
+\section*{Lecture 2: Topological Manifolds}
+      $\exists$ too many topological spaces to classify. Too many topological spaces exist which have no known connection to the study of spacetime. For spacetime physics we may focus on topological spaces $(\M,\mathcal{O})$ which can be charted analogously to how the surface of the Earth is charted in an atlas.
+      \subsection*{Topological Manifolds}
+         \begin{defn}
+            A topological space $(\M, \mathcal{0})$ is called a d-dimenional topological manifold if $\forall p \in \M: \exists p \in \mathcal{U} \in \mathcal{O} : \exists x:\mathcal{U} \to x(\mathcal{U}) \subseteq \R^d$ with $\R^d$ equiped with $\mathcal{O}_{standard}$such that:
+            \begin{itemize}
+               \item $x$ is invertible: $x^{-1}: x(\mathcal{U}) \to \mathcal{U}$
+               \item $x$ is continous. 
+               \item $x^{-1}$ is continous.
+            \end{itemize}
+         \end{defn}
+         \begin{example}
+            \item The surface of a torus $:= \M \subseteq \R^3$. This is a $d=2$ dimensional topolgical manifold. 
+            \item A mobius strip $:= \M \subseteq (\R^3,\mathcal{O}_{st})$ then this is a $d=1$ manifold. 
+            \item A bifurcating line $:= \M \subset (\R^2,\mathcal{O}_{st})$ then $(\M, \mathcal{O}_{st}|_{\M})$ is a topology but the point of bifurcation is not invertible so it is not a manifold. 
+         \end{example}
+         \begin{Terminology}
+            \begin{enumerate}
+               \item A pair $(\mathcal{U},x)$ is called a chart. 
+               \item A set $\mathcal{A}={(\mathcal{U_\alpha},x_{\alpha})|\alpha \in A}$ is called an atlas of the topoligcal manifold $\M$ if $\mathcal{M} = \bigcup_{\alpha \in A} \mathcal{U}_\alpha$.
+               \item $x:\mathcal{U} \to x(\mathcal{U}) \subseteq \R^d$ is called the chart map. 
+               \item $x^{i} \mathcal{U} \to \R$ is called the coordinate maps. 
+               \item $p \in \mathcal{U}$ then $x^{i}$ is the $i$-th coordinate of the point $p$ with respect to the chosen chart $(\mathcal{U},x)$.
+            \end{enumerate}
+         \end{Terminology}
+         \begin{example}
+            \begin{itemize}
+               \item \begin{align*}
+                  \M &= \R^2 \\
+                  \mathcal{U} &= \R^2 \slash {0,0} \\
+                  x: \mathcal{U} &\to \R^2 : x(m,n) \to (-m,-n) 
+               \end{align*}
+               \item We can take another chart map on $\mathcal{U}\\$
+            $(m,n) \to (\sqrt{m^2+n^2}, \text{arctan}(\frac{n}{m}))$
+            \end{itemize}
+         \end{example}
+      \subsection*{Chart Transition Maps}
+         Imagine two charts $(\mathcal{U},x)$ and $(\mathcal{V},y)$ with $\mathcal{U} \cap \mathcal{V} = \mathcal{A} \neq \emptyset$. The same point $p \in \mathcal{A}$ can be mapped via $x$ and $y$ to two different charts. 
+         Because these maps are continuously invertible we can smoothly transition between pages of our atlas: $(y \circ x^{-1})(p) = y(x^{-1}(p))$. 
+         This map is called the chart tranisition map. Informally the chart transition map contains the instructions how to $glue$ together the charts of our atlas. 
+      \subsection*{Manifold Philosophy}
+         Often it is desirable (or indeed the way) to define properties ("contiuityt") of real-world objects ("$\R \xrightarrow{\gamma}\M)$ by judging suitible condition not on the real-world object iself but on the chart-representation of the real-world object.
+         Advantages: You can define continuity in this way.
+         Disadvantages: The chart map $x$ is a 'fantasy,' $x$ may be ill defined because the chart chosen is arbitrary. 
+         Solution: The property must be maintained regardless of chart. 
+         \begin{align*}
+         \R &\xrightarrow{y \circ \gamma} y(\mathcal{U}) \\
+         \R &\xrightarrow{x \circ \gamma} x(\mathcal{U}) \\
+         \R &\xrightarrow{\gamma} \mathcal{U}
+         \end{align*}
+         We are interested in properties of $\gamma$ but must talk about it with respect to $x$ and $y$.
+\section*{Lecture 3: Multilinear Algebra}
+         We will not equip space(time) with a vector space structure. There is no such thing as five times Paris or Paris plus Vienna. However, the tangent spaces of $T_p \M$ of smooth manifolds carry a vector space structure.
+         It is beneficial to first study vecotr spaces abstractly for two reasons.
+         \begin{itemize}
+            \item For construction of $T_p \M$ one needs an intermediate vector space $C^\infty (\M)$.
+            \item Tensor teqniques are best understoond in an abstract setting.
+         \end{itemize}
+         \subsection*{Vecotr Spaces}
+         \begin{defn}
+            A vector space $(V,+,\cdot)$ is
+            \begin{itemize}
+            \item a set $V$
+            \item $+: V \times V \to V$
+            \item $\cdot \R \times V \to V$
+            \end{itemize}
+            Which satisfies CANI and ADDU axioms. For $w,v,u \in V$ and $\lambda, \mu \in \R$
+            \begin{itemize}
+               \item $C^+: v+w = w+v$
+               \item $A^+: (u+v)+w = u+(v+w)$
+               \item $N^+: \exists 0 \in V: \forall v \in V: v+0 = v$
+               \item $I^+: \forall v \in V: \exists (-v) \in V: v+(-v) = 0$
+               \item $A: \lambda \cdot (\mu \cdot v) = (\lambda \cdot \mu)\cdot v$
+               \item $D: (\lambda + \mu) \cdot v = \lambda \cdot v + \mu \cdot v$
+               \item $D: \lambda \cdot v + \lambda \cdot w = \lambda \cdot (v+w)$
+               \item $U: 1 \cdot v = v$
+            \end{itemize}
+         \end{defn}
+         \begin{Terminology}
+            An element of a vector space is often referred to (informally) as a vector. 
+         \end{Terminology}
+         \begin{example}
+            \begin{defn}
+            Set $P := {p:(-1,+1)\to \R}$ of polynomials of (fixed) degree. $p(x) = \sum_{n=1}^{N} p_n x^n$. Is $\square (x)=x^2$ a vector? No. $\square \in P$.
+            \end{defn}
+            \begin{defn}
+               Define the operations in the space: $\\$
+               $+: P \times P \to P: (p,q) \rightarrowtail p+q\\$
+               $\cdot: \R \times P \to P: (\lambda,p) \rightarrowtail \lambda \cdot p\\$
+               Is $\square \in (P,+\cdot)$ a vector in a vector space? Yes!
+            \end{defn}
+         \end{example}
+      \subsection*{Linear Maps}
+         We want to study maps which preserve (vector space) structure. On vector spaces these are called linear maps.
+         \begin{defn}
+            Let $(V,+,\cdot)$ and $(W,+,\cdot)$ be vector spaces. Then a map $\phi V \to W$ is called linear if:
+            \begin{itemize}
+               \item $\phi(v+\tilde{v}) = \phi(v) + \phi(\tilde{v})$
+               \item $\phi(\lambda \cdot v) = lambda \cdot \phi(v)$
+            \end{itemize}
+         \end{defn}
+         \begin{example}
+            Take $P$ as before. Take $\delta: P \to P: \rightarrow \delta(p):p'$. $\delta(p,q) = (p+q)'=\delta(p)+\delta(q)$ and $\delta(\lambda p) = (\lambda p)' = \lambda p'$
+         \end{example}
+            Notation: $\phi: V \to W$ linear $\iff: \phi:V \xrightarrow[]{\sim} W$
+      \subsection*{Vector space of Homomorphisms}
+         Take $(V,+,\cdot)$ and $(W,+,cdot)$ vector spaces.
+         \begin{defn}
+            $\text{Hom}(V,W:={\phi: V \xrightarrow{\sim} V})$ as a set. This is a vectorspace: 
+            \begin{itemize}
+               \item $\oplus: \text{Hom}(V,W) \times \text{Hom}(V,W) \to \text{Hom}(V,W): (\phi,\psi) \rightarrowtail \phi \oplus \psi$ where $(\phi \oplus \psi)(v) := \phi(v) + \psi(v)$
+               \item $\otimes$ defined dimilarly. 
+            \end{itemize}
+            $(\text{Hom}(V,W),\oplus,\otimes)$ is a vector space. 
+         \end{defn}
+         \begin{example}
+            Take $P$ as before. Then $\delta$ is a vector space similarly. 
+         \end{example}
+      \subsection*{Dual Vector Space}
+         $(V,+,\cdot)$ as a vector space.
+         \begin{defn}
+            $V^* := {\psi: V \xrightarrow{\sim} \R} = \text{Hom} (V,\R)$ is also a vector space called the dual vector space of $V$.
+         \end{defn}
+         \begin{Terminology}
+            $\phi \in V^*$ is called (informally) a covector.
+         \end{Terminology}
+         \begin{example}
+         $I: P \xrightarrow{\sim} \R$ so $I \in P^*$
+         \begin{defn}
+            $I(p) := \int_{0}^{1}dxp(x)$
+         \end{defn}
+         $I$ is clearly linear.
+         \end{example}
+      \subsection*{Tensors}
+      \begin{defn}
+         Take a vector space $V$. Then a $(r,s)$ tensor $T$ over $V$ is a multilinear map: $T: \bigotimes_{i=1}^{r} V^* \otimes \bigotimes_{j=1}^{s} V \xrightarrow{\sim (r+s)} \R$
+      \end{defn}
+      \begin{example}
+         $T (1,1) - $ tensor. $T(\phi+\psi,v) = T(\phi,v)+T(\psi,v), T(\lambda \psi,v)=\lambda\cdot T(\phi,v) T(\psi,v+w)=T(\psi,v)+T(\psi,w), T(\psi,\lambda\cdot v)= \lambda \cdot T(\psi,v)$ Linear in both entries. Hence, multi-linear.
+      \end{example}
+      \bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
 \bibliography{references.bib}  % the name of the .bib file
 \end{document}

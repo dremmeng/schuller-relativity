@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.26)  9 JUL 2025 14:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.26)  10 JUL 2025 13:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -167,52 +167,219 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/xltabular/xltabular.sty
+Package: xltabular 2025/02/28 v0.2i `xltabular' package (hv,RN)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen159
+\ar@mcellbox=\box54
+\extrarowheight=\dimen160
+\NC@list=\toks32
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box55
 )
-\c@thm=\count285
-\c@defn=\count286
-\c@conv=\count287
-\c@rem=\count288
-\c@lem=\count289
-\c@cor=\count290
-\c@example=\count291
-\c@exe=\count292
-\c@conjecture=\count293
-\c@remark=\count294
-\c@Terminology=\count295
+\TX@col@width=\dimen161
+\TX@old@table=\dimen162
+\TX@old@col=\dimen163
+\TX@target=\dimen164
+\TX@delta=\dimen165
+\TX@cols=\count285
+\TX@ftn=\toks33
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count286
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/ltablex/ltablex.sty
+Package: ltablex 2014/08/13 v1.1 Modified tabularx
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
+\LTleft=\skip59
+\LTright=\skip60
+\LTpre=\skip61
+\LTpost=\skip62
+\LTchunksize=\count287
+\LTcapwidth=\dimen166
+\LT@head=\box56
+\LT@firsthead=\box57
+\LT@foot=\box58
+\LT@lastfoot=\box59
+\LT@gbox=\box60
+\LT@cols=\count288
+\LT@rows=\count289
+\c@LT@tables=\count290
+\c@LT@chunks=\count291
+\LT@p@ftn=\toks34
+))) (/usr/local/texlive/2025/texmf-dist/tex/latex/tabularray/tabularray.sty
+Package: tabularray 2025-03-11 v2025A Typeset tabulars and arrays with LaTeX3
+\l__tblr_a_int=\count292
+\l__tblr_c_int=\count293
+\l__tblr_r_int=\count294
+\l__tblr_d_dim=\dimen167
+\l__tblr_h_dim=\dimen168
+\l__tblr_o_dim=\dimen169
+\l__tblr_p_dim=\dimen170
+\l__tblr_q_dim=\dimen171
+\l__tblr_r_dim=\dimen172
+\l__tblr_s_dim=\dimen173
+\l__tblr_t_dim=\dimen174
+\l__tblr_v_dim=\dimen175
+\l__tblr_w_dim=\dimen176
+\l__tblr_a_box=\box61
+\l__tblr_b_box=\box62
+\l__tblr_c_box=\box63
+\l__tblr_d_box=\box64
+\c@tblrcount=\count295
+\c@rownum=\count296
+\c@colnum=\count297
+\c@rowcount=\count298
+\c@colcount=\count299
+\abovesep=\dimen177
+\belowsep=\dimen178
+\leftsep=\dimen179
+\rightsep=\dimen180
+\gTblrLevelInt=\count300
+\g__tblr_data_row_key_count_int=\count301
+\g__tblr_data_column_key_count_int=\count302
+\g__tblr_data_cell_key_count_int=\count303
+\g__tblr_array_int=\count304
+\l__tblr_key_count_int=\count305
+\l__tblr_key_quotient_int=\count306
+\l__tblr_key_quotient_two_int=\count307
+\l__tblr_key_remainder_int=\count308
+\g__tblr_data_str_value_count_int=\count309
+\lTblrChildTotalInt=\count310
+\lTblrChildHtotalInt=\count311
+\lTblrChildVtotalInt=\count312
+\l__child_diff_h_int=\count313
+\l__child_diff_v_int=\count314
+\l__child_sign_h_int=\count315
+\l__child_sign_v_int=\count316
+\l__child_step_int=\count317
+\lTblrDefaultHruleWidthDim=\dimen181
+\lTblrDefaultVruleWidthDim=\dimen182
+\l__tblr_split_balance_int=\count318
+\l__tblr_strut_dp_dim=\dimen183
+\l__tblr_strut_ht_dim=\dimen184
+\g__tblr_cell_wd_dim=\dimen185
+\g__tblr_cell_ht_dim=\dimen186
+\g__tblr_cell_head_dim=\dimen187
+\g__tblr_cell_foot_dim=\dimen188
+\l__tblr_measured_cell_box=\box65
+\g__tblr_last_box=\box66
+\l__tblr_temp_box=\box67
+\l__tblr_column_target_dim=\dimen189
+\l__tblr_hfuzz_dim=\dimen190
+\l__tblr_caption_box=\box68
+\l__tblr_caption_left_box=\box69
+\lTblrRowHeadInt=\count319
+\lTblrRowFootInt=\count320
+\l__tblr_row_head_box=\box70
+\l__tblr_row_foot_box=\box71
+\l__tblr_row_head_foot_dim=\dimen191
+\lTblrTableWidthDim=\dimen192
+\l__tblr_table_firsthead_box=\box72
+\l__tblr_table_middlehead_box=\box73
+\l__tblr_table_lasthead_box=\box74
+\l__tblr_table_firstfoot_box=\box75
+\l__tblr_table_middlefoot_box=\box76
+\l__tblr_table_lastfoot_box=\box77
+\l__tblr_remain_height_dim=\dimen193
+\l__tblr_long_from_int=\count321
+\l__tblr_long_to_int=\count322
+\l__tblr_curr_i_int=\count323
+\l__tblr_prev_i_int=\count324
+\lTblrTablePageInt=\count325
+\l__tblr_table_head_box=\box78
+\l__tblr_table_foot_box=\box79
+\l__tblr_table_head_foot_dim=\dimen194
+\l__tblr_table_head_body_foot_dim=\dimen195
+\l__tblr_table_box=\box80
+\lTblrRowFirstInt=\count326
+\lTblrRowLastInt=\count327
+\l__tblr_table_hlines_box=\box81
+\l__tblr_hline_box=\box82
+\l__tblr_row_box=\box83
+\l__tblr_col_o_wd_dim=\dimen196
+\l__tblr_col_b_wd_dim=\dimen197
+\l__tblr_hline_leftskip_dim=\dimen198
+\l__tblr_hline_rightskip_dim=\dimen199
+\l__tblr_row_ht_dim=\dimen256
+\l__tblr_row_dp_dim=\dimen257
+\l__tblr_row_abovesep_dim=\dimen258
+\l__tblr_row_belowsep_dim=\dimen259
+\l__tblr_row_vlines_box=\box84
+\l__tblr_vline_box=\box85
+\l__tblr_cell_box=\box86
+\l__tblr_row_upper_dim=\dimen260
+\l__tblr_row_lower_dim=\dimen261
+\l__tblr_row_vpace_dim=\dimen262
+\l__tblr_vline_aboveskip_dim=\dimen263
+\l__tblr_vline_belowskip_dim=\dimen264
+\lTblrCellRowSpanInt=\count328
+\lTblrCellColSpanInt=\count329
+\l__tblr_cell_wd_dim=\dimen265
+\l__tblr_cell_ht_dim=\dimen266
+\lTblrCellAboveBorderWidthDim=\dimen267
+\lTblrCellBelowBorderWidthDim=\dimen268
+\lTblrCellLeftBorderWidthDim=\dimen269
+\lTblrCellRightBorderWidthDim=\dimen270
+\l__tblr_diag_box=\box87
+\l__tblr_cell_inner_wd_dim=\dimen271
+\l__tblr_cell_inner_dp_dim=\dimen272
+\l__tblr_cell_hanchor_dim=\dimen273
+\l__tblr_last_cell_table_ht_dim=\dimen274
+\l__tblr_last_cell_table_dp_dim=\dimen275
+\l__tblr_last_vline_wd_dim=\dimen276
+\l__tblr_tikz_node_box=\box88
+)
+\c@thm=\count330
+\c@defn=\count331
+\c@conv=\count332
+\c@rem=\count333
+\c@lem=\count334
+\c@cor=\count335
+\c@example=\count336
+\c@exe=\count337
+\c@conjecture=\count338
+\c@remark=\count339
+\c@Terminology=\count340
+\c@Philosophy=\count341
  (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count296
-\l__pdf_internal_box=\box54
+\l__color_backend_stack_int=\count342
+\l__pdf_internal_box=\box89
 ) (./relativity-schuller.aux)
 \openout1 = `relativity-schuller.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
-\scratchdimen=\dimen159
-\scratchbox=\box55
-\nofMPsegments=\count298
-\nofMParguments=\count299
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count300
-\MPscratchDim=\dimen160
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
-\everyMPtoPDFconversion=\toks33
+\scratchcounter=\count343
+\scratchdimen=\dimen277
+\scratchbox=\box90
+\nofMPsegments=\count344
+\nofMParguments=\count345
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count346
+\MPscratchDim=\dimen278
+\MPnumerator=\count347
+\makeMPintoPDFobject=\count348
+\everyMPtoPDFconversion=\toks36
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -253,17 +420,17 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OMS+rsfs on input line 35.
+LaTeX Font Info:    Trying to load font information for OMS+rsfs on input line 36.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/calrsfs/OMSrsfs.fd)
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 35.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 36.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
@@ -279,28 +446,32 @@ Missing character: There is no 0 in font rsfs10!
 [3]
 
 [4]
+
+[5]
+
+[6]
 No file relativity-schuller.bbl.
 
 
-[5] (./relativity-schuller.aux)
+[7] (./relativity-schuller.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3746 strings out of 473190
- 54469 string characters out of 5715806
- 461917 words of memory out of 5000000
- 26941 multiletter control sequences out of 15000+600000
+ 6387 strings out of 473190
+ 118209 string characters out of 5715806
+ 524178 words of memory out of 5000000
+ 29558 multiletter control sequences out of 15000+600000
  570992 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,18n,65p,426b,330s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on relativity-schuller.pdf (5 pages, 246751 bytes).
+ 57i,18n,65p,1577b,330s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on relativity-schuller.pdf (7 pages, 265999 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 134 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

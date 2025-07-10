@@ -1,5 +1,5 @@
 \documentclass[10pt, oneside]{article}
-\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry, cite}
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry, cite, xltabular, tabularray}
 \geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}
 
 
@@ -24,6 +24,7 @@
 \newtheorem{conjecture}{Conjecture}
 \newtheorem{remark}{Remark}
 \newtheorem{Terminology}{Terminology}
+\newtheorem{Philosophy}{Philosophy}
 \title{Notes From Fredric Schuller's Lectures on Relativity}
 \author{[Drew Remmenga]}
 
@@ -307,6 +308,68 @@
          \begin{Terminology}
             If we agree to label $T^i_j = T(\epsilon^i,e_j)$ with the up and down components then Einstein sumation convention of tensors $:= \phi_i v^j T^i_j$ where we drop $\sum$. This only works over multilinear maps. 
          \end{Terminology}
+\section*{Lecture 4: Differentiable Manifolds}
+   So far we have topolgical manifolds $(\M,\mathcal{O})$ dim($\M$)=$d$. We want to talk about velocitcy vectors on them but this structure is insufficient to do so. 
+   Pick a dimension $d \neq 4$ for your manifold. In that dimension the choices of topology are countable, so presumably we can do experiments to discern which one coorisponds to our reality. 
+   In $d=4$ our choices of topology are suddenly uncountable. We need additional sturucte to talk about differentiable curves on manifolds and between manifolds. 
+   \begin{enumerate}
+      \item Curves: $\R \to \M$
+      \item Functions: $\M \to \R$
+      \item Maps: $\M_1 \to \M_2$
+   \end{enumerate}
+   \subsection*{Strategy}
+      $\gamma: \R \to \mathcal{U}$ and choose a chart $(\mathcal{U},x)$. $\mathcal{U} \xrightarrow{x} x(\mathcal{U}) \subseteq \R^d$. 
+      Try and 'lift' the undergraduate notion of differentiable of a curve in $\R^d$ to a notion of differentiability on a curve on $\M$.
+      Problem: Is this well defined under a change of chart? We don't want it to depend on our taste. 
+      \begin{align}
+         \gamma: \R \to\mathcal{U} \cap \mathcal{V} \neq 0 \\
+         y \circ \gamma: \R \to y(\mathcal{U} \cap \mathcal{V}) \subseteq \R^d \\
+         x \circ \gamma: \R \to x(\mathcal{U} \cap \mathcal{V}) \subseteq \R^d \\
+         y \circ \gamma = (y \circ x^{-1}) \circ (x \circ \gamma) = y \circ (x^{-1} \circ x) \circ \gamma 
+      \end{align}
+      If $(x \circ \gamma)$ differentiable and $(y \circ x^{-1})$ continuous is $y \circ \gamma$ guarenteed to be continuously differentiable? No.
+   \subsection*{Compatible Charts}
+      In previous we took a chart on the topological manifold. Our atlases $\mathcal{V}$ and $\mathcal{U}$ were elements of the maximal atlas of the manifold. 
+      \begin{defn}
+         Two charts $(\mathcal{U},x)$ and $(\mathcal{V},y)$ are called $\square$ compatible if either:
+         \begin{enumerate}
+         \item $\mathcal{U} \cap \mathcal{V} = \emptyset$
+         \item $y \circ x^{-1}: x(\mathcal{U} \cap \mathcal{V}) \to y(\mathcal{U} \cap \mathcal{V})$ and $x \circ y^{-1}: y(\mathcal{U} \cap \mathcal{V}) \to x(\mathcal{U} \cap \mathcal{V})$ are differentiable. 
+         \end{enumerate}
+      \end{defn}
+      Philosophy of $\square$:
+         \begin{defn}
+            An atlas $\mathcal{A}_\square$ is a $\square$ - compatible atlas if any two charts in $\mathcal{A}_\square$ are $\square$ - compatible. 
+         \end{defn}
+         \begin{defn}
+            A $\square$ - manifold is a triple $(\M, \mathcal{O}, \mathcal{A}_\square)$
+         \end{defn}
+      Undergraduate $\square$. $C^0$: $C^0 (\R^d \to \R^d)$ Continuous maps. $C^1$: $\C^1 (\R^d \to \R^d)$ Differentiable Once. $C^k$: $k$-times continuous differentiable. 
+      $D^k$: $k$-times differentiable. $C^\infty$: $\C^\infty (\R^d \to \R^d)$ infinitly continously differentiable. $C^\omega$: $\exists$ multidimensional Taylor Expansion.
+      $\C^\infty$: Satisfies Cauchy-Riemann Equations. 
+      \begin{thm}
+         Any $\C^{k \geq 1}$ - atlas $\mathcal{A}$ of a topolgical manifold contains a $C^\infty$ - atlas. 
+      \end{thm}
+      Thus we will consider $C^\infty$ manifolds or "smoothmanifolds" unless we wish to define taylor expantions or complex differentiable. 
+      \begin{defn}
+         A smooth manifold is a tripple $(\M,\mathcal{O}, \mathcal{A})$ where $\mathcal{A}$ is a $C^\infty$ - atlas. 
+      \end{defn}
+   \subsection*{Diffeororphisms}
+      Take a map: $\M \xrightarrow{\phi} \mathcal{N}$. If $\M$ and $\mathcal{N}$ are naked sets then the structure preserviung maps are the bijections. If $\exists \phi$ is a bijection $\M \cong \mathcal{N}$.
+      \begin{example}
+      \begin{align*}
+         \N \cong \Z \\
+         \N \cong \Q \\
+         \N \not \cong \R
+      \end{align*}
+      \end{example}
+      Linear bijections between vector spaces are the structure preserving maps between vector spaces.
+      \begin{defn}
+         Two $C^\infty$ manifolds are said to be diffeomorphic $\iff \exists$ bijection $\phi: \M \to \mathcal{N}$ such that $\phi, \phi^{-1}$ are both $C^\infty$ maps. 
+      \end{defn}
+      \begin{thm}
+         The number of $C^\infty$ manifolds that can be contructed from a given $C^0$ - manifold up to diffeomorphism by the More-Radon Theorms in $d = 1,2,3$ dimension are 1. In $d > 4$ the number is finitie. In $d=4 \exists$ uncountably infinitely such manifolds. 
+      \end{thm}
 \bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
 \bibliography{references.bib}  % the name of the .bib file
 \end{document}

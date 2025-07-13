@@ -370,6 +370,143 @@
       \begin{thm}
          The number of $C^\infty$ manifolds that can be contructed from a given $C^0$ - manifold up to diffeomorphism by the More-Radon Theorms in $d = 1,2,3$ dimension are 1. In $d > 4$ the number is finitie. In $d=4 \exists$ uncountably infinitely such manifolds. 
       \end{thm}
+\section*{Lecture 5: Tangent Spaces}
+      Lead question: "What is the velocity of a curve $\gamma$ at a point $p$?"
+   \subsection*{Velocitites}
+      \begin{defn}
+         Take a $(\M,\mathcal{O}, \mathcal{A})$ smooth manifold. Take a curve: $\gamma: \R \to \M$ of at least $C^1$. Suppose $\gamma(\lambda_0) = p$. 
+         The velocity of $\gamma$ at $p$ is the linear map: $v_{\gamma,p}: C^{\infty}(\M) \xrightarrow{\sim} \R$. $C^\infty (\M) := \{f:\M \to \R | f $ smooth function $\}$ equipped with $(f \oplus g)(p) := f(p) +_{\R} g(p), (\lambda \oplus g)(p):=\lambda \cdot g(p)$.
+         So velocity is a linear map: $f \rightarrowtail v_{\gamma,p} (f) := (f \circ \gamma)'(\lambda_0)$.
+      \end{defn}
+   \subsection*{Tangent Vector Space}
+      \begin{defn}
+         For each point $p \in \M$ we define the set "tangent space to $\M$ at p" as $T_p \M := \{v{\gamma,p} | \gamma \text{ smooth curve } \}$.
+      \end{defn}
+      Observe that $T_p \M$ can be made into a vector space. 
+      \begin{defn}
+         We need to define $\oplus$ and $\otimes$.
+         \begin{align*}
+            \oplus: T_p \M \times T_p \M &\to \text{Hom}(C^\infty(\M),\R) \\
+            (v_{\gamma,p} \oplus v_{\delta,p})(f) &:= v_{\gamma,p}(f) +_{\R} v_{\delta,p} (f), f \in C^\infty (\M)
+         \end{align*}
+         \begin{align*}
+            \otimes: \R \times T_p \M \to \text{Hom}(C^\infty(\M,\R)) \\
+            (\alpha \otimes v_{\gamma,p})(f) &:= \alpha \cdot_{\R} v_{\gamma,p} (f), \alpha \in \R
+         \end{align*}
+         Remains to be shown that: 
+         \begin{enumerate}
+            \item $\exists \sigma$ curve: $v_{\gamma,p} \oplus v_{\delta,p} = \mathcal{\sigma,p}$
+            \item $\exists \tau$ curve: $\lambda \otimes v_{\gamma,p} = v_{\tau,p}$
+         \end{enumerate}
+         \begin{proof}
+            Construct: 
+            \begin{align*}
+               \tau: \R &\to \M \\
+               &\rightarrowtail \tau(\lambda) := \gamma(\alpha \lambda \cdot \lambda_0) = (\gamma \circ \mu_{\alpha})(\lambda) \\
+               \mu_\alpha: \R &\to \R \\
+               \triangle &\rightarrowtail \triangle \cdot \alpha
+            \end{align*}
+            Then:
+            \begin{align*}
+               \tau (0) &= \gamma(\lambda_0) = p \\
+               v_{\tau,p} &:= (f \circ \tau)'(0) = (f \circ \gamma \mu_\alpha)'(0) \\
+               &= (f \circ \gamma)' (\lambda_0) \cdot \alpha \\
+               &= \alpha v_{\gamma,p} 
+            \end{align*}
+            And for addition:
+            \begin{align*}
+               v_{\gamma,p} \oplus v_{\delta,p} =^? \mathcal{\sigma,p}
+            \end{align*}
+            Make a choice of chart $(\mathcal{U},x)$ with $p \in \mathcal{U}$ and define:
+            \begin{align*}
+               \sigma_x: \R \to \M \\
+               \sigma_x(\lambda) := x^{-1} ((x \circ \gamma)(\lambda_0 + \lambda)+ (x \circ \gamma)(\lambda_0))
+            \end{align*}
+            Then: 
+            \begin{align*}
+               \sigma_x (0) &= x^{-1} ((x \circ \gamma)(\lambda_0)+(x \circ \delta)(\lambda_0)-(x \circ \gamma)(\lambda_0)) \\
+               &= \delta(\lambda_0) = 0   
+            \end{align*}
+            Now:
+            \begin{align*}
+               v_{\sigma ,p} &:= (f \circ \sigma_x)' (0) \\
+               &= (f \circ x^{-1}_\circ(x \circ \sigma_x))'(\gamma) \\
+               &= (x \circ \sigma_x)^i(0) \cdot (\partial_i (f \circ x^{-1}))(x(\sigma_x(0))) (x \circ \gamma)^i (\lambda_0) + (x \circ \delta)^i (\lambda_0)\\
+               &= (x \circ \gamma)^i(\lambda_0)(\partial_i(f \circ x^{-1}))(x(p)) + (x \circ \delta)^i(\lambda_0)(\partial_i(f \circ x^{-1}))(x(p)) \\
+               &= (f \circ \gamma)'(\lambda_0) + (f \circ \delta)' (\lambda_0) \\
+               &= v_{\gamma,p}(f) + v_{\delta,p}(f), \forall f \in C^\infty (\M) \\
+               v_{\sigma,p} &= v_{\gamma,p} \oplus v_{\delta,p}
+            \end{align*}
+            And we are done. 
+         \end{proof}
+      \end{defn}
+   \subsection*{Components of a Vector With Respect to a Chart}
+   \begin{defn}
+      Let $(\mathcal{U},x) \in \mathcal{A}_{smooth}$ and let $\gamma: \R \to \mathcal{U}, \gamma(0) =p$. Calculate 
+      \begin{align*}
+         v_{\gamma,p}(f)&:= (f \circ \gamma)'(0) = ((f \circ x^{-1})\circ(x\circ \gamma))'(0) \\
+         &= (x \circ \gamma)^i (0) \cdot(\partial_i(f \circ x^{-1}))(x(p)) \\
+         &= \dot{\gamma}_x^i (0) \cdot(\frac{\partial}{\partial x^i})_p f, \forall f \in C^{\infty}(\M)
+      \end{align*}
+      This is the components of velocity vector from the chart induced basis of the vector from $T_p \M$.
+   \end{defn}
+   \subsection*{Chart-induced Basis}
+   \begin{defn}
+      Take $(\mathcal{U},x) \in \mathcal{A}_{smooth}$. Then
+      \begin{align*}
+         (\frac{\partial}{\partial x^1})_p, ..., (\frac{\partial}{\partial x^d})_p \in T_p \M
+      \end{align*}
+      Consititute a basis of $T_p \mathcal{U}$.
+   \end{defn}
+   \begin{proof}
+      Linear independence remains to be shown. 
+      \begin{align*}
+         \lambda^i (\frac{\partial}{\partial x^i})_p &=  \\
+         \lambda^i (\frac{\partial}{\partial x^i})_p(x^i) &=\\
+         \lambda^i \partial_i (x^j \circ x^{-1})(x(p)) &=  \\
+         \lambda^i \delta_i^j &= \lambda^j
+      \end{align*}
+      Corollarary $\text{dim}T_\phi \M = d = \text{dim}(\M)$.
+   \end{proof}
+   \begin{Terminology}
+      $X \in T_p \M \implies \exists \gamma: \R \to \M: X= v_{\gamma,p}$ and $\exists x^1, ..., x^d: X = x^i(\frac{\partial}{\partial x^i})_p$
+   \end{Terminology}
+   \subsection*{Change of Vector Components Under a Change of Chart}
+   The physical vector in the real world doesn't change under change of chart. The vector components change under change of chart.  Let $(\mathcal{U},x), (\mathcal{V},y) \in \mathcal{A}_{smooth}, p \in \mathcal{U} \cap \mathcal{V} \neq \emptyset$. Let $X \in T_p \M$ then
+   \begin{align*}
+      X^i_{(y)}\cdot (\frac{\partial}{\partial y^i})_p =_{(\mathcal{V},y)} X =_{(\mathcal{U},x)} (\frac{\partial}{\partial x^i})_p
+   \end{align*} 
+   To study chang eof components formula take:
+   \begin{align*}
+      (\frac{\partial}{\partial x^i})_p f &= \partial_i (f \circ x^{-1})(x(p)) \\
+      &= \partial_i ((f \circ y^{-1})\circ(y \circ x^{-1})(x(p))) \\
+      &= (\partial_i(y^j \circ x^{-1}))(x(p)) \cdot (\partial_j (f \circ y^{-1}))(y(p))\\
+      &=(\frac{\partial y^j}{\partial x^i})_p \cdot (\frac{\partial f}{\partial y^j})_p f\\
+      &= X^i_{(x)} \cdot (\frac{\partial y^j}{\partial x^i})_p \cdot (\frac{\partial}{\partial y^j})_p \\
+      &= X^i_{(y)} (\frac{\partial}{\partial y^j})_p \\
+      &\implies \\
+      X^j_{(y)} &= (\frac{\partial y^j}{\partial x^i})_p X^i_{(x)}
+   \end{align*}
+   \subsection*{Cotangent Spaces}
+   Trivial $(T_p^* \M) := \{\phi: T_p \M \xrightarrow{\sim} \R \}$.
+   \begin{example}
+   $f \in C^{\infty}(\M)$
+   \begin{align*}
+      (df)_p : T_p \M &\xrightarrow{\sim} \R \\
+      X &\rightarrowtail (df)_p (X):= X f 
+   \end{align*}
+   So $(df)_p $ is called the gradient of $f$ at $p \in \M$. Calculate the components of the gradient. (0,1)- tensor of the vector space with respect to a chart $(\mathcal{U},x)$. 
+   \begin{align*}
+      ((df)_p)_j &:= (df)_p (\frac{\partial }{\partial x^j})_p  \\
+      &= (\frac{\partial f}{\partial x^j})_p  \\
+      &= \partial_j (f \circ x^{-1})(x(p)) 
+   \end{align*}
+   \end{example}
+   \begin{thm}
+      Consider a chart $(\mathcal{U},x) \implies x^i : \mathcal{U} \to \R$. Claim: $(dx^i)_p$ is the basis of $T_p^* \M$ or dual basis. $(dx^a)_p (\frac{\partial}{\partial x^b})_p =\delta^a_b$
+   \end{thm}
+   \subsection{Change of Components of A Covector with Respect to a Chart}
+   $\omega \in T_p^* \M$ then $\omega_{((x)i)} (dx^i)_p \implies \omega_{(y)j}= (\frac{\partial x^j}{\partial y^i}) \omega_{(x)j}$.
 \bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
 \bibliography{references.bib}  % the name of the .bib file
 \end{document}

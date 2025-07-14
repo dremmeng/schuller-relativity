@@ -4,6 +4,9 @@
 
 
 
+
+
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -12,6 +15,7 @@
 \newcommand{\Cdot}{\boldsymbol{\cdot}}
 \newcommand{\F}{\mathfrak{F}}
 \newcommand{\M}{\mathcal{M}}
+
 
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}{Definition}
@@ -30,519 +34,585 @@
 
 
 
+
+
+
 \begin{document}
+
+
 
 
 \maketitle
 \begin{abstract}
-    Notes on Fredric Schuller's Relativity lectures. "Spacetime is a four-dimensional topolgical manifold with a smooth atlas carrying a torsion free connection compatible with a Lorentzian metric and time orientation satisfying the Einstein Equations."
+   Notes on Fredric Schuller's Relativity lectures. "Spacetime is a four-dimensional topolgical manifold with a smooth atlas carrying a torsion free connection compatible with a Lorentzian metric and time orientation satisfying the Einstein Equations."
 \end{abstract}
 \section*{Lecture 1: Topological Spaces}
-   @ the coursest level spacetime is a set. This is not enough to talk about conintuity of maps. In classical physics there are no jumps. Sets are not enough alone to talk about continuity. We are interested in establishing the weakest possible structure on a set to talk about continuity of maps.
-   The mathematician knows the weakest structurenecessary to do this is a topology.
-   \begin{defn}
-       Let $\mathcal{M}$ be a set. A topology $\mathcal{O}$ is a subset of the powerset of $\mathcal{M}$ denoted $\mathcal{O} \subseteq \mathcal{P}(\mathcal{M})$ satisfying three axioms: 
-      \begin{itemize}
-         \item $\emptyset \subset \mathcal{O}$, $\mathcal{M} \subset \mathcal{O}$
-         \item For arbitrary $U, V \in \mathcal{O} \implies U \cap V \in \mathcal{O}$
-         \item For arbitrary $U_\alpha \in \mathcal{O} \implies (\bigcap_{\alpha \in A} U_\alpha) \in \mathcal{O}$ where $\alpha$ is an index of the set $A$.
-      \end{itemize}
-   \end{defn}
-   \begin{example}
-      \begin{itemize}
-         \item Let $\mathcal{M} = \{1,2,3\}$
-         \begin{itemize}
-            \item Let $\mathcal{O}_1 = \{\emptyset, \{1,2,3\} \}$ then $\mathcal{O}_1$ is a topology for $\mathcal{M}$.
-            \item Let $\mathcal{O}_2 = \{ \emptyset, \{1\}, \{2\}, \{1,2,3\} \}$ then $\mathcal{O}_2$ is not a topology for $\M$ because $\{1,2\} \not \in \mathcal{O}_2$.
-         \end{itemize}
-         \item Let $\M$ be any set.
-         \begin{itemize}
-            \item $\mathcal{O}_{chaotic} = \{\emptyset, \M \}$ is a topology
-            \item $\mathcal{O}_{discrete} = \mathcal{P}(\M)$ is a topology
-         \end{itemize}
-         \item $\M = \R^d$ (tuples of dimenions $d$ from $\R$) then $\mathcal{O}_{standard} \subseteq \mathcal{P}(\M)$ is a topology for $\M$ defined as follows.
-         \begin{defn}
-            $\mathcal{O}_{standard}$ defined in two steps.
-            \begin{itemize}
-               \item $B_r(p) := \{q_1, \cdots, q_d \} | \sum_{i=1}^d (q_i - p)^2 < r, r \in \R^+, q_i \in \R, p \in \R^d$
-               \item $\mathcal{U} \in \mathcal{O}_{standard} \iff \forall p \in \mathcal{U}, \exists r \in \R^+ : B_r(p) \subseteq \mathcal{U}$
-            \end{itemize}
-         \end{defn}
-      \end{itemize}
-   \end{example}
-   We want $\M$ to be spacetime and we want to equip it with an apropriate topology $\mathcal{O}$ to be able to talk about it.
-   We want to make the implicit assumptions of spacetime to be explicit.
-   \begin{Terminology}
-      Let $\M$ be a set defined from (ZFC) then $\mathcal{O}$ is the topology on $\M$ and it a collection of open sets. $(\M,\mathcal{O})$ is a topological space. 
-      \begin{itemize}
-         \item $\mathcal{U} \in \mathcal{O} \iff \mathcal{U} \subseteq \M$ is an open set.
-         \item $M \slash A \in \mathcal{O}$ $\iff A \subseteq \M$ is closed.
-      \end{itemize}
-      $\not$ open $\not \implies$ closed and 
-      $\not$ closed $\not \implies$ open 
-   \end{Terminology}
-   \begin{defn}
-      A map $f: M \to N$ takes all elements $m \in M$ to an element $n \in N$. $M$ is the domain. $N$ is the target.
-      If $\exists m_1, m_2 \in M$ such that $f(m_1) = f(m_2) = n \in N$ then $f$ is $\not$ injective.
-      If $\exists n \in N$ such that $\forall m \in M : f(m) \neq n$ then $f$ is not surjective.
-      Is a map $f$ continuous? Depends by definition on topologies $\mathcal{O}_M$ on $M$ and $\mathcal{O}_N$ on $N$. 
-      \begin{defn}
-         A map $f$ is called continuous between $(M,\mathcal{O}_M)$ and $(N,\mathcal{O}_N)$. Then a map $f$ is called continuous with respect to these topologies if for every open $V \in \mathcal{O}_N$ the preimage of $V$ is open in $\mathcal{O}_M$.
-         $\forall V \in O_N : \text{preim}_f(V) \in \mathcal{O}_M$, $\text{preim}_f(V) := \{m \in M \} | f(m) \in V$.
-      \end{defn}
-   \end{defn}
-   \begin{example}
-      $M = {1,2}, \mathcal{O}_M = {\emptyset, {1}, {2}, {1,2}} \\$
-      $N = {1,2}, \mathcal{O}_N = {\emptyset, {1,2}} \\$
-      $f: M \to N | f(1) = 2, f(2) = 1 \\$
-      Is $f$ continuous? $\\$
-      $\text{preim}_f (\emptyset) = \emptyset \in \mathcal{O}_M \\$
-      $\text{preim}_f ({1,2}) = M \in \mathcal{O}_M \\$
-      Therefore $f$ is continuous.
-   \end{example}
-   \begin{example}
-      $g: N \to M$ or $f^{-1}$ then $\text{preim}_g ({1}) = {2} \not\in \mathcal{O}_N$ so $g$ is not continuous.
-   \end{example}
-   \subsection*{Composition of Maps}
-      $M \xrightarrow{f} N \xrightarrow{g} P$ so $g \circ f: M \to P$ by $m \to (g \circ f)(m) := g(f(m))$.
-      \begin{thm}
-         Composition of continuous maps is continuous.
-      \end{thm}
-      \begin{proof}
-         Let $V \in \mathcal{O}_P$ then 
-         \begin{align*}
-            \text{preim}_{g \circ f}(V) &:= {m \in M | (g \circ f)(m) \in V} \\
-               &= {m \in M | f(m) \in \text{preim}_g(V)} \\
-               &= \text{preim}_f(\text{preim}_g(V) \in \mathcal{O}_N) \in \mathcal{O}_M \\
-         \end{align*}
-      \end{proof}
-   \subsection*{Inheritance of a Topology}
-      Many useful ways to inherit a topology from another topological space or set of topological spaces. Of particular importance for spacetime physics is $S \subseteq M$ where $M$ has topology $\mathcal{O}_M$.
-      Can we construct a topology $\mathcal{O}_S$ from $\mathcal{O}_M$. Yes. 
-      \begin{defn}
-         $\mathcal{O} |_S \subseteq \mathcal{P}(S) \\$
-         $\mathcal{O}|_S := {\mathcal{U} \cap S | \mathcal{U} \in \mathcal{O}_M} \\$
-         This is a topology called the subset topology.
-      \end{defn}
-      Use of this specific way to inherit a topology from a super set. Let it be easy to say a map $f$ is continuous. Then a subset $S$ of a set $M$ with a inherited topology then the restriction of the map $f|_S: S \to N$ it can be easy to show this restriction is continuous.
+  At the coarsest level spacetime is a set. This is not enough to talk about continuity of maps. In classical physics there are no jumps. Sets are not enough alone to talk about continuity. We are interested in establishing the weakest possible structure on a set to talk about continuity of maps.
+  The mathematician knows the weakest structure necessary to do this is a topology.
+  \begin{defn}
+      Let $\mathcal{M}$ be a set. A topology $\mathcal{O}$ is a subset of the powerset of $\mathcal{M}$ denoted $\mathcal{O} \subseteq \mathcal{P}(\mathcal{M})$ satisfying three axioms:
+     \begin{itemize}
+        \item $\emptyset \subset \mathcal{O}$, $\mathcal{M} \subset \mathcal{O}$
+        \item For arbitrary $U, V \in \mathcal{O} \implies U \cap V \in \mathcal{O}$
+        \item For arbitrary $U_\alpha \in \mathcal{O} \implies (\bigcap_{\alpha \in A} U_\alpha) \in \mathcal{O}$ where $\alpha$ is an index of the set $A$.
+     \end{itemize}
+  \end{defn}
+  \begin{example}
+     \begin{itemize}
+        \item Let $\mathcal{M} = \{1,2,3\}$
+        \begin{itemize}
+           \item Let $\mathcal{O}_1 = \{\emptyset, \{1,2,3\} \}$ then $\mathcal{O}_1$ is a topology for $\mathcal{M}$.
+           \item Let $\mathcal{O}_2 = \{ \emptyset, \{1\}, \{2\}, \{1,2,3\} \}$ then $\mathcal{O}_2$ is not a topology for $\M$ because $\{1,2\} \not \in \mathcal{O}_2$.
+        \end{itemize}
+        \item Let $\M$ be any set.
+        \begin{itemize}
+           \item $\mathcal{O}_{chaotic} = \{\emptyset, \M \}$ is a topology
+           \item $\mathcal{O}_{discrete} = \mathcal{P}(\M)$ is a topology
+        \end{itemize}
+        \item $\M = \R^d$ (tuples of dimensions $d$ from $\R$) then $\mathcal{O}_{standard} \subseteq \mathcal{P}(\M)$ is a topology for $\M$ defined as follows.
+        \begin{defn}
+           $\mathcal{O}_{standard}$ defined in two steps.
+           \begin{itemize}
+              \item $B_r(p) := \{q_1, \cdots, q_d \} | \sum_{i=1}^d (q_i - p)^2 < r, r \in \R^+, q_i \in \R, p \in \R^d$
+              \item $\mathcal{U} \in \mathcal{O}_{standard} \iff \forall p \in \mathcal{U}, \exists r \in \R^+ : B_r(p) \subseteq \mathcal{U}$
+           \end{itemize}
+        \end{defn}
+     \end{itemize}
+  \end{example}
+  We want $\M$ to be spacetime and we want to equip it with an appropriate topology $\mathcal{O}$ to be able to talk about it.
+  We want to make the implicit assumptions of spacetime to be explicit.
+  \begin{Terminology}
+     Let $\M$ be a set defined from (ZFC) then $\mathcal{O}$ is the topology on $\M$ and it is a collection of open sets. $(\M,\mathcal{O})$ is a topological space.
+     \begin{itemize}
+        \item $\mathcal{U} \in \mathcal{O} \iff \mathcal{U} \subseteq \M$ is an open set.
+        \item $M \slash A \in \mathcal{O}$ $\iff A \subseteq \M$ is closed.
+     \end{itemize}
+     $\not$ open $\not \implies$ closed and
+     $\not$ closed $\not \implies$ open
+  \end{Terminology}
+  \begin{defn}
+     A map $f: M \to N$ takes all elements $m \in M$ to an element $n \in N$. $M$ is the domain. $N$ is the target.
+     If $\exists m_1, m_2 \in M$ such that $f(m_1) = f(m_2) = n \in N$ then $f$ is $\not$ injective.
+     If $\exists n \in N$ such that $\forall m \in M : f(m) \neq n$ then $f$ is not surjective.
+     Is a map $f$ continuous? Depends by definition on topologies $\mathcal{O}_M$ on $M$ and $\mathcal{O}_N$ on $N$.
+     \begin{defn}
+        A map $f$ is called continuous between $(M,\mathcal{O}_M)$ and $(N,\mathcal{O}_N)$. Then a map $f$ is called continuous with respect to these topologies if for every open $V \in \mathcal{O}_N$ the preimage of $V$ is open in $\mathcal{O}_M$.
+        $\forall V \in O_N : \text{preim}_f(V) \in \mathcal{O}_M$, $\text{preim}_f(V) := \{m \in M \} | f(m) \in V$.
+     \end{defn}
+  \end{defn}
+  \begin{example}
+     $M = {1,2}, \mathcal{O}_M = {\emptyset, {1}, {2}, {1,2}} \\$
+     $N = {1,2}, \mathcal{O}_N = {\emptyset, {1,2}} \\$
+     $f: M \to N | f(1) = 2, f(2) = 1 \\$
+     Is $f$ continuous? $\\$
+     $\text{preim}_f (\emptyset) = \emptyset \in \mathcal{O}_M \\$
+     $\text{preim}_f ({1,2}) = M \in \mathcal{O}_M \\$
+     Therefore $f$ is continuous.
+  \end{example}
+  \begin{example}
+     $g: N \to M$ or $f^{-1}$ then $\text{preim}_g ({1}) = {2} \not\in \mathcal{O}_N$ so $g$ is not continuous.
+  \end{example}
+  \subsection*{Composition of Maps}
+     $M \xrightarrow{f} N \xrightarrow{g} P$ so $g \circ f: M \to P$ by $m \to (g \circ f)(m) := g(f(m))$.
+     \begin{thm}
+        Composition of continuous maps is continuous.
+     \end{thm}
+     \begin{proof}
+        Let $V \in \mathcal{O}_P$ then
+        \begin{align*}
+           \text{preim}_{g \circ f}(V) &:= {m \in M | (g \circ f)(m) \in V} \\
+              &= {m \in M | f(m) \in \text{preim}_g(V)} \\
+              &= \text{preim}_f(\text{preim}_g(V) \in \mathcal{O}_N) \in \mathcal{O}_M \\
+        \end{align*}
+     \end{proof}
+  \subsection*{Inheritance of a Topology}
+     Many useful ways to inherit a topology from another topological space or set of topological spaces. Of particular importance for spacetime physics is $S \subseteq M$ where $M$ has topology $\mathcal{O}_M$.
+     Can we construct a topology $\mathcal{O}_S$ from $\mathcal{O}_M$. Yes.
+     \begin{defn}
+        $\mathcal{O} |_S \subseteq \mathcal{P}(S) \\$
+        $\mathcal{O}|_S := {\mathcal{U} \cap S | \mathcal{U} \in \mathcal{O}_M} \\$
+        This is a topology called the subset topology.
+     \end{defn}
+     Use of this specific way to inherit a topology from a super set. Let it be easy to say a map $f$ is continuous. Then a subset $S$ of a set $M$ with an inherited topology then the restriction of the map $f|_S: S \to N$ it can be easy to show this restriction is continuous.
 \section*{Lecture 2: Topological Manifolds}
-      $\exists$ too many topological spaces to classify. Too many topological spaces exist which have no known connection to the study of spacetime. For spacetime physics we may focus on topological spaces $(\M,\mathcal{O})$ which can be charted analogously to how the surface of the Earth is charted in an atlas.
-      \subsection*{Topological Manifolds}
-         \begin{defn}
-            A topological space $(\M, \mathcal{0})$ is called a d-dimenional topological manifold if $\forall p \in \M: \exists p \in \mathcal{U} \in \mathcal{O} : \exists x:\mathcal{U} \to x(\mathcal{U}) \subseteq \R^d$ with $\R^d$ equiped with $\mathcal{O}_{standard}$such that:
-            \begin{itemize}
-               \item $x$ is invertible: $x^{-1}: x(\mathcal{U}) \to \mathcal{U}$
-               \item $x$ is continous. 
-               \item $x^{-1}$ is continous.
-            \end{itemize}
-         \end{defn}
-         \begin{example}
-            \item The surface of a torus $:= \M \subseteq \R^3$. This is a $d=2$ dimensional topolgical manifold. 
-            \item A mobius strip $:= \M \subseteq (\R^3,\mathcal{O}_{st})$ then this is a $d=1$ manifold. 
-            \item A bifurcating line $:= \M \subset (\R^2,\mathcal{O}_{st})$ then $(\M, \mathcal{O}_{st}|_{\M})$ is a topology but the point of bifurcation is not invertible so it is not a manifold. 
-         \end{example}
-         \begin{Terminology}
-            \begin{enumerate}
-               \item A pair $(\mathcal{U},x)$ is called a chart. 
-               \item A set $\mathcal{A}={(\mathcal{U_\alpha},x_{\alpha})|\alpha \in A}$ is called an atlas of the topoligcal manifold $\M$ if $\mathcal{M} = \bigcup_{\alpha \in A} \mathcal{U}_\alpha$.
-               \item $x:\mathcal{U} \to x(\mathcal{U}) \subseteq \R^d$ is called the chart map. 
-               \item $x^{i} \mathcal{U} \to \R$ is called the coordinate maps. 
-               \item $p \in \mathcal{U}$ then $x^{i}$ is the $i$-th coordinate of the point $p$ with respect to the chosen chart $(\mathcal{U},x)$.
-            \end{enumerate}
-         \end{Terminology}
-         \begin{example}
-            \begin{itemize}
-               \item \begin{align*}
-                  \M &= \R^2 \\
-                  \mathcal{U} &= \R^2 \slash {0,0} \\
-                  x: \mathcal{U} &\to \R^2 : x(m,n) \to (-m,-n) 
-               \end{align*}
-               \item We can take another chart map on $\mathcal{U}\\$
-            $(m,n) \to (\sqrt{m^2+n^2}, \text{arctan}(\frac{n}{m}))$
-            \end{itemize}
-         \end{example}
-      \subsection*{Chart Transition Maps}
-         Imagine two charts $(\mathcal{U},x)$ and $(\mathcal{V},y)$ with $\mathcal{U} \cap \mathcal{V} = \mathcal{A} \neq \emptyset$. The same point $p \in \mathcal{A}$ can be mapped via $x$ and $y$ to two different charts. 
-         Because these maps are continuously invertible we can smoothly transition between pages of our atlas: $(y \circ x^{-1})(p) = y(x^{-1}(p))$. 
-         This map is called the chart tranisition map. Informally the chart transition map contains the instructions how to $glue$ together the charts of our atlas. 
-      \subsection*{Manifold Philosophy}
-         Often it is desirable (or indeed the way) to define properties ("contiuityt") of real-world objects ("$\R \xrightarrow{\gamma}\M)$ by judging suitible condition not on the real-world object iself but on the chart-representation of the real-world object.
-         Advantages: You can define continuity in this way.
-         Disadvantages: The chart map $x$ is a 'fantasy,' $x$ may be ill defined because the chart chosen is arbitrary. 
-         Solution: The property must be maintained regardless of chart. 
-         \begin{align*}
-         \R &\xrightarrow{y \circ \gamma} y(\mathcal{U}) \\
-         \R &\xrightarrow{x \circ \gamma} x(\mathcal{U}) \\
-         \R &\xrightarrow{\gamma} \mathcal{U}
-         \end{align*}
-         We are interested in properties of $\gamma$ but must talk about it with respect to $x$ and $y$.
+     $\exists$ too many topological spaces to classify. Too many topological spaces exist which have no known connection to the study of spacetime. For spacetime physics we may focus on topological spaces $(\M,\mathcal{O})$ which can be charted analogously to how the surface of the Earth is charted in an atlas.
+     \subsection*{Topological Manifolds}
+        \begin{defn}
+           A topological space $(\M, \mathcal{0})$ is called a d-dimensional topological manifold if $\forall p \in \M: \exists p \in \mathcal{U} \in \mathcal{O} : \exists x:\mathcal{U} \to x(\mathcal{U}) \subseteq \R^d$ with $\R^d$ equiped with $\mathcal{O}_{standard}$such that:
+           \begin{itemize}
+              \item $x$ is invertible: $x^{-1}: x(\mathcal{U}) \to \mathcal{U}$
+              \item $x$ is continuous.
+              \item $x^{-1}$ is continuous.
+           \end{itemize}
+        \end{defn}
+        \begin{example}
+           \item The surface of a torus $:= \M \subseteq \R^3$. This is a $d=2$ dimensional topological manifold.
+           \item A mobius strip $:= \M \subseteq (\R^3,\mathcal{O}_{st})$ then this is a $d=1$ manifold.
+           \item A bifurcating line $:= \M \subset (\R^2,\mathcal{O}_{st})$ then $(\M, \mathcal{O}_{st}|_{\M})$ is a topology but the point of bifurcation is not invertible so it is not a manifold.
+        \end{example}
+        \begin{Terminology}
+           \begin{enumerate}
+              \item A pair $(\mathcal{U},x)$ is called a chart.
+              \item A set $\mathcal{A}={(\mathcal{U_\alpha},x_{\alpha})|\alpha \in A}$ is called an atlas of the topological manifold $\M$ if $\mathcal{M} = \bigcup_{\alpha \in A} \mathcal{U}_\alpha$.
+              \item $x:\mathcal{U} \to x(\mathcal{U}) \subseteq \R^d$ is called the chart map.
+              \item $x^{i} \mathcal{U} \to \R$ is called the coordinate maps.
+              \item $p \in \mathcal{U}$ then $x^{i}$ is the $i$-th coordinate of the point $p$ with respect to the chosen chart $(\mathcal{U},x)$.
+           \end{enumerate}
+        \end{Terminology}
+        \begin{example}
+           \begin{itemize}
+              \item \begin{align*}
+                 \M &= \R^2 \\
+                 \mathcal{U} &= \R^2 \slash {0,0} \\
+                 x: \mathcal{U} &\to \R^2 : x(m,n) \to (-m,-n)
+              \end{align*}
+              \item We can take another chart map on $\mathcal{U}\\$
+           $(m,n) \to (\sqrt{m^2+n^2}, \text{arctan}(\frac{n}{m}))$
+           \end{itemize}
+        \end{example}
+     \subsection*{Chart Transition Maps}
+        Imagine two charts $(\mathcal{U},x)$ and $(\mathcal{V},y)$ with $\mathcal{U} \cap \mathcal{V} = \mathcal{A} \neq \emptyset$. The same point $p \in \mathcal{A}$ can be mapped via $x$ and $y$ to two different charts.
+        Because these maps are continuously invertible we can smoothly transition between pages of our atlas: $(y \circ x^{-1})(p) = y(x^{-1}(p))$.
+        This map is called the chart transition map. Informally the chart transition map contains the instructions how to $glue$ together the charts of our atlas.
+     \subsection*{Manifold Philosophy}
+        Often it is desirable (or indeed the way) to define properties ("contiuityt") of real-world objects ("$\R \xrightarrow{\gamma}\M)$ by judging suitible condition not on the real-world object itself but on the chart-representation of the real-world object.
+        Advantages: You can define continuity in this way.
+        Disadvantages: The chart map $x$ is a 'fantasy,' $x$ may be ill defined because the chart chosen is arbitrary.
+        Solution: The property must be maintained regardless of the chart.
+        \begin{align*}
+        \R &\xrightarrow{y \circ \gamma} y(\mathcal{U}) \\
+        \R &\xrightarrow{x \circ \gamma} x(\mathcal{U}) \\
+        \R &\xrightarrow{\gamma} \mathcal{U}
+        \end{align*}
+        We are interested in properties of $\gamma$ but must talk about it with respect to $x$ and $y$.
 \section*{Lecture 3: Multilinear Algebra}
-         We will not equip space(time) with a vector space structure. There is no such thing as five times Paris or Paris plus Vienna. However, the tangent spaces of $T_p \M$ of smooth manifolds carry a vector space structure.
-         It is beneficial to first study vecotr spaces abstractly for two reasons.
-         \begin{itemize}
-            \item For construction of $T_p \M$ one needs an intermediate vector space $C^\infty (\M)$.
-            \item Tensor teqniques are best understoond in an abstract setting.
-         \end{itemize}
-         \subsection*{Vecotr Spaces}
-         \begin{defn}
-            A vector space $(V,+,\cdot)$ is
-            \begin{itemize}
-            \item a set $V$
-            \item $+: V \times V \to V$
-            \item $\cdot \R \times V \to V$
-            \end{itemize}
-            Which satisfies CANI and ADDU axioms. For $w,v,u \in V$ and $\lambda, \mu \in \R$
-            \begin{itemize}
-               \item $C^+: v+w = w+v$
-               \item $A^+: (u+v)+w = u+(v+w)$
-               \item $N^+: \exists 0 \in V: \forall v \in V: v+0 = v$
-               \item $I^+: \forall v \in V: \exists (-v) \in V: v+(-v) = 0$
-               \item $A: \lambda \cdot (\mu \cdot v) = (\lambda \cdot \mu)\cdot v$
-               \item $D: (\lambda + \mu) \cdot v = \lambda \cdot v + \mu \cdot v$
-               \item $D: \lambda \cdot v + \lambda \cdot w = \lambda \cdot (v+w)$
-               \item $U: 1 \cdot v = v$
-            \end{itemize}
-         \end{defn}
-         \begin{Terminology}
-            An element of a vector space is often referred to (informally) as a vector. 
-         \end{Terminology}
-         \begin{example}
-            \begin{defn}
-            Set $P := {p:(-1,+1)\to \R}$ of polynomials of (fixed) degree. $p(x) = \sum_{n=1}^{N} p_n x^n$. Is $\square (x)=x^2$ a vector? No. $\square \in P$.
-            \end{defn}
-            \begin{defn}
-               Define the operations in the space: $\\$
-               $+: P \times P \to P: (p,q) \rightarrowtail p+q\\$
-               $\cdot: \R \times P \to P: (\lambda,p) \rightarrowtail \lambda \cdot p\\$
-               Is $\square \in (P,+\cdot)$ a vector in a vector space? Yes!
-            \end{defn}
-         \end{example}
-      \subsection*{Linear Maps}
-         We want to study maps which preserve (vector space) structure. On vector spaces these are called linear maps.
-         \begin{defn}
-            Let $(V,+,\cdot)$ and $(W,+,\cdot)$ be vector spaces. Then a map $\phi V \to W$ is called linear if:
-            \begin{itemize}
-               \item $\phi(v+\tilde{v}) = \phi(v) + \phi(\tilde{v})$
-               \item $\phi(\lambda \cdot v) = lambda \cdot \phi(v)$
-            \end{itemize}
-         \end{defn}
-         \begin{example}
-            Take $P$ as before. Take $\delta: P \to P: \rightarrow \delta(p):p'$. $\delta(p,q) = (p+q)'=\delta(p)+\delta(q)$ and $\delta(\lambda p) = (\lambda p)' = \lambda p'$
-         \end{example}
-            Notation: $\phi: V \to W$ linear $\iff \phi:V \xrightarrow[]{\sim} W$
-      \subsection*{Vector space of Homomorphisms}
-         Take $(V,+,\cdot)$ and $(W,+,\cdot)$ vector spaces.
-         \begin{defn}
-            $\text{Hom}(V,W:={\phi: V \xrightarrow{\sim} V})$ as a set. This is a vectorspace: 
-            \begin{itemize}
-               \item $\oplus: \text{Hom}(V,W) \times \text{Hom}(V,W) \to \text{Hom}(V,W): (\phi,\psi) \rightarrowtail \phi \oplus \psi$ where $(\phi \oplus \psi)(v) := \phi(v) + \psi(v)$
-               \item $\otimes$ defined similarly. 
-            \end{itemize}
-            $(\text{Hom}(V,W),\oplus,\otimes)$ is a vector space. 
-         \end{defn}
-         \begin{example}
-            Take $P$ as before. Then $\delta$ is a vector space similarly. 
-         \end{example}
-      \subsection*{Dual Vector Space}
-         $(V,+,\cdot)$ as a vector space.
-         \begin{defn}
-            $V^* := {\psi: V \xrightarrow{\sim} \R} = \text{Hom} (V,\R)$ is also a vector space called the dual vector space of $V$.
-         \end{defn}
-         \begin{Terminology}
-            $\phi \in V^*$ is called (informally) a covector.
-         \end{Terminology}
-         \begin{example}
-         $I: P \xrightarrow{\sim} \R$ so $I \in P^*$
-         \begin{defn}
-            $I(p) := \int_{0}^{1}dxp(x)$
-         \end{defn}
-         $I$ is clearly linear.
-         \end{example}
-      \subsection*{Tensors}
-      \begin{defn}
-         Take a vector space $V$. Then a $(r,s)$ tensor $T$ over $V$ is a multilinear map: $T: \bigotimes_{i=1}^{r} V^* \otimes \bigotimes_{j=1}^{s} V \xrightarrow{\sim (r+s)} \R$
-      \end{defn}
-      \begin{example}
-         $T (1,1) - $ tensor. $T(\phi+\psi,v) = T(\phi,v)+T(\psi,v), T(\lambda \psi,v)=\lambda\cdot T(\phi,v) T(\psi,v+w)=T(\psi,v)+T(\psi,w), T(\psi,\lambda\cdot v)= \lambda \cdot T(\psi,v)$ Linear in both entries. Hence, multi-linear.
-      \end{example}
-      \begin{example}
-         $g: P \times P \xrightarrow{\sim} \R, (p,q) \rightarrow \int_{0}^{1}dx p(x) q(x)$ is a $(0,2)$ - temnor over example of $P$.
-      \end{example}
-      \subsection*{Vectors and Covectors}
-         \begin{thm}
-            $\phi \in V^* \iff \phi: V \xrightarrow{\sim} \R \iff \phi(0,1) - $ tensor.
-         \end{thm}
-         \begin{thm}
-            $dim(V) < \infty \implies v \in V = (V^*)^* \iff v: V^* \xrightarrow{\sim} \R \iff v$ is a $(1,0) -$ tensor. 
-         \end{thm}
-      \subsection*{Bases}
-         \begin{defn}
-            Take a vector space $V$. A subset $B \subset V$ is called a basis if $\forall v \in V \exists F=\{f_1, ..., f_n\} \in B : \exists ! \{v^1, ..., v^n\} \in R : v = v^1 f_1 + ... + v^n f_n$.
-         \end{defn}
-         \begin{defn}
-            If $\exists$ basis $B$ with finite many elements ($d$ many elements) then we call $d =: \text{dim}(V)$.
-         \end{defn}
-         \begin{remark}
-            Let $V$ be finite dimensional vector space. Choose a basis $e_1, ..., e_n$ of $V$. We may uniquely associtate a vector $v \in V$ with $v \rightarrowtail (v^1,...,v^n)$ called the components of $v=v^1e_1+...+v^ne_n$ with respect to the chosen basis.
-            It is mor eeconomical to require your basis on $V$ once chosen such that $\epsilon^a (e_b) = \delta^a_b$. This uniquely determines choice of vector components from a choice of basis. 
-         \end{remark}
-         \begin{defn}
-            If a basis $\epsilon^1,...,\epsilon^n$ of $V^*$ satisfies these axioms it is called the dual basis.
-         \end{defn}
-         \begin{example}
-            Take $P$ with $(N=3)$. Then $e_0,...,e_3$ is a basis if $e_a (x) := x^a$ is a basis of $P$. Then dual basis is given by $\epsilon^a := \frac{1}{a!} \partial^a |_{x=0}$.
-         \end{example}
-      \subsection*{Components of Tensors}
-         \begin{defn}
-            Let $T$ be an $(r,s) - $ tensor over a finite dimensional vectors space $V$. Then define the $(r+s)^{\text{dim}(V)}$ many real numbers $i_1,...,i_r, j_1,...,j_s \in \{1,...,\text{dim}(V)\}, T^i_j \in R := T(\epsilon^i,e_j)$. The $T^i_j$ elements are called the components of the tensor with respect to the chosen basis.
-            Knowing the components and basis one can reconstruct the entire tensor.
-         \end{defn}
-         \begin{example}
-            $T (1,1,)$ - tensor with $T^i_j = T(\epsilon^i,e_j)$ reconstruct 
-            \begin{align*}
-               T(\phi,v) &= T(\sum_{i=1}^{\text{dim}(V)}\phi_i \epsilon^i, \sum_{j=1}^{\text{dim}(V)}v^j e_j) \\
-               &=\sum_{i=1}^{\text{dim}(V)}\sum_{j=1}^{\text{dim}(V)} \phi_1 v^j T(\epsilon^i,e_j)
-            \end{align*} 
-            with $\phi_i, v^j \in \R$.
-         \end{example}
-         \begin{Terminology}
-            If we agree to label $T^i_j = T(\epsilon^i,e_j)$ with the up and down components then Einstein sumation convention of tensors $:= \phi_i v^j T^i_j$ where we drop $\sum$. This only works over multilinear maps. 
-         \end{Terminology}
+        We will not equip space(time) with a vector space structure. There is no such thing as five times Paris or Paris plus Vienna. However, the tangent spaces of $T_p \M$ of smooth manifolds carry a vector space structure.
+        It is beneficial to first study vector spaces abstractly for two reasons.
+        \begin{itemize}
+           \item For construction of $T_p \M$ one needs an intermediate vector space $C^\infty (\M)$.
+           \item Tensor techniques are best understood in an abstract setting.
+        \end{itemize}
+        \subsection*{Vector Spaces}
+        \begin{defn}
+           A vector space $(V,+,\cdot)$ is
+           \begin{itemize}
+           \item a set $V$
+           \item $+: V \times V \to V$
+           \item $\cdot \R \times V \to V$
+           \end{itemize}
+           Which satisfies CANI and ADDU axioms. For $w,v,u \in V$ and $\lambda, \mu \in \R$
+           \begin{itemize}
+              \item $C^+: v+w = w+v$
+              \item $A^+: (u+v)+w = u+(v+w)$
+              \item $N^+: \exists 0 \in V: \forall v \in V: v+0 = v$
+              \item $I^+: \forall v \in V: \exists (-v) \in V: v+(-v) = 0$
+              \item $A: \lambda \cdot (\mu \cdot v) = (\lambda \cdot \mu)\cdot v$
+              \item $D: (\lambda + \mu) \cdot v = \lambda \cdot v + \mu \cdot v$
+              \item $D: \lambda \cdot v + \lambda \cdot w = \lambda \cdot (v+w)$
+              \item $U: 1 \cdot v = v$
+           \end{itemize}
+        \end{defn}
+        \begin{Terminology}
+           An element of a vector space is often referred to (informally) as a vector.
+        \end{Terminology}
+        \begin{example}
+           \begin{defn}
+           Set $P := {p:(-1,+1)\to \R}$ of polynomials of (fixed) degree. $p(x) = \sum_{n=1}^{N} p_n x^n$. Is $\square (x)=x^2$ a vector? No. $\square \in P$.
+           \end{defn}
+           \begin{defn}
+              Define the operations in the space: $\\$
+              $+: P \times P \to P: (p,q) \rightarrowtail p+q\\$
+              $\cdot: \R \times P \to P: (\lambda,p) \rightarrowtail \lambda \cdot p\\$
+              Is $\square \in (P,+\cdot)$ a vector in a vector space? Yes!
+           \end{defn}
+        \end{example}
+     \subsection*{Linear Maps}
+        We want to study maps which preserve (vector space) structure. On vector spaces these are called linear maps.
+        \begin{defn}
+           Let $(V,+,\cdot)$ and $(W,+,\cdot)$ be vector spaces. Then a map $\phi V \to W$ is called linear if:
+           \begin{itemize}
+              \item $\phi(v+\tilde{v}) = \phi(v) + \phi(\tilde{v})$
+              \item $\phi(\lambda \cdot v) = lambda \cdot \phi(v)$
+           \end{itemize}
+        \end{defn}
+        \begin{example}
+           Take $P$ as before. Take $\delta: P \to P: \rightarrow \delta(p):p'$. $\delta(p,q) = (p+q)'=\delta(p)+\delta(q)$ and $\delta(\lambda p) = (\lambda p)' = \lambda p'$
+        \end{example}
+           Notation: $\phi: V \to W$ linear $\iff \phi:V \xrightarrow[]{\sim} W$
+     \subsection*{Vector space of Homomorphisms}
+        Take $(V,+,\cdot)$ and $(W,+,\cdot)$ vector spaces.
+        \begin{defn}
+           $\text{Hom}(V,W:={\phi: V \xrightarrow{\sim} V})$ as a set. This is a vectorspace:
+           \begin{itemize}
+              \item $\oplus: \text{Hom}(V,W) \times \text{Hom}(V,W) \to \text{Hom}(V,W): (\phi,\psi) \rightarrowtail \phi \oplus \psi$ where $(\phi \oplus \psi)(v) := \phi(v) + \psi(v)$
+              \item $\otimes$ defined similarly.
+           \end{itemize}
+           $(\text{Hom}(V,W),\oplus,\otimes)$ is a vector space.
+        \end{defn}
+        \begin{example}
+           Take $P$ as before. Then $\delta$ is a vector space similarly.
+        \end{example}
+     \subsection*{Dual Vector Space}
+        $(V,+,\cdot)$ as a vector space.
+        \begin{defn}
+           $V^* := {\psi: V \xrightarrow{\sim} \R} = \text{Hom} (V,\R)$ is also a vector space called the dual vector space of $V$.
+        \end{defn}
+        \begin{Terminology}
+           $\phi \in V^*$ is called (informally) a covector.
+        \end{Terminology}
+        \begin{example}
+        $I: P \xrightarrow{\sim} \R$ so $I \in P^*$
+        \begin{defn}
+           $I(p) := \int_{0}^{1}dxp(x)$
+        \end{defn}
+        $I$ is clearly linear.
+        \end{example}
+     \subsection*{Tensors}
+     \begin{defn}
+        Take a vector space $V$. Then a $(r,s)$ tensor $T$ over $V$ is a multilinear map: $T: \bigotimes_{i=1}^{r} V^* \otimes \bigotimes_{j=1}^{s} V \xrightarrow{\sim (r+s)} \R$
+     \end{defn}
+     \begin{example}
+        $T (1,1) - $ tensor. $T(\phi+\psi,v) = T(\phi,v)+T(\psi,v), T(\lambda \psi,v)=\lambda\cdot T(\phi,v) T(\psi,v+w)=T(\psi,v)+T(\psi,w), T(\psi,\lambda\cdot v)= \lambda \cdot T(\psi,v)$ Linear in both entries. Hence, multi-linear.
+     \end{example}
+     \begin{example}
+        $g: P \times P \xrightarrow{\sim} \R, (p,q) \rightarrow \int_{0}^{1}dx p(x) q(x)$ is a $(0,2)$ - tensor over example of $P$.
+     \end{example}
+     \subsection*{Vectors and Covectors}
+        \begin{thm}
+           $\phi \in V^* \iff \phi: V \xrightarrow{\sim} \R \iff \phi(0,1) - $ tensor.
+        \end{thm}
+        \begin{thm}
+           $dim(V) < \infty \implies v \in V = (V^*)^* \iff v: V^* \xrightarrow{\sim} \R \iff v$ is a $(1,0) -$ tensor.
+        \end{thm}
+     \subsection*{Bases}
+        \begin{defn}
+           Take a vector space $V$. A subset $B \subset V$ is called a basis if $\forall v \in V \exists F=\{f_1, ..., f_n\} \in B : \exists ! \{v^1, ..., v^n\} \in R : v = v^1 f_1 + ... + v^n f_n$.
+        \end{defn}
+        \begin{defn}
+           If $\exists$ basis $B$ with finite many elements ($d$ many elements) then we call $d =: \text{dim}(V)$.
+        \end{defn}
+        \begin{remark}
+           Let $V$ be finite dimensional vector space. Choose a basis $e_1, ..., e_n$ of $V$. We may uniquely associate a vector $v \in V$ with $v \rightarrowtail (v^1,...,v^n)$ called the components of $v=v^1e_1+...+v^ne_n$ with respect to the chosen basis.
+           It is more economical to require your basis on $V$ once chosen such that $\epsilon^a (e_b) = \delta^a_b$. This uniquely determines the choice of vector components from a choice of basis.
+        \end{remark}
+        \begin{defn}
+           If a basis $\epsilon^1,...,\epsilon^n$ of $V^*$ satisfies these axioms it is called the dual basis.
+        \end{defn}
+        \begin{example}
+           Take $P$ with $(N=3)$. Then $e_0,...,e_3$ is a basis if $e_a (x) := x^a$ is a basis of $P$. Then dual basis is given by $\epsilon^a := \frac{1}{a!} \partial^a |_{x=0}$.
+        \end{example}
+     \subsection*{Components of Tensors}
+        \begin{defn}
+           Let $T$ be an $(r,s) - $ tensor over a finite dimensional vector space $V$. Then define the $(r+s)^{\text{dim}(V)}$ many real numbers $i_1,...,i_r, j_1,...,j_s \in \{1,...,\text{dim}(V)\}, T^i_j \in R := T(\epsilon^i,e_j)$. The $T^i_j$ elements are called the components of the tensor with respect to the chosen basis.
+           Knowing the components and basis one can reconstruct the entire tensor.
+        \end{defn}
+        \begin{example}
+           $T (1,1,)$ - tensor with $T^i_j = T(\epsilon^i,e_j)$ reconstruct
+           \begin{align*}
+              T(\phi,v) &= T(\sum_{i=1}^{\text{dim}(V)}\phi_i \epsilon^i, \sum_{j=1}^{\text{dim}(V)}v^j e_j) \\
+              &=\sum_{i=1}^{\text{dim}(V)}\sum_{j=1}^{\text{dim}(V)} \phi_1 v^j T(\epsilon^i,e_j)
+           \end{align*}
+           with $\phi_i, v^j \in \R$.
+        \end{example}
+        \begin{Terminology}
+           If we agree to label $T^i_j = T(\epsilon^i,e_j)$ with the up and down components then Einstein summation convention of tensors $:= \phi_i v^j T^i_j$ where we drop $\sum$. This only works over multilinear maps.
+        \end{Terminology}
 \section*{Lecture 4: Differentiable Manifolds}
-   So far we have topolgical manifolds $(\M,\mathcal{O})$ dim($\M$)=$d$. We want to talk about velocitcy vectors on them but this structure is insufficient to do so. 
-   Pick a dimension $d \neq 4$ for your manifold. In that dimension the choices of topology are countable, so presumably we can do experiments to discern which one coorisponds to our reality. 
-   In $d=4$ our choices of topology are suddenly uncountable. We need additional sturucte to talk about differentiable curves on manifolds and between manifolds. 
-   \begin{enumerate}
-      \item Curves: $\R \to \M$
-      \item Functions: $\M \to \R$
-      \item Maps: $\M_1 \to \M_2$
-   \end{enumerate}
-   \subsection*{Strategy}
-      $\gamma: \R \to \mathcal{U}$ and choose a chart $(\mathcal{U},x)$. $\mathcal{U} \xrightarrow{x} x(\mathcal{U}) \subseteq \R^d$. 
-      Try and 'lift' the undergraduate notion of differentiable of a curve in $\R^d$ to a notion of differentiability on a curve on $\M$.
-      Problem: Is this well defined under a change of chart? We don't want it to depend on our taste. 
-      \begin{align}
-         \gamma: \R \to\mathcal{U} \cap \mathcal{V} \neq 0 \\
-         y \circ \gamma: \R \to y(\mathcal{U} \cap \mathcal{V}) \subseteq \R^d \\
-         x \circ \gamma: \R \to x(\mathcal{U} \cap \mathcal{V}) \subseteq \R^d \\
-         y \circ \gamma = (y \circ x^{-1}) \circ (x \circ \gamma) = y \circ (x^{-1} \circ x) \circ \gamma 
-      \end{align}
-      If $(x \circ \gamma)$ differentiable and $(y \circ x^{-1})$ continuous is $y \circ \gamma$ guarenteed to be continuously differentiable? No.
-   \subsection*{Compatible Charts}
-      In previous we took a chart on the topological manifold. Our atlases $\mathcal{V}$ and $\mathcal{U}$ were elements of the maximal atlas of the manifold. 
-      \begin{defn}
-         Two charts $(\mathcal{U},x)$ and $(\mathcal{V},y)$ are called $\square$ compatible if either:
-         \begin{enumerate}
-         \item $\mathcal{U} \cap \mathcal{V} = \emptyset$
-         \item $y \circ x^{-1}: x(\mathcal{U} \cap \mathcal{V}) \to y(\mathcal{U} \cap \mathcal{V})$ and $x \circ y^{-1}: y(\mathcal{U} \cap \mathcal{V}) \to x(\mathcal{U} \cap \mathcal{V})$ are differentiable. 
-         \end{enumerate}
-      \end{defn}
-      Philosophy of $\square$:
-         \begin{defn}
-            An atlas $\mathcal{A}_\square$ is a $\square$ - compatible atlas if any two charts in $\mathcal{A}_\square$ are $\square$ - compatible. 
-         \end{defn}
-         \begin{defn}
-            A $\square$ - manifold is a triple $(\M, \mathcal{O}, \mathcal{A}_\square)$
-         \end{defn}
-      Undergraduate $\square$. $C^0$: $C^0 (\R^d \to \R^d)$ Continuous maps. $C^1$: $\C^1 (\R^d \to \R^d)$ Differentiable Once. $C^k$: $k$-times continuous differentiable. 
-      $D^k$: $k$-times differentiable. $C^\infty$: $\C^\infty (\R^d \to \R^d)$ infinitly continously differentiable. $C^\omega$: $\exists$ multidimensional Taylor Expansion.
-      $\C^\infty$: Satisfies Cauchy-Riemann Equations. 
-      \begin{thm}
-         Any $\C^{k \geq 1}$ - atlas $\mathcal{A}$ of a topolgical manifold contains a $C^\infty$ - atlas. 
-      \end{thm}
-      Thus we will consider $C^\infty$ manifolds or "smoothmanifolds" unless we wish to define taylor expantions or complex differentiable. 
-      \begin{defn}
-         A smooth manifold is a tripple $(\M,\mathcal{O}, \mathcal{A})$ where $\mathcal{A}$ is a $C^\infty$ - atlas. 
-      \end{defn}
-   \subsection*{Diffeororphisms}
-      Take a map: $\M \xrightarrow{\phi} \mathcal{N}$. If $\M$ and $\mathcal{N}$ are naked sets then the structure preserviung maps are the bijections. If $\exists \phi$ is a bijection $\M \cong \mathcal{N}$.
-      \begin{example}
-      \begin{align*}
-         \N \cong \Z \\
-         \N \cong \Q \\
-         \N \not \cong \R
-      \end{align*}
-      \end{example}
-      Linear bijections between vector spaces are the structure preserving maps between vector spaces.
-      \begin{defn}
-         Two $C^\infty$ manifolds are said to be diffeomorphic $\iff \exists$ bijection $\phi: \M \to \mathcal{N}$ such that $\phi, \phi^{-1}$ are both $C^\infty$ maps. 
-      \end{defn}
-      \begin{thm}
-         The number of $C^\infty$ manifolds that can be contructed from a given $C^0$ - manifold up to diffeomorphism by the More-Radon Theorms in $d = 1,2,3$ dimension are 1. In $d > 4$ the number is finitie. In $d=4 \exists$ uncountably infinitely such manifolds. 
-      \end{thm}
+  So far we have topological manifolds $(\M,\mathcal{O})$ dim($\M$)=$d$. We want to talk about velocity vectors on them but this structure is insufficient to do so.
+  Pick a dimension $d \neq 4$ for your manifold. In that dimension the choices of topology are countable, so presumably we can do experiments to discern which one corresponds to our reality.
+  In $d=4$ our choices of topology are suddenly uncountable. We need additional structure to talk about differentiable curves on manifolds and between manifolds.
+  \begin{enumerate}
+     \item Curves: $\R \to \M$
+     \item Functions: $\M \to \R$
+     \item Maps: $\M_1 \to \M_2$
+  \end{enumerate}
+  \subsection*{Strategy}
+     $\gamma: \R \to \mathcal{U}$ and choose a chart $(\mathcal{U},x)$. $\mathcal{U} \xrightarrow{x} x(\mathcal{U}) \subseteq \R^d$.
+     Try and 'lift' the undergraduate notion of differentiableity of a curve in $\R^d$ to a notion of differentiability on a curve on $\M$.
+     Problem: Is this well defined under a change of chart? We don't want it to depend on our taste.
+     \begin{align}
+        \gamma: \R \to\mathcal{U} \cap \mathcal{V} \neq 0 \\
+        y \circ \gamma: \R \to y(\mathcal{U} \cap \mathcal{V}) \subseteq \R^d \\
+        x \circ \gamma: \R \to x(\mathcal{U} \cap \mathcal{V}) \subseteq \R^d \\
+        y \circ \gamma = (y \circ x^{-1}) \circ (x \circ \gamma) = y \circ (x^{-1} \circ x) \circ \gamma
+     \end{align}
+     If $(x \circ \gamma)$ differentiable and $(y \circ x^{-1})$ continuous is $y \circ \gamma$ guaranteed to be continuously differentiable? No.
+  \subsection*{Compatible Charts}
+     In previous we took a chart on the topological manifold. Our atlases $\mathcal{V}$ and $\mathcal{U}$ were elements of the maximal atlas of the manifold.
+     \begin{defn}
+        Two charts $(\mathcal{U},x)$ and $(\mathcal{V},y)$ are called $\square$ compatible if either:
+        \begin{enumerate}
+        \item $\mathcal{U} \cap \mathcal{V} = \emptyset$
+        \item $y \circ x^{-1}: x(\mathcal{U} \cap \mathcal{V}) \to y(\mathcal{U} \cap \mathcal{V})$ and $x \circ y^{-1}: y(\mathcal{U} \cap \mathcal{V}) \to x(\mathcal{U} \cap \mathcal{V})$ are differentiable.
+        \end{enumerate}
+     \end{defn}
+     Philosophy of $\square$:
+        \begin{defn}
+           An atlas $\mathcal{A}_\square$ is a $\square$ - compatible atlas if any two charts in $\mathcal{A}_\square$ are $\square$ - compatible.
+        \end{defn}
+        \begin{defn}
+           A $\square$ - manifold is a triple $(\M, \mathcal{O}, \mathcal{A}_\square)$
+        \end{defn}
+     Undergraduate $\square$. $C^0$: $C^0 (\R^d \to \R^d)$ Continuous maps. $C^1$: $\C^1 (\R^d \to \R^d)$ Differentiable Once. $C^k$: $k$-times continuous differentiable.
+     $D^k$: $k$-times differentiable. $C^\infty$: $\C^\infty (\R^d \to \R^d)$ infinitely continuously infinitly continously differentiable. $C^\omega$: $\exists$ multidimensional Taylor Expansion.
+     $\C^\infty$: Satisfies Cauchy-Riemann Equations.
+     \begin{thm}
+        Any $\C^{k \geq 1}$ - atlas $\mathcal{A}$ of a topological manifold contains a $C^\infty$ - atlas.
+     \end{thm}
+     Thus we will consider $C^\infty$ manifolds or "smooth manifolds" unless we wish to define taylor expansions or complex differentiable.
+     \begin{defn}
+        A smooth manifold is a tripple $(\M,\mathcal{O}, \mathcal{A})$ where $\mathcal{A}$ is a $C^\infty$ - atlas.
+     \end{defn}
+  \subsection*{Diffeororphisms}
+     Take a map: $\M \xrightarrow{\phi} \mathcal{N}$. If $\M$ and $\mathcal{N}$ are naked sets then the structure preserving maps are the bijections. If $\exists \phi$ is a bijection $\M \cong \mathcal{N}$.
+     \begin{example}
+     \begin{align*}
+        \N \cong \Z \\
+        \N \cong \Q \\
+        \N \not \cong \R
+     \end{align*}
+     \end{example}
+     Linear bijections between vector spaces are the structure preserving maps between vector spaces.
+     \begin{defn}
+        Two $C^\infty$ manifolds are said to be diffeomorphic $\iff \exists$ bijection $\phi: \M \to \mathcal{N}$ such that $\phi, \phi^{-1}$ are both $C^\infty$ maps.
+     \end{defn}
+     \begin{thm}
+        The number of $C^\infty$ manifolds that can be constructed from a given $C^0$ - manifold up to diffeomorphism by the More-Radon Theorems in $d = 1,2,3$ dimension are 1. In $d > 4$ the number is finite. In $d=4 \exists$ uncountably infinitely many such manifolds.
+     \end{thm}
 \section*{Lecture 5: Tangent Spaces}
-      Lead question: "What is the velocity of a curve $\gamma$ at a point $p$?"
-   \subsection*{Velocitites}
-      \begin{defn}
-         Take a $(\M,\mathcal{O}, \mathcal{A})$ smooth manifold. Take a curve: $\gamma: \R \to \M$ of at least $C^1$. Suppose $\gamma(\lambda_0) = p$. 
-         The velocity of $\gamma$ at $p$ is the linear map: $v_{\gamma,p}: C^{\infty}(\M) \xrightarrow{\sim} \R$. $C^\infty (\M) := \{f:\M \to \R | f $ smooth function $\}$ equipped with $(f \oplus g)(p) := f(p) +_{\R} g(p), (\lambda \oplus g)(p):=\lambda \cdot g(p)$.
-         So velocity is a linear map: $f \rightarrowtail v_{\gamma,p} (f) := (f \circ \gamma)'(\lambda_0)$.
-      \end{defn}
-   \subsection*{Tangent Vector Space}
-      \begin{defn}
-         For each point $p \in \M$ we define the set "tangent space to $\M$ at p" as $T_p \M := \{v{\gamma,p} | \gamma \text{ smooth curve } \}$.
-      \end{defn}
-      Observe that $T_p \M$ can be made into a vector space. 
-      \begin{defn}
-         We need to define $\oplus$ and $\otimes$.
-         \begin{align*}
-            \oplus: T_p \M \times T_p \M &\to \text{Hom}(C^\infty(\M),\R) \\
-            (v_{\gamma,p} \oplus v_{\delta,p})(f) &:= v_{\gamma,p}(f) +_{\R} v_{\delta,p} (f), f \in C^\infty (\M)
-         \end{align*}
-         \begin{align*}
-            \otimes: \R \times T_p \M \to \text{Hom}(C^\infty(\M,\R)) \\
-            (\alpha \otimes v_{\gamma,p})(f) &:= \alpha \cdot_{\R} v_{\gamma,p} (f), \alpha \in \R
-         \end{align*}
-         Remains to be shown that: 
-         \begin{enumerate}
-            \item $\exists \sigma$ curve: $v_{\gamma,p} \oplus v_{\delta,p} = \mathcal{\sigma,p}$
-            \item $\exists \tau$ curve: $\lambda \otimes v_{\gamma,p} = v_{\tau,p}$
-         \end{enumerate}
-         \begin{proof}
-            Construct: 
-            \begin{align*}
-               \tau: \R &\to \M \\
-               &\rightarrowtail \tau(\lambda) := \gamma(\alpha \lambda \cdot \lambda_0) = (\gamma \circ \mu_{\alpha})(\lambda) \\
-               \mu_\alpha: \R &\to \R \\
-               \triangle &\rightarrowtail \triangle \cdot \alpha
-            \end{align*}
-            Then:
-            \begin{align*}
-               \tau (0) &= \gamma(\lambda_0) = p \\
-               v_{\tau,p} &:= (f \circ \tau)'(0) = (f \circ \gamma \mu_\alpha)'(0) \\
-               &= (f \circ \gamma)' (\lambda_0) \cdot \alpha \\
-               &= \alpha v_{\gamma,p} 
-            \end{align*}
-            And for addition:
-            \begin{align*}
-               v_{\gamma,p} \oplus v_{\delta,p} =^? \mathcal{\sigma,p}
-            \end{align*}
-            Make a choice of chart $(\mathcal{U},x)$ with $p \in \mathcal{U}$ and define:
-            \begin{align*}
-               \sigma_x: \R \to \M \\
-               \sigma_x(\lambda) := x^{-1} ((x \circ \gamma)(\lambda_0 + \lambda)+ (x \circ \gamma)(\lambda_0))
-            \end{align*}
-            Then: 
-            \begin{align*}
-               \sigma_x (0) &= x^{-1} ((x \circ \gamma)(\lambda_0)+(x \circ \delta)(\lambda_0)-(x \circ \gamma)(\lambda_0)) \\
-               &= \delta(\lambda_0) = 0   
-            \end{align*}
-            Now:
-            \begin{align*}
-               v_{\sigma ,p} &:= (f \circ \sigma_x)' (0) \\
-               &= (f \circ x^{-1}_\circ(x \circ \sigma_x))'(\gamma) \\
-               &= (x \circ \sigma_x)^i(0) \cdot (\partial_i (f \circ x^{-1}))(x(\sigma_x(0))) (x \circ \gamma)^i (\lambda_0) + (x \circ \delta)^i (\lambda_0)\\
-               &= (x \circ \gamma)^i(\lambda_0)(\partial_i(f \circ x^{-1}))(x(p)) + (x \circ \delta)^i(\lambda_0)(\partial_i(f \circ x^{-1}))(x(p)) \\
-               &= (f \circ \gamma)'(\lambda_0) + (f \circ \delta)' (\lambda_0) \\
-               &= v_{\gamma,p}(f) + v_{\delta,p}(f), \forall f \in C^\infty (\M) \\
-               v_{\sigma,p} &= v_{\gamma,p} \oplus v_{\delta,p}
-            \end{align*}
-            And we are done. 
-         \end{proof}
-      \end{defn}
-   \subsection*{Components of a Vector With Respect to a Chart}
-   \begin{defn}
-      Let $(\mathcal{U},x) \in \mathcal{A}_{smooth}$ and let $\gamma: \R \to \mathcal{U}, \gamma(0) =p$. Calculate 
-      \begin{align*}
-         v_{\gamma,p}(f)&:= (f \circ \gamma)'(0) = ((f \circ x^{-1})\circ(x\circ \gamma))'(0) \\
-         &= (x \circ \gamma)^i (0) \cdot(\partial_i(f \circ x^{-1}))(x(p)) \\
-         &= \dot{\gamma}_x^i (0) \cdot(\frac{\partial}{\partial x^i})_p f, \forall f \in C^{\infty}(\M)
-      \end{align*}
-      This is the components of velocity vector from the chart induced basis of the vector from $T_p \M$.
-   \end{defn}
-   \subsection*{Chart-induced Basis}
-   \begin{defn}
-      Take $(\mathcal{U},x) \in \mathcal{A}_{smooth}$. Then
-      \begin{align*}
-         (\frac{\partial}{\partial x^1})_p, ..., (\frac{\partial}{\partial x^d})_p \in T_p \M
-      \end{align*}
-      Consititute a basis of $T_p \mathcal{U}$.
-   \end{defn}
-   \begin{proof}
-      Linear independence remains to be shown. 
-      \begin{align*}
-         \lambda^i (\frac{\partial}{\partial x^i})_p &=  \\
-         \lambda^i (\frac{\partial}{\partial x^i})_p(x^i) &=\\
-         \lambda^i \partial_i (x^j \circ x^{-1})(x(p)) &=  \\
-         \lambda^i \delta_i^j &= \lambda^j
-      \end{align*}
-      Corollarary $\text{dim}T_\phi \M = d = \text{dim}(\M)$.
-   \end{proof}
-   \begin{Terminology}
-      $X \in T_p \M \implies \exists \gamma: \R \to \M: X= v_{\gamma,p}$ and $\exists x^1, ..., x^d: X = x^i(\frac{\partial}{\partial x^i})_p$
-   \end{Terminology}
-   \subsection*{Change of Vector Components Under a Change of Chart}
-   The physical vector in the real world doesn't change under change of chart. The vector components change under change of chart.  Let $(\mathcal{U},x), (\mathcal{V},y) \in \mathcal{A}_{smooth}, p \in \mathcal{U} \cap \mathcal{V} \neq \emptyset$. Let $X \in T_p \M$ then
-   \begin{align*}
-      X^i_{(y)}\cdot (\frac{\partial}{\partial y^i})_p =_{(\mathcal{V},y)} X =_{(\mathcal{U},x)} (\frac{\partial}{\partial x^i})_p
-   \end{align*} 
-   To study chang eof components formula take:
-   \begin{align*}
-      (\frac{\partial}{\partial x^i})_p f &= \partial_i (f \circ x^{-1})(x(p)) \\
-      &= \partial_i ((f \circ y^{-1})\circ(y \circ x^{-1})(x(p))) \\
-      &= (\partial_i(y^j \circ x^{-1}))(x(p)) \cdot (\partial_j (f \circ y^{-1}))(y(p))\\
-      &=(\frac{\partial y^j}{\partial x^i})_p \cdot (\frac{\partial f}{\partial y^j})_p f\\
-      &= X^i_{(x)} \cdot (\frac{\partial y^j}{\partial x^i})_p \cdot (\frac{\partial}{\partial y^j})_p \\
-      &= X^i_{(y)} (\frac{\partial}{\partial y^j})_p \\
-      &\implies \\
-      X^j_{(y)} &= (\frac{\partial y^j}{\partial x^i})_p X^i_{(x)}
-   \end{align*}
-   \subsection*{Cotangent Spaces}
-   Trivial $(T_p^* \M) := \{\phi: T_p \M \xrightarrow{\sim} \R \}$.
-   \begin{example}
-   $f \in C^{\infty}(\M)$
-   \begin{align*}
-      (df)_p : T_p \M &\xrightarrow{\sim} \R \\
-      X &\rightarrowtail (df)_p (X):= X f 
-   \end{align*}
-   So $(df)_p $ is called the gradient of $f$ at $p \in \M$. Calculate the components of the gradient. (0,1)- tensor of the vector space with respect to a chart $(\mathcal{U},x)$. 
-   \begin{align*}
-      ((df)_p)_j &:= (df)_p (\frac{\partial }{\partial x^j})_p  \\
-      &= (\frac{\partial f}{\partial x^j})_p  \\
-      &= \partial_j (f \circ x^{-1})(x(p)) 
-   \end{align*}
-   \end{example}
-   \begin{thm}
-      Consider a chart $(\mathcal{U},x) \implies x^i : \mathcal{U} \to \R$. Claim: $(dx^i)_p$ is the basis of $T_p^* \M$ or dual basis. $(dx^a)_p (\frac{\partial}{\partial x^b})_p =\delta^a_b$
-   \end{thm}
-   \subsection{Change of Components of A Covector with Respect to a Chart}
-   $\omega \in T_p^* \M$ then $\omega_{((x)i)} (dx^i)_p \implies \omega_{(y)j}= (\frac{\partial x^j}{\partial y^i}) \omega_{(x)j}$.
+     Lead question: "What is the velocity of a curve $\gamma$ at a point $p$?"
+  \subsection*{Velocitites}
+     \begin{defn}
+        Take a $(\M,\mathcal{O}, \mathcal{A})$ smooth manifold. Take a curve: $\gamma: \R \to \M$ of at least $C^1$. Suppose $\gamma(\lambda_0) = p$.
+        The velocity of $\gamma$ at $p$ is the linear map: $v_{\gamma,p}: C^{\infty}(\M) \xrightarrow{\sim} \R$. $C^\infty (\M) := \{f:\M \to \R | f $ smooth function $\}$ equipped with $(f \oplus g)(p) := f(p) +_{\R} g(p), (\lambda \oplus g)(p):=\lambda \cdot g(p)$.
+        So velocity is a linear map: $f \rightarrowtail v_{\gamma,p} (f) := (f \circ \gamma)'(\lambda_0)$.
+     \end{defn}
+  \subsection*{Tangent Vector Space}
+     \begin{defn}
+        For each point $p \in \M$ we define the set "tangent space to $\M$ at p" as $T_p \M := \{v{\gamma,p} | \gamma \text{ smooth curve } \}$.
+     \end{defn}
+     Observe that $T_p \M$ can be made into a vector space.
+     \begin{defn}
+        We need to define $\oplus$ and $\otimes$.
+        \begin{align*}
+           \oplus: T_p \M \times T_p \M &\to \text{Hom}(C^\infty(\M),\R) \\
+           (v_{\gamma,p} \oplus v_{\delta,p})(f) &:= v_{\gamma,p}(f) +_{\R} v_{\delta,p} (f), f \in C^\infty (\M)
+        \end{align*}
+        \begin{align*}
+           \otimes: \R \times T_p \M \to \text{Hom}(C^\infty(\M,\R)) \\
+           (\alpha \otimes v_{\gamma,p})(f) &:= \alpha \cdot_{\R} v_{\gamma,p} (f), \alpha \in \R
+        \end{align*}
+        Remains to be shown that:
+        \begin{enumerate}
+           \item $\exists \sigma$ curve: $v_{\gamma,p} \oplus v_{\delta,p} = \mathcal{\sigma,p}$
+           \item $\exists \tau$ curve: $\lambda \otimes v_{\gamma,p} = v_{\tau,p}$
+        \end{enumerate}
+        \begin{proof}
+           Construct:
+           \begin{align*}
+              \tau: \R &\to \M \\
+              &\rightarrowtail \tau(\lambda) := \gamma(\alpha \lambda \cdot \lambda_0) = (\gamma \circ \mu_{\alpha})(\lambda) \\
+              \mu_\alpha: \R &\to \R \\
+              \triangle &\rightarrowtail \triangle \cdot \alpha
+           \end{align*}
+           Then:
+           \begin{align*}
+              \tau (0) &= \gamma(\lambda_0) = p \\
+              v_{\tau,p} &:= (f \circ \tau)'(0) = (f \circ \gamma \mu_\alpha)'(0) \\
+              &= (f \circ \gamma)' (\lambda_0) \cdot \alpha \\
+              &= \alpha v_{\gamma,p}
+           \end{align*}
+           And for addition:
+           \begin{align*}
+              v_{\gamma,p} \oplus v_{\delta,p} =^? \mathcal{\sigma,p}
+           \end{align*}
+           Make a choice of chart $(\mathcal{U},x)$ with $p \in \mathcal{U}$ and define:
+           \begin{align*}
+              \sigma_x: \R \to \M \\
+              \sigma_x(\lambda) := x^{-1} ((x \circ \gamma)(\lambda_0 + \lambda)+ (x \circ \gamma)(\lambda_0))
+           \end{align*}
+           Then:
+           \begin{align*}
+              \sigma_x (0) &= x^{-1} ((x \circ \gamma)(\lambda_0)+(x \circ \delta)(\lambda_0)-(x \circ \gamma)(\lambda_0)) \\
+              &= \delta(\lambda_0) = 0  
+           \end{align*}
+           Now:
+           \begin{align*}
+              v_{\sigma ,p} &:= (f \circ \sigma_x)' (0) \\
+              &= (f \circ x^{-1}_\circ(x \circ \sigma_x))'(\gamma) \\
+              &= (x \circ \sigma_x)^i(0) \cdot (\partial_i (f \circ x^{-1}))(x(\sigma_x(0))) (x \circ \gamma)^i (\lambda_0) + (x \circ \delta)^i (\lambda_0)\\
+              &= (x \circ \gamma)^i(\lambda_0)(\partial_i(f \circ x^{-1}))(x(p)) + (x \circ \delta)^i(\lambda_0)(\partial_i(f \circ x^{-1}))(x(p)) \\
+              &= (f \circ \gamma)'(\lambda_0) + (f \circ \delta)' (\lambda_0) \\
+              &= v_{\gamma,p}(f) + v_{\delta,p}(f), \forall f \in C^\infty (\M) \\
+              v_{\sigma,p} &= v_{\gamma,p} \oplus v_{\delta,p}
+           \end{align*}
+           And we are done.
+        \end{proof}
+     \end{defn}
+  \subsection*{Components of a Vector With Respect to a Chart}
+  \begin{defn}
+     Let $(\mathcal{U},x) \in \mathcal{A}_{smooth}$ and let $\gamma: \R \to \mathcal{U}, \gamma(0) =p$. Calculate
+     \begin{align*}
+        v_{\gamma,p}(f)&:= (f \circ \gamma)'(0) = ((f \circ x^{-1})\circ(x\circ \gamma))'(0) \\
+        &= (x \circ \gamma)^i (0) \cdot(\partial_i(f \circ x^{-1}))(x(p)) \\
+        &= \dot{\gamma}_x^i (0) \cdot(\frac{\partial}{\partial x^i})_p f, \forall f \in C^{\infty}(\M)
+     \end{align*}
+     This is the components of the velocity vector from the chart induced basis of the vector from $T_p \M$.
+  \end{defn}
+  \subsection*{Chart-induced Basis}
+  \begin{defn}
+     Take $(\mathcal{U},x) \in \mathcal{A}_{smooth}$. Then
+     \begin{align*}
+        (\frac{\partial}{\partial x^1})_p, ..., (\frac{\partial}{\partial x^d})_p \in T_p \M
+     \end{align*}
+     Constitute a basis of $T_p \mathcal{U}$.
+  \end{defn}
+  \begin{proof}
+     Linear independence remains to be shown.
+     \begin{align*}
+        \lambda^i (\frac{\partial}{\partial x^i})_p &=  \\
+        \lambda^i (\frac{\partial}{\partial x^i})_p(x^i) &=\\
+        \lambda^i \partial_i (x^j \circ x^{-1})(x(p)) &=  \\
+        \lambda^i \delta_i^j &= \lambda^j
+     \end{align*}
+     Corollarary $\text{dim}T_\phi \M = d = \text{dim}(\M)$.
+  \end{proof}
+  \begin{Terminology}
+     $X \in T_p \M \implies \exists \gamma: \R \to \M: X= v_{\gamma,p}$ and $\exists x^1, ..., x^d: X = x^i(\frac{\partial}{\partial x^i})_p$
+  \end{Terminology}
+  \subsection*{Change of Vector Components Under a Change of Chart}
+  The physical vector in the real world doesn't change under change of chart. The vector components change under change of chart.  Let $(\mathcal{U},x), (\mathcal{V},y) \in \mathcal{A}_{smooth}, p \in \mathcal{U} \cap \mathcal{V} \neq \emptyset$. Let $X \in T_p \M$ then
+  \begin{align*}
+     X^i_{(y)}\cdot (\frac{\partial}{\partial y^i})_p =_{(\mathcal{V},y)} X =_{(\mathcal{U},x)} (\frac{\partial}{\partial x^i})_p
+  \end{align*}
+  To study chang eof components formula take:
+  \begin{align*}
+     (\frac{\partial}{\partial x^i})_p f &= \partial_i (f \circ x^{-1})(x(p)) \\
+     &= \partial_i ((f \circ y^{-1})\circ(y \circ x^{-1})(x(p))) \\
+     &= (\partial_i(y^j \circ x^{-1}))(x(p)) \cdot (\partial_j (f \circ y^{-1}))(y(p))\\
+     &=(\frac{\partial y^j}{\partial x^i})_p \cdot (\frac{\partial f}{\partial y^j})_p f\\
+     &= X^i_{(x)} \cdot (\frac{\partial y^j}{\partial x^i})_p \cdot (\frac{\partial}{\partial y^j})_p \\
+     &= X^i_{(y)} (\frac{\partial}{\partial y^j})_p \\
+     &\implies \\
+     X^j_{(y)} &= (\frac{\partial y^j}{\partial x^i})_p X^i_{(x)}
+  \end{align*}
+  \subsection*{Cotangent Spaces}
+  Trivial $(T_p^* \M) := \{\phi: T_p \M \xrightarrow{\sim} \R \}$.
+  \begin{example}
+  $f \in C^{\infty}(\M)$
+  \begin{align*}
+     (df)_p : T_p \M &\xrightarrow{\sim} \R \\
+     X &\rightarrowtail (df)_p (X):= X f
+  \end{align*}
+  So $(df)_p $ is called the gradient of $f$ at $p \in \M$. Calculate the components of the gradient. (0,1)- tensor of the vector space with respect to a chart $(\mathcal{U},x)$.
+  \begin{align*}
+     ((df)_p)_j &:= (df)_p (\frac{\partial }{\partial x^j})_p  \\
+     &= (\frac{\partial f}{\partial x^j})_p  \\
+     &= \partial_j (f \circ x^{-1})(x(p))
+  \end{align*}
+  \end{example}
+  \begin{thm}
+     Consider a chart $(\mathcal{U},x) \implies x^i : \mathcal{U} \to \R$. Claim: $(dx^i)_p$ is the basis of $T_p^* \M$ or dual basis. $(dx^a)_p (\frac{\partial}{\partial x^b})_p =\delta^a_b$
+  \end{thm}
+  \subsection{Change of Components of A Covector with Respect to a Chart}
+  $\omega \in T_p^* \M$ then $\omega_{((x)i)} (dx^i)_p \implies \omega_{(y)j}= (\frac{\partial x^j}{\partial y^i}) \omega_{(x)j}$.
 \section*{Lecture 6: Fields}
-   We want to assign to every point on a manifold a vector. To do this we need Theory of Bundles.
-   \subsection*{Bundles}
-   \begin{defn}
-      A bundle is a triple $E \xrightarrow{\pi} \M$ where $E$ is the 'total space' and is a smooth manifold. $\pi$ is a smooth surjective map called the 'projective map'. And $\M$ is our smooth manifold called the 'base space.'
-   \end{defn}
-   \begin{defn}
-      Take bundle with $p \in \M$ we define the Fibre over $p$ as the $\text{preim}_{\pi} (\{p\})$.
-   \end{defn}
-   \begin{defn}
-      A section $\sigma$ of a bundle is the $\text{preim}_{\pi}(\M)$ where we require $\pi \circ \sigma = \text{id}_{\M}$. 
-   \end{defn}
-   As an aside in quantum mechanics we take a wave function of a position space $\psi: \M \to \C$. They are actually sections of $\C$-line bundle of the phase-space.
-   \subsection*{Tangent Bundle of a Smooth Manifold}
-   Take a smooth manifold $(\M,\mathcal{O},\mathcal{A})$. 
-   \begin{itemize}
-      \item The tangent bundle is a set: $TM := \dot{\bigcup_{p \in \M}} T_p \M$.
-      \item $\pi: T \M \to \M: X \rightarrowtail p$ where $p$ is the unqiue ppoint in $\M$ such that $X \in T_p \M$.
-      \item We want the coursest topology such that $\pi$ is continuous. This is called the 'initial topology.' $\mathcal{O}_{T \M}:= \{\text{preim}_{\pi} (\mathcal{U})| \mathcal{U} \in \mathcal{O} \}$.  
-   \end{itemize}
-   Construction of a $C^\infty$ atlas on $T \M$ from the $C^\infty$ atlas on $\M$. $\mathcal{A}_{T \M} := \{ (T\mathcal{U},\psi_x) | (\mathcal{U},x) \in \mathcal{A} \}$ with $\psi_x: T \mathcal{U} \rightarrow \R^{2\cdot \text{dim}(\M)}: X \in T_{\pi (x)} \M$ with $X \rightarrowtail ((x^1 \circ \pi)(X),\cdots,(x^d \circ \pi)(X),(dx^1)_{\pi(x)}(X), \cdots, (dx^d)_{\pi (x)}(X))$.
-   Note we need to reconstruct $\psi^{-1}$ from our data. So we have $(\alpha^i,\beta^j)\in \R^{2d}$ such that we have $\beta^i (\frac{\partial}{\partial x^i})_{x^{-1}(\alpha^j)}$. Alphas are the point and the betas are the components. 
-   Check that this map is smooth by change of atlas!
-   \subsection*{Vector Fields}
-   \begin{defn}
-      A smooth vector field is a $\chi$ is a smooth map that is a section. 
-   \end{defn}
-   \subsection*{The $C^\infty (\M)$ - module $\Gamma (T \M)$}
-   $(C^{\infty} (\M), +, \cdot)$ This satisfies the notion of a ring. It is the ring of smooth function on a manifold. $\Gamma (T \M) = \{ \chi : T \M \to \M \| \text{smooth sections} \}$. This is a vector space module over the ring. The set of all smooth vector fields can be made into such a module structure. This is important because we cannot guarantee that there exists a basis. There is no way to generate a basis for a vector field over a sphere (Harry Ball Theorem). 
-   \subsection*{Tensor Fields}
-   \begin{defn}
-      An $(r,s)$ - tensor field $T$ is a $C^{\infty} (\M)$ multilinear map between modules.
-   \end{defn}
-   \begin{example}
-      Define $df := \Gamma(T \M) \to C^\infty (\M): \chi \rightarrowtail df(\chi) := \chi (f)$ with $(\chi f)(p) := \chi (p) f $ with $p \in \M$ and $\chi(p) \in T_p \M$. This is a covector field. 
-   \end{example}
+  We want to assign to every point on a manifold a vector. To do this we need Theory of Bundles.
+  \subsection*{Bundles}
+  \begin{defn}
+     A bundle is a triple $E \xrightarrow{\pi} \M$ where $E$ is the 'total space' and is a smooth manifold. $\pi$ is a smooth surjective map called the 'projective map'. And $\M$ is our smooth manifold called the 'base space.'
+  \end{defn}
+  \begin{defn}
+     Take bundle with $p \in \M$ we define the Fibre over $p$ as the $\text{preim}_{\pi} (\{p\})$.
+  \end{defn}
+  \begin{defn}
+     A section $\sigma$ of a bundle is the $\text{preim}_{\pi}(\M)$ where we require $\pi \circ \sigma = \text{id}_{\M}$.
+  \end{defn}
+  As an aside in quantum mechanics we take a wave function of a position space $\psi: \M \to \C$. They are actually sections of $\C$-line bundle of the phase-space.
+  \subsection*{Tangent Bundle of a Smooth Manifold}
+  Take a smooth manifold $(\M,\mathcal{O},\mathcal{A})$.
+  \begin{itemize}
+     \item The tangent bundle is a set: $TM := \dot{\bigcup_{p \in \M}} T_p \M$.
+     \item $\pi: T \M \to \M: X \rightarrowtail p$ where $p$ is the unqiue ppoint in $\M$ such that $X \in T_p \M$.
+     \item We want the coursest topology such that $\pi$ is continuous. This is called the 'initial topology.' $\mathcal{O}_{T \M}:= \{\text{preim}_{\pi} (\mathcal{U})| \mathcal{U} \in \mathcal{O} \}$. 
+  \end{itemize}
+  Construction of a $C^\infty$ atlas on $T \M$ from the $C^\infty$ atlas on $\M$. $\mathcal{A}_{T \M} := \{ (T\mathcal{U},\psi_x) | (\mathcal{U},x) \in \mathcal{A} \}$ with $\psi_x: T \mathcal{U} \rightarrow \R^{2\cdot \text{dim}(\M)}: X \in T_{\pi (x)} \M$ with $X \rightarrowtail ((x^1 \circ \pi)(X),\cdots,(x^d \circ \pi)(X),(dx^1)_{\pi(x)}(X), \cdots, (dx^d)_{\pi (x)}(X))$.
+  Note we need to reconstruct $\psi^{-1}$ from our data. So we have $(\alpha^i,\beta^j)\in \R^{2d}$ such that we have $\beta^i (\frac{\partial}{\partial x^i})_{x^{-1}(\alpha^j)}$. Alphas are the point and the betas are the components.
+  Check that this map is smooth by change of atlas!
+  \subsection*{Vector Fields}
+  \begin{defn}
+     A smooth vector field is a $\chi$ is a smooth map that is a section.
+  \end{defn}
+  \subsection*{The $C^\infty (\M)$ - module $\Gamma (T \M)$}
+  $(C^{\infty} (\M), +, \cdot)$ This satisfies the notion of a ring. It is the ring of smooth function on a manifold. $\Gamma (T \M) = \{ \chi : T \M \to \M \| \text{smooth sections} \}$. This is a vector space module over the ring. The set of all smooth vector fields can be made into such a module structure. This is important because we cannot guarantee that there exists a basis. There is no way to generate a basis for a vector field over a sphere (Harry Ball Theorem).
+  \subsection*{Tensor Fields}
+  \begin{defn}
+     An $(r,s)$ - tensor field $T$ is a $C^{\infty} (\M)$ multilinear map between modules.
+  \end{defn}
+  \begin{example}
+     Define $df := \Gamma(T \M) \to C^\infty (\M): \chi \rightarrowtail df(\chi) := \chi (f)$ with $(\chi f)(p) := \chi (p) f $ with $p \in \M$ and $\chi(p) \in T_p \M$. This is a covector field.
+  \end{example}
+\section*{Lecture 7: Connections}
+ So far we saw that a vector field $X$ can be used to provide a directional derivative.
+ \begin{align*}
+     \nabla_X f := Xf
+ \end{align*}
+ of a $f \in C^\infty (\M)$.
+ \begin{remark}
+  From now on we will mostly consider vector fields. Seems like notational overkill? $\nabla_X f = Xf = (df)(X)$. Not quite the same thing.
+  \begin{align*}
+     X: C^{\infty} (\M) &\to C^{\infty} (\M) \\
+     df: \Gamma(T \M) &\to C^\infty (\M) \\
+     \nabla_X: C^\infty (\M) &\to C^\infty (\M)
+  \end{align*}
+  But we want to extend $\nabla_X$ to $(p,q) \to (p,q)$ -tensor fields. This is not free.
+ \end{remark}
+ \subsection*{Directional Derivatives of Tensor Fields}
+  We formulate a wish list of properties which the $\nabla_X$ acting on a tensor field should have. Any remaining freedom in choice $\nabla$ will need to be provided as additional structure beyond our smooth manifold $(\M, \mathcal{O}, \mathcal{A})$.
+ \begin{defn}
+  A connection $\nabla$ on a smooth manifold is a map that takes a pair consisting of a vector (field) $X$ and a $(p,q)$ - tensor (field) $T$ and yields a $(p,q)$ - tensor (field) $\nabla_X T$ satisfying four properties:
+  \begin{enumerate}
+     \item $\nabla_X f = X f, \forall f \in C^\infty (\M)$
+     \item $\nabla_X (T + S) = \nabla_X T + \nabla_X S$
+     \item $\nabla_X(T(\omega,Y))= (\nabla_X T)(\omega, Y)+T(\nabla_X \omega,Y)+T(\omega,\nabla_X Y)$ (Liebnitz rule)\footnote{For $(1,1)$ tensor field T, but analogously for any $(p,q)$ - TF}
+     \item $\nabla_{f X +Z} T = f \nabla_X T +\nabla_X T, \forall f \in C^\infty (\M)$
+  \end{enumerate}
+  A manifold with connection is a quadruple of structures $(\M, \mathcal{O},\mathcal{A}, \nabla)$.
+  \end{defn}
+  \begin{remark}
+     $\nabla_X$ is the extension of $X$. So $\nabla_.$ is the extension of d.
+  \end{remark}
+  \subsection*{New Structure on $(\M, \mathcal{O}, \mathcal{A})$ Required to Fix $\nabla$}
+     Consider $X,Y$ vector fields.
+     \begin{align*}
+        \nabla_X Y &=_{(\mathcal{U},x)} \nabla_{X^i \frac{\partial}{\partial x^i}} (Y^m \cdot \frac{\partial}{\partial x^m}) \\
+        &=_{(iii)} X^i (\nabla_{\frac{\partial}{\partial x^i}} Y^m) \cdot \frac{\partial}{\partial x^m} + X^i Y^m \cdot_{\frac{\partial}{\partial x^i}}(\frac{\partial}{\partial y^m}) \\
+        &=_{(i)} X^i (\frac{\partial}{\partial x^i} Y^m) \cdot \frac{\partial}{\partial x^m} X^i Y^m \cdot \Gamma^q_{m i} \frac{\partial}{\partial x^q}
+     \end{align*}
+     $\Gamma$ is the connection coefficient functions (on $\M$) of $\nabla$ with respect to the chart $(\mathcal{U},x)$
+     \begin{defn}
+        $(\M,\mathcal{O},\mathcal{A},\nabla)$, $(\mathcal{U},x) \in \mathcal{A}$ then the connection coefficient functions ("$\Gamma$s) with respect to our chart $(\mathcal{U},x)$ are the $(\text{dim}(\M))^3$ many functions:
+        \begin{align*}
+           \Gamma_(x)^i_{jk}: \mathcal{U} &\to \R \\
+           p & \rightarrowtail (dx^i)(\nabla_{\frac{\partial}{\partial x^k}} \frac{\partial}{\partial x^j})(p)
+        \end{align*}
+     \end{defn}
+     Thus $(\nabla_X Y)^i = X^m (\frac{\partial}{\partial x^m} Y^j)+\Gamma^i_{nm} \cdot Y^n \cdot X^m$
+     \begin{remark}
+        On a chart domain $\mathcal{U}$ the choice of the $(\text{dim}(\M))^3$ functions $\Gamma^i_{n m}$ functions suffices to fix the action $\nabla$ on a vector field. Those same functions fix the action of $\nabla$ on any tensor field.
+     \end{remark}
+     \begin{remark}
+        $\nabla_{\frac{\partial}{\partial x^m}} (dx^i) = \Sigma^i_{jm} dx^j$. But now
+        \begin{align*}
+           \nabla_{\frac{\partial}{\partial x^m}}(dx^i(\frac{\partial}{\partial x^j})) &= \frac{\partial}{\partial x^m} \delta^i_j \\
+           &= (\nabla_{\frac{\partial}{\partial x^m}} dx^i) + dx^i (\nabla_{\frac{\partial}{\partial x^m}} \frac{\partial}{\partial x^j}) \\
+           & \implies \\
+           (\nabla_{\frac{\partial}{\partial x^m}} dx^i)_j &= - \Gamma^i_{jm}
+        \end{align*}
+        In summary $(\nabla_X Y)^i = X ( Y ^i) + \Gamma^i_{jm} Y^j X^m$\footnote{On vector fields} and $(\nabla_X \omega)_i = X(\omega_i) - \Gamma^j_{im} \omega_j X^m$.\footnote{On Covector fields}
+        So: $(\nabla_X T)^i_{jk} = X(T^i_{jk})+\Gamma^i_{sm} T^s_{jk} X^m - \Gamma^s_{jm} T^i_{sk} X^m - \Gamma^s_{km} T^i_{js} X^m$ where T is a $(1,2)$ - tensor field.
+     \end{remark}
    \bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
 \bibliography{references.bib}  % the name of the .bib file
 \end{document}
+

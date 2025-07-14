@@ -507,6 +507,42 @@
    \end{thm}
    \subsection{Change of Components of A Covector with Respect to a Chart}
    $\omega \in T_p^* \M$ then $\omega_{((x)i)} (dx^i)_p \implies \omega_{(y)j}= (\frac{\partial x^j}{\partial y^i}) \omega_{(x)j}$.
-\bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
+\section*{Lecture 6: Fields}
+   We want to assign to every point on a manifold a vector. To do this we need Theory of Bundles.
+   \subsection*{Bundles}
+   \begin{defn}
+      A bundle is a triple $E \xrightarrow{\pi} \M$ where $E$ is the 'total space' and is a smooth manifold. $\pi$ is a smooth surjective map called the 'projective map'. And $\M$ is our smooth manifold called the 'base space.'
+   \end{defn}
+   \begin{defn}
+      Take bundle with $p \in \M$ we define the Fibre over $p$ as the $\text{preim}_{\pi} (\{p\})$.
+   \end{defn}
+   \begin{defn}
+      A section $\sigma$ of a bundle is the $\text{preim}_{\pi}(\M)$ where we require $\pi \circ \sigma = \text{id}_{\M}$. 
+   \end{defn}
+   As an aside in quantum mechanics we take a wave function of a position space $\psi: \M \to \C$. They are actually sections of $\C$-line bundle of the phase-space.
+   \subsection*{Tangent Bundle of a Smooth Manifold}
+   Take a smooth manifold $(\M,\mathcal{O},\mathcal{A})$. 
+   \begin{itemize}
+      \item The tangent bundle is a set: $TM := \dot{\bigcup_{p \in \M}} T_p \M$.
+      \item $\pi: T \M \to \M: X \rightarrowtail p$ where $p$ is the unqiue ppoint in $\M$ such that $X \in T_p \M$.
+      \item We want the coursest topology such that $\pi$ is continuous. This is called the 'initial topology.' $\mathcal{O}_{T \M}:= \{\text{preim}_{\pi} (\mathcal{U})| \mathcal{U} \in \mathcal{O} \}$.  
+   \end{itemize}
+   Construction of a $C^\infty$ atlas on $T \M$ from the $C^\infty$ atlas on $\M$. $\mathcal{A}_{T \M} := \{ (T\mathcal{U},\psi_x) | (\mathcal{U},x) \in \mathcal{A} \}$ with $\psi_x: T \mathcal{U} \rightarrow \R^{2\cdot \text{dim}(\M)}: X \in T_{\pi (x)} \M$ with $X \rightarrowtail ((x^1 \circ \pi)(X),\cdots,(x^d \circ \pi)(X),(dx^1)_{\pi(x)}(X), \cdots, (dx^d)_{\pi (x)}(X))$.
+   Note we need to reconstruct $\psi^{-1}$ from our data. So we have $(\alpha^i,\beta^j)\in \R^{2d}$ such that we have $\beta^i (\frac{\partial}{\partial x^i})_{x^{-1}(\alpha^j)}$. Alphas are the point and the betas are the components. 
+   Check that this map is smooth by change of atlas!
+   \subsection*{Vector Fields}
+   \begin{defn}
+      A smooth vector field is a $\chi$ is a smooth map that is a section. 
+   \end{defn}
+   \subsection*{The $C^\infty (\M)$ - module $\Gamma (T \M)$}
+   $(C^{\infty} (\M), +, \cdot)$ This satisfies the notion of a ring. It is the ring of smooth function on a manifold. $\Gamma (T \M) = \{ \chi : T \M \to \M \| \text{smooth sections} \}$. This is a vector space module over the ring. The set of all smooth vector fields can be made into such a module structure. This is important because we cannot guarantee that there exists a basis. There is no way to generate a basis for a vector field over a sphere (Harry Ball Theorem). 
+   \subsection*{Tensor Fields}
+   \begin{defn}
+      An $(r,s)$ - tensor field $T$ is a $C^{\infty} (\M)$ multilinear map between modules.
+   \end{defn}
+   \begin{example}
+      Define $df := \Gamma(T \M) \to C^\infty (\M): \chi \rightarrowtail df(\chi) := \chi (f)$ with $(\chi f)(p) := \chi (p) f $ with $p \in \M$ and $\chi(p) \in T_p \M$. This is a covector field. 
+   \end{example}
+   \bibliographystyle{plain}  % or another style like alpha, unsrt, etc.
 \bibliography{references.bib}  % the name of the .bib file
 \end{document}

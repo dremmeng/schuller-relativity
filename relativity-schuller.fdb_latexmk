@@ -1,14 +1,6 @@
 # Fdb version 4
-["bibtex relativity-schuller"] 0 "relativity-schuller.aux" "relativity-schuller.bbl" "relativity-schuller" 1752509116.23629 0
-  "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "references.bib" 0 -1 0 ""
-  "relativity-schuller.aux" 0 -1 0 "pdflatex"
-  (generated)
-  "relativity-schuller.bbl"
-  "relativity-schuller.blg"
-  (rewritten before read)
-["pdflatex"] 1752509115.55101 "/home/drew/Documents/schuller-relativity/relativity-schuller.tex" "relativity-schuller.pdf" "relativity-schuller" 1752509116.23644 0
-  "/home/drew/Documents/schuller-relativity/relativity-schuller.tex" 1752509115.38205 38452 4bc9939a1bf30c64e77dbcb4e46e9947 ""
+["pdflatex"] 1754946835.29849 "/home/drew/Documents/schuller-relativity/relativity-schuller.tex" "relativity-schuller.pdf" "relativity-schuller" 1754946835.84052 2
+  "/home/drew/Documents/schuller-relativity/relativity-schuller.tex" 1754946834.51283 50016 4a0538e374caba8592c9ad1d7bd459ef ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -78,6 +70,7 @@
   "/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty" 1734129479 7984 7dbb9280f03c0a315425f1b4f35d43ee ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
+  "/usr/local/texlive/2025/texmf-dist/tex/latex/accents/accents.sty" 1561671379 7328 0be438db743f506252aa5bfa0a11a780 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty" 1591045760 12594 0d51ac3a545aaaa555021326ff22a6cc ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
@@ -93,7 +86,6 @@
   "/usr/local/texlive/2025/texmf-dist/tex/latex/bbm-macros/bbm.sty" 1191314257 1644 1e0d54b051369c3f457872824cac219f ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/calrsfs/OMSrsfs.fd" 1227059419 524 d3d490b473a1c0bdfa01c0b5daf71c98 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/calrsfs/calrsfs.sty" 1227059419 448 b25cc00586a8e913df3849a6442fb4e1 ""
-  "/usr/local/texlive/2025/texmf-dist/tex/latex/cite/cite.sty" 1425427964 26218 19edeff8cdc2bcb704e8051dc55eb5a7 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1739306980 46850 d87daedc2abdc653769a6f1067849fe0 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
@@ -120,9 +112,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1743017093 5496777 dfac5a65ccd1b178961f799dec0d389d ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1743017200 3345754 aaf435fcdfc94e675b7472152a660ba2 ""
   "/usr/local/texlive/2025/texmf.cnf" 1743017089.25792 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "relativity-schuller.aux" 1752509115.95604 226 5f6b46c054a6ec8488b45d014b889079 "pdflatex"
-  "relativity-schuller.bbl" 0 -1 0 "bibtex relativity-schuller"
-  "relativity-schuller.tex" 1752509115.38205 38452 4bc9939a1bf30c64e77dbcb4e46e9947 ""
+  "relativity-schuller.aux" 1754946835.75687 5846 ca4312096941c4b9805c61200940a025 "pdflatex"
+  "relativity-schuller.tex" 1754946834.51283 50016 4a0538e374caba8592c9ad1d7bd459ef ""
   (generated)
   "relativity-schuller.aux"
   "relativity-schuller.log"

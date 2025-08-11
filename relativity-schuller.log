@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.26)  14 JUL 2025 10:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.26)  11 AUG 2025 15:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,6 +23,13 @@ File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen141
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/accents/accents.sty
+Package: accents 2006/05/12 v1.4 Math Accent Tools
+\cc@skew=\dimen142
+\cc@wd=\dimen143
+\cc@code=\count270
+\cc@group=\count271
+\cc@skewchar=\count272
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
 \@mathmargin=\skip51
@@ -33,21 +40,21 @@ Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
-\ex@=\dimen142
+\ex@=\dimen144
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen143
+\pmbraise@=\dimen145
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count270
+\inf@bad=\count273
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count271
-\leftroot@=\count272
+\uproot@=\count274
+\leftroot@=\count275
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count273
-\DOTSCASE@=\count274
+\classnum@=\count276
+\DOTSCASE@=\count277
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -57,30 +64,59 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen144
+\big@size=\dimen146
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count275
+
+
+/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty:746: LaTeX Error: Command \dddot already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.746    \hbox{\,\normalfont...}\vss}}}}
+                                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty:749: LaTeX Error: Command \ddddot already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.749    \hbox{\,\normalfont....}\vss}}}}
+                                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\macc@depth=\count278
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count276
+\c@MaxMatrixCols=\count279
 \dotsspace@=\muskip17
-\c@parentequation=\count277
-\dspbrk@lvl=\count278
+\c@parentequation=\count280
+\dspbrk@lvl=\count281
 \tag@help=\toks18
-\row@=\count279
-\column@=\count280
-\maxfields@=\count281
+\row@=\count282
+\column@=\count283
+\maxfields@=\count284
 \andhelp@=\toks19
-\eqnshift@=\dimen145
-\alignsep@=\dimen146
-\tagshift@=\dimen147
-\tagwidth@=\dimen148
-\totwidth@=\dimen149
-\lineht@=\dimen150
+\eqnshift@=\dimen147
+\alignsep@=\dimen148
+\tagshift@=\dimen149
+\tagwidth@=\dimen150
+\totwidth@=\dimen151
+\lineht@=\dimen152
 \@envbody=\toks20
 \multlinegap=\skip52
 \multlinetaggap=\skip53
@@ -151,46 +187,42 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count282
-\Gm@cntv=\count283
-\c@Gm@tempcnt=\count284
-\Gm@bindingoffset=\dimen151
-\Gm@wd@mp=\dimen152
-\Gm@odd@mp=\dimen153
-\Gm@even@mp=\dimen154
-\Gm@layoutwidth=\dimen155
-\Gm@layoutheight=\dimen156
-\Gm@layouthoffset=\dimen157
-\Gm@layoutvoffset=\dimen158
+\Gm@cnth=\count285
+\Gm@cntv=\count286
+\c@Gm@tempcnt=\count287
+\Gm@bindingoffset=\dimen153
+\Gm@wd@mp=\dimen154
+\Gm@odd@mp=\dimen155
+\Gm@even@mp=\dimen156
+\Gm@layoutwidth=\dimen157
+\Gm@layoutheight=\dimen158
+\Gm@layouthoffset=\dimen159
+\Gm@layoutvoffset=\dimen160
 \Gm@dimlist=\toks31
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/cite/cite.sty
-LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 332.
-Package: cite 2015/02/27  v 5.5
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/xltabular/xltabular.sty
 Package: xltabular 2025/02/28 v0.2i `xltabular' package (hv,RN)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
 Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
-\col@sep=\dimen159
+\col@sep=\dimen161
 \ar@mcellbox=\box54
-\extrarowheight=\dimen160
+\extrarowheight=\dimen162
 \NC@list=\toks32
 \extratabsurround=\skip57
 \backup@length=\skip58
 \ar@cellbox=\box55
 )
-\TX@col@width=\dimen161
-\TX@old@table=\dimen162
-\TX@old@col=\dimen163
-\TX@target=\dimen164
-\TX@delta=\dimen165
-\TX@cols=\count285
+\TX@col@width=\dimen163
+\TX@old@table=\dimen164
+\TX@old@col=\dimen165
+\TX@target=\dimen166
+\TX@delta=\dimen167
+\TX@cols=\count288
 \TX@ftn=\toks33
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count286
+\etb@tempcnta=\count289
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/ltablex/ltablex.sty
 Package: ltablex 2014/08/13 v1.1 Modified tabularx
  (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
@@ -199,186 +231,186 @@ Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 \LTright=\skip60
 \LTpre=\skip61
 \LTpost=\skip62
-\LTchunksize=\count287
-\LTcapwidth=\dimen166
+\LTchunksize=\count290
+\LTcapwidth=\dimen168
 \LT@head=\box56
 \LT@firsthead=\box57
 \LT@foot=\box58
 \LT@lastfoot=\box59
 \LT@gbox=\box60
-\LT@cols=\count288
-\LT@rows=\count289
-\c@LT@tables=\count290
-\c@LT@chunks=\count291
+\LT@cols=\count291
+\LT@rows=\count292
+\c@LT@tables=\count293
+\c@LT@chunks=\count294
 \LT@p@ftn=\toks34
 ))) (/usr/local/texlive/2025/texmf-dist/tex/latex/tabularray/tabularray.sty
 Package: tabularray 2025-03-11 v2025A Typeset tabulars and arrays with LaTeX3
-\l__tblr_a_int=\count292
-\l__tblr_c_int=\count293
-\l__tblr_r_int=\count294
-\l__tblr_d_dim=\dimen167
-\l__tblr_h_dim=\dimen168
-\l__tblr_o_dim=\dimen169
-\l__tblr_p_dim=\dimen170
-\l__tblr_q_dim=\dimen171
-\l__tblr_r_dim=\dimen172
-\l__tblr_s_dim=\dimen173
-\l__tblr_t_dim=\dimen174
-\l__tblr_v_dim=\dimen175
-\l__tblr_w_dim=\dimen176
+\l__tblr_a_int=\count295
+\l__tblr_c_int=\count296
+\l__tblr_r_int=\count297
+\l__tblr_d_dim=\dimen169
+\l__tblr_h_dim=\dimen170
+\l__tblr_o_dim=\dimen171
+\l__tblr_p_dim=\dimen172
+\l__tblr_q_dim=\dimen173
+\l__tblr_r_dim=\dimen174
+\l__tblr_s_dim=\dimen175
+\l__tblr_t_dim=\dimen176
+\l__tblr_v_dim=\dimen177
+\l__tblr_w_dim=\dimen178
 \l__tblr_a_box=\box61
 \l__tblr_b_box=\box62
 \l__tblr_c_box=\box63
 \l__tblr_d_box=\box64
-\c@tblrcount=\count295
-\c@rownum=\count296
-\c@colnum=\count297
-\c@rowcount=\count298
-\c@colcount=\count299
-\abovesep=\dimen177
-\belowsep=\dimen178
-\leftsep=\dimen179
-\rightsep=\dimen180
-\gTblrLevelInt=\count300
-\g__tblr_data_row_key_count_int=\count301
-\g__tblr_data_column_key_count_int=\count302
-\g__tblr_data_cell_key_count_int=\count303
-\g__tblr_array_int=\count304
-\l__tblr_key_count_int=\count305
-\l__tblr_key_quotient_int=\count306
-\l__tblr_key_quotient_two_int=\count307
-\l__tblr_key_remainder_int=\count308
-\g__tblr_data_str_value_count_int=\count309
-\lTblrChildTotalInt=\count310
-\lTblrChildHtotalInt=\count311
-\lTblrChildVtotalInt=\count312
-\l__child_diff_h_int=\count313
-\l__child_diff_v_int=\count314
-\l__child_sign_h_int=\count315
-\l__child_sign_v_int=\count316
-\l__child_step_int=\count317
-\lTblrDefaultHruleWidthDim=\dimen181
-\lTblrDefaultVruleWidthDim=\dimen182
-\l__tblr_split_balance_int=\count318
-\l__tblr_strut_dp_dim=\dimen183
-\l__tblr_strut_ht_dim=\dimen184
-\g__tblr_cell_wd_dim=\dimen185
-\g__tblr_cell_ht_dim=\dimen186
-\g__tblr_cell_head_dim=\dimen187
-\g__tblr_cell_foot_dim=\dimen188
+\c@tblrcount=\count298
+\c@rownum=\count299
+\c@colnum=\count300
+\c@rowcount=\count301
+\c@colcount=\count302
+\abovesep=\dimen179
+\belowsep=\dimen180
+\leftsep=\dimen181
+\rightsep=\dimen182
+\gTblrLevelInt=\count303
+\g__tblr_data_row_key_count_int=\count304
+\g__tblr_data_column_key_count_int=\count305
+\g__tblr_data_cell_key_count_int=\count306
+\g__tblr_array_int=\count307
+\l__tblr_key_count_int=\count308
+\l__tblr_key_quotient_int=\count309
+\l__tblr_key_quotient_two_int=\count310
+\l__tblr_key_remainder_int=\count311
+\g__tblr_data_str_value_count_int=\count312
+\lTblrChildTotalInt=\count313
+\lTblrChildHtotalInt=\count314
+\lTblrChildVtotalInt=\count315
+\l__child_diff_h_int=\count316
+\l__child_diff_v_int=\count317
+\l__child_sign_h_int=\count318
+\l__child_sign_v_int=\count319
+\l__child_step_int=\count320
+\lTblrDefaultHruleWidthDim=\dimen183
+\lTblrDefaultVruleWidthDim=\dimen184
+\l__tblr_split_balance_int=\count321
+\l__tblr_strut_dp_dim=\dimen185
+\l__tblr_strut_ht_dim=\dimen186
+\g__tblr_cell_wd_dim=\dimen187
+\g__tblr_cell_ht_dim=\dimen188
+\g__tblr_cell_head_dim=\dimen189
+\g__tblr_cell_foot_dim=\dimen190
 \l__tblr_measured_cell_box=\box65
 \g__tblr_last_box=\box66
 \l__tblr_temp_box=\box67
-\l__tblr_column_target_dim=\dimen189
-\l__tblr_hfuzz_dim=\dimen190
+\l__tblr_column_target_dim=\dimen191
+\l__tblr_hfuzz_dim=\dimen192
 \l__tblr_caption_box=\box68
 \l__tblr_caption_left_box=\box69
-\lTblrRowHeadInt=\count319
-\lTblrRowFootInt=\count320
+\lTblrRowHeadInt=\count322
+\lTblrRowFootInt=\count323
 \l__tblr_row_head_box=\box70
 \l__tblr_row_foot_box=\box71
-\l__tblr_row_head_foot_dim=\dimen191
-\lTblrTableWidthDim=\dimen192
+\l__tblr_row_head_foot_dim=\dimen193
+\lTblrTableWidthDim=\dimen194
 \l__tblr_table_firsthead_box=\box72
 \l__tblr_table_middlehead_box=\box73
 \l__tblr_table_lasthead_box=\box74
 \l__tblr_table_firstfoot_box=\box75
 \l__tblr_table_middlefoot_box=\box76
 \l__tblr_table_lastfoot_box=\box77
-\l__tblr_remain_height_dim=\dimen193
-\l__tblr_long_from_int=\count321
-\l__tblr_long_to_int=\count322
-\l__tblr_curr_i_int=\count323
-\l__tblr_prev_i_int=\count324
-\lTblrTablePageInt=\count325
+\l__tblr_remain_height_dim=\dimen195
+\l__tblr_long_from_int=\count324
+\l__tblr_long_to_int=\count325
+\l__tblr_curr_i_int=\count326
+\l__tblr_prev_i_int=\count327
+\lTblrTablePageInt=\count328
 \l__tblr_table_head_box=\box78
 \l__tblr_table_foot_box=\box79
-\l__tblr_table_head_foot_dim=\dimen194
-\l__tblr_table_head_body_foot_dim=\dimen195
+\l__tblr_table_head_foot_dim=\dimen196
+\l__tblr_table_head_body_foot_dim=\dimen197
 \l__tblr_table_box=\box80
-\lTblrRowFirstInt=\count326
-\lTblrRowLastInt=\count327
+\lTblrRowFirstInt=\count329
+\lTblrRowLastInt=\count330
 \l__tblr_table_hlines_box=\box81
 \l__tblr_hline_box=\box82
 \l__tblr_row_box=\box83
-\l__tblr_col_o_wd_dim=\dimen196
-\l__tblr_col_b_wd_dim=\dimen197
-\l__tblr_hline_leftskip_dim=\dimen198
-\l__tblr_hline_rightskip_dim=\dimen199
-\l__tblr_row_ht_dim=\dimen256
-\l__tblr_row_dp_dim=\dimen257
-\l__tblr_row_abovesep_dim=\dimen258
-\l__tblr_row_belowsep_dim=\dimen259
+\l__tblr_col_o_wd_dim=\dimen198
+\l__tblr_col_b_wd_dim=\dimen199
+\l__tblr_hline_leftskip_dim=\dimen256
+\l__tblr_hline_rightskip_dim=\dimen257
+\l__tblr_row_ht_dim=\dimen258
+\l__tblr_row_dp_dim=\dimen259
+\l__tblr_row_abovesep_dim=\dimen260
+\l__tblr_row_belowsep_dim=\dimen261
 \l__tblr_row_vlines_box=\box84
 \l__tblr_vline_box=\box85
 \l__tblr_cell_box=\box86
-\l__tblr_row_upper_dim=\dimen260
-\l__tblr_row_lower_dim=\dimen261
-\l__tblr_row_vpace_dim=\dimen262
-\l__tblr_vline_aboveskip_dim=\dimen263
-\l__tblr_vline_belowskip_dim=\dimen264
-\lTblrCellRowSpanInt=\count328
-\lTblrCellColSpanInt=\count329
-\l__tblr_cell_wd_dim=\dimen265
-\l__tblr_cell_ht_dim=\dimen266
-\lTblrCellAboveBorderWidthDim=\dimen267
-\lTblrCellBelowBorderWidthDim=\dimen268
-\lTblrCellLeftBorderWidthDim=\dimen269
-\lTblrCellRightBorderWidthDim=\dimen270
+\l__tblr_row_upper_dim=\dimen262
+\l__tblr_row_lower_dim=\dimen263
+\l__tblr_row_vpace_dim=\dimen264
+\l__tblr_vline_aboveskip_dim=\dimen265
+\l__tblr_vline_belowskip_dim=\dimen266
+\lTblrCellRowSpanInt=\count331
+\lTblrCellColSpanInt=\count332
+\l__tblr_cell_wd_dim=\dimen267
+\l__tblr_cell_ht_dim=\dimen268
+\lTblrCellAboveBorderWidthDim=\dimen269
+\lTblrCellBelowBorderWidthDim=\dimen270
+\lTblrCellLeftBorderWidthDim=\dimen271
+\lTblrCellRightBorderWidthDim=\dimen272
 \l__tblr_diag_box=\box87
-\l__tblr_cell_inner_wd_dim=\dimen271
-\l__tblr_cell_inner_dp_dim=\dimen272
-\l__tblr_cell_hanchor_dim=\dimen273
-\l__tblr_last_cell_table_ht_dim=\dimen274
-\l__tblr_last_cell_table_dp_dim=\dimen275
-\l__tblr_last_vline_wd_dim=\dimen276
+\l__tblr_cell_inner_wd_dim=\dimen273
+\l__tblr_cell_inner_dp_dim=\dimen274
+\l__tblr_cell_hanchor_dim=\dimen275
+\l__tblr_last_cell_table_ht_dim=\dimen276
+\l__tblr_last_cell_table_dp_dim=\dimen277
+\l__tblr_last_vline_wd_dim=\dimen278
 \l__tblr_tikz_node_box=\box88
 )
-\c@thm=\count330
-\c@defn=\count331
-\c@conv=\count332
-\c@rem=\count333
-\c@lem=\count334
-\c@cor=\count335
-\c@example=\count336
-\c@exe=\count337
-\c@conjecture=\count338
-\c@remark=\count339
-\c@Terminology=\count340
-\c@Philosophy=\count341
+\c@thm=\count333
+\c@defn=\count334
+\c@conv=\count335
+\c@rem=\count336
+\c@lem=\count337
+\c@cor=\count338
+\c@example=\count339
+\c@exe=\count340
+\c@conjecture=\count341
+\c@remark=\count342
+\c@Terminology=\count343
+\c@Philosophy=\count344
  (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count342
+\l__color_backend_stack_int=\count345
 \l__pdf_internal_box=\box89
 ) (./relativity-schuller.aux)
 \openout1 = `relativity-schuller.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count343
-\scratchdimen=\dimen277
+\scratchcounter=\count346
+\scratchdimen=\dimen279
 \scratchbox=\box90
-\nofMPsegments=\count344
-\nofMParguments=\count345
+\nofMPsegments=\count347
+\nofMParguments=\count348
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count346
-\MPscratchDim=\dimen278
-\MPnumerator=\count347
-\makeMPintoPDFobject=\count348
+\MPscratchCnt=\count349
+\MPscratchDim=\dimen280
+\MPnumerator=\count350
+\makeMPintoPDFobject=\count351
 \everyMPtoPDFconversion=\toks36
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -420,17 +452,17 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OMS+rsfs on input line 45.
+LaTeX Font Info:    Trying to load font information for OMS+rsfs on input line 46.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/calrsfs/OMSrsfs.fd)
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 45.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 46.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
@@ -450,10 +482,6 @@ Missing character: There is no 0 in font rsfs10!
 [5]
 
 [6]
-Overfull \hbox (4.83458pt too wide) in paragraph at lines 392--393
-[]\OT1/cmr/bx/n/10 Definition 25. []\OT1/cmr/m/it/10 For each point $\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 2 \OMS/rsfs/m/n/10 M$ \OT1/cmr/m/it/10 we de-fine the set "tan-gent space to $\OMS/rsfs/m/n/10 M$ \OT1/cmr/m/it/10 at p" as $\OML/cmm/m/it/10 T[]\OMS/rsfs/m/n/10 M \OT1/cmr/m/n/10 := \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 v[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^M[]\OMS/cmsy/m/n/10 g$\OT1/cmr/m/it/10 . 
- []
-
 Missing character: There is no p in font rsfs10!
 Missing character: There is no p in font rsfs10!
 Missing character: There is no p in font rsfs10!
@@ -466,28 +494,34 @@ Missing character: There is no p in font rsfs10!
 [9]
 
 [10]
-No file relativity-schuller.bbl.
 
+[11]
 
-[11] (./relativity-schuller.aux)
+[12]
+
+[13]
+
+[14]
+
+[15] (./relativity-schuller.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6387 strings out of 473190
- 118209 string characters out of 5715806
- 524180 words of memory out of 5000000
- 29558 multiletter control sequences out of 15000+600000
+ 6340 strings out of 473190
+ 117570 string characters out of 5715806
+ 525940 words of memory out of 5000000
+ 29509 multiletter control sequences out of 15000+600000
  570992 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,18n,65p,1577b,330s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,18n,65p,1506b,328s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on relativity-schuller.pdf (11 pages, 369335 bytes).
+Output written on relativity-schuller.pdf (15 pages, 394345 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 205 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

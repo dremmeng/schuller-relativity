@@ -9,6 +9,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/accents/accents.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/accents/accents.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
@@ -59,8 +61,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/cite/cite.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/cite/cite.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/xltabular/xltabular.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/xltabular/xltabular.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty

@@ -1,7 +1,6 @@
 \documentclass[10pt, oneside]{article}
 \usepackage{accents, amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry, xltabular, tabularray}
-
-
+\usepackage{musicography}
 \geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}
 
 
@@ -15,7 +14,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Cdot}{\boldsymbol{\cdot}}
 \newcommand{\F}{\mathfrak{F}}
-\newcommand{\M}{\mathcal{M}}
+
 
 
 \newtheorem{thm}{Theorem}
@@ -33,44 +32,36 @@
 \title{Notes From Fredric Schuller's Lectures on Relativity}
 \author{[Drew Remmenga]}
 
-
-
-
-
-
 \begin{document}
-
-
-
 
 \maketitle
 \begin{abstract}
    Notes on Fredric Schuller's Relativity lectures. "Spacetime is a four-dimensional topolgical manifold with a smooth atlas carrying a torsion free connection compatible with a Lorentzian metric and time orientation satisfying the Einstein Equations."
 \end{abstract}
-\section{Lecture 1: Topological Spaces}
+\section{Lecture 1: Topological Spaces \cite{Topology}}
   At the coarsest level spacetime is a set. This is not enough to talk about continuity of maps. In classical physics there are no jumps. Sets are not enough alone to talk about continuity. We are interested in establishing the weakest possible structure on a set to talk about continuity of maps.
   The mathematician knows the weakest structure necessary to do this is a topology.
   \begin{defn}
-      Let $\mathcal{M}$ be a set. A topology $\mathcal{O}$ is a subset of the powerset of $\mathcal{M}$ denoted $\mathcal{O} \subseteq \mathcal{P}(\mathcal{M})$ satisfying three axioms:
+      Let $M$ be a set. A topology $\mathcal{O}$ is a subset of the powerset of $M$ denoted $\mathcal{O} \subseteq \mathcal{P}(M)$ satisfying three axioms:
      \begin{itemize}
-        \item $\emptyset \subset \mathcal{O}$, $\mathcal{M} \subset \mathcal{O}$
+        \item $\emptyset \subset \mathcal{O}$, $M \subset \mathcal{O}$
         \item For arbitrary $U, V \in \mathcal{O} \implies U \cap V \in \mathcal{O}$
         \item For arbitrary $U_\alpha \in \mathcal{O} \implies (\bigcap_{\alpha \in A} U_\alpha) \in \mathcal{O}$ where $\alpha$ is an index of the set $A$.
      \end{itemize}
   \end{defn}
   \begin{example}
      \begin{itemize}
-        \item Let $\mathcal{M} = \{1,2,3\}$
+        \item Let $M = \{1,2,3\}$
         \begin{itemize}
-           \item Let $\mathcal{O}_1 = \{\emptyset, \{1,2,3\} \}$ then $\mathcal{O}_1$ is a topology for $\mathcal{M}$.
-           \item Let $\mathcal{O}_2 = \{ \emptyset, \{1\}, \{2\}, \{1,2,3\} \}$ then $\mathcal{O}_2$ is not a topology for $\M$ because $\{1,2\} \not \in \mathcal{O}_2$.
+           \item Let $\mathcal{O}_1 = \{\emptyset, \{1,2,3\} \}$ then $\mathcal{O}_1$ is a topology for $M$.
+           \item Let $\mathcal{O}_2 = \{ \emptyset, \{1\}, \{2\}, \{1,2,3\} \}$ then $\mathcal{O}_2$ is not a topology for $M$ because $\{1,2\} \not \in \mathcal{O}_2$.
         \end{itemize}
-        \item Let $\M$ be any set.
+        \item Let $M$ be any set.
         \begin{itemize}
-           \item $\mathcal{O}_{chaotic} = \{\emptyset, \M \}$ is a topology
-           \item $\mathcal{O}_{discrete} = \mathcal{P}(\M)$ is a topology
+           \item $\mathcal{O}_{chaotic} = \{\emptyset, M \}$ is a topology
+           \item $\mathcal{O}_{discrete} = \mathcal{P}(M)$ is a topology
         \end{itemize}
-        \item $\M = \R^d$ (tuples of dimensions $d$ from $\R$) then $\mathcal{O}_{standard} \subseteq \mathcal{P}(\M)$ is a topology for $\M$ defined as follows.
+        \item $M = \R^d$ (tuples of dimensions $d$ from $\R$) then $\mathcal{O}_{standard} \subseteq \mathcal{P}(M)$ is a topology for $M$ defined as follows.
         \begin{defn}
            $\mathcal{O}_{standard}$ defined in two steps.
            \begin{itemize}
@@ -80,13 +71,13 @@
         \end{defn}
      \end{itemize}
   \end{example}
-  We want $\M$ to be spacetime and we want to equip it with an appropriate topology $\mathcal{O}$ to be able to talk about it.
+  We want $M$ to be spacetime and we want to equip it with an appropriate topology $\mathcal{O}$ to be able to talk about it.
   We want to make the implicit assumptions of spacetime to be explicit.
   \begin{Terminology}
-     Let $\M$ be a set defined from (ZFC) then $\mathcal{O}$ is the topology on $\M$ and it is a collection of open sets. $(\M,\mathcal{O})$ is a topological space.
+     Let $M$ be a set defined from (ZFC) then $\mathcal{O}$ is the topology on $M$ and it is a collection of open sets. $(M,\mathcal{O})$ is a topological space.
      \begin{itemize}
-        \item $\mathcal{U} \in \mathcal{O} \iff \mathcal{U} \subseteq \M$ is an open set.
-        \item $M \slash A \in \mathcal{O}$ $\iff A \subseteq \M$ is closed.
+        \item $\mathcal{U} \in \mathcal{O} \iff \mathcal{U} \subseteq M$ is an open set.
+        \item $M \slash A \in \mathcal{O}$ $\iff A \subseteq M$ is closed.
      \end{itemize}
      $\not$ open $\not \implies$ closed and
      $\not$ closed $\not \implies$ open
@@ -135,11 +126,11 @@
         This is a topology called the subset topology.
      \end{defn}
      Use of this specific way to inherit a topology from a super set. Let it be easy to say a map $f$ is continuous. Then a subset $S$ of a set $M$ with an inherited topology then the restriction of the map $f|_S: S \to N$ it can be easy to show this restriction is continuous.
-\section{Lecture 2: Topological Manifolds}
-     $\exists$ too many topological spaces to classify. Too many topological spaces exist which have no known connection to the study of spacetime. For spacetime physics we may focus on topological spaces $(\M,\mathcal{O})$ which can be charted analogously to how the surface of the Earth is charted in an atlas.
+\section{Lecture 2: Topological Manifolds \cite{TopologyM}}
+     $\exists$ too many topological spaces to classify. Too many topological spaces exist which have no known connection to the study of spacetime. For spacetime physics we may focus on topological spaces $(M, \mathcal{O})$ which can be charted analogously to how the surface of the Earth is charted in an atlas.
      \subsection{Topological Manifolds}
         \begin{defn}
-           A topological space $(\M, \mathcal{0})$ is called a d-dimensional topological manifold if $\forall p \in \M: \exists p \in \mathcal{U} \in \mathcal{O} : \exists x:\mathcal{U} \to x(\mathcal{U}) \subseteq \R^d$ with $\R^d$ equiped with $\mathcal{O}_{standard}$such that:
+           A topological space $(M \mathcal{0})$ is called a d-dimensional topological manifold if $\forall p \in M: \exists p \in \mathcal{U} \in \mathcal{O} : \exists x:\mathcal{U} \to x(\mathcal{U}) \subseteq \R^d$ with $\R^d$ equiped with $\mathcal{O}_{standard}$ such that:
            \begin{itemize}
               \item $x$ is invertible: $x^{-1}: x(\mathcal{U}) \to \mathcal{U}$
               \item $x$ is continuous.
@@ -147,14 +138,14 @@
            \end{itemize}
         \end{defn}
         \begin{example}
-           \item The surface of a torus $:= \M \subseteq \R^3$. This is a $d=2$ dimensional topological manifold.
-           \item A mobius strip $:= \M \subseteq (\R^3,\mathcal{O}_{st})$ then this is a $d=1$ manifold.
-           \item A bifurcating line $:= \M \subset (\R^2,\mathcal{O}_{st})$ then $(\M, \mathcal{O}_{st}|_{\M})$ is a topology but the point of bifurcation is not invertible so it is not a manifold.
+           \item The surface of a torus $:= M \subseteq \R^3$. This is a $d=2$ dimensional topological manifold.
+           \item A mobius strip $:= M \subseteq (\R^3,\mathcal{O}_{st})$ then this is a $d=1$ manifold.
+           \item A bifurcating line $:= M \subset (\R^2,\mathcal{O}_{st})$ then $(M \mathcal{O}_{st}|_{M})$ is a topology but the point of bifurcation is not invertible so it is not a manifold.
         \end{example}
         \begin{Terminology}
            \begin{enumerate}
               \item A pair $(\mathcal{U},x)$ is called a chart.
-              \item A set $\mathcal{A}={(\mathcal{U_\alpha},x_{\alpha})|\alpha \in A}$ is called an atlas of the topological manifold $\M$ if $\mathcal{M} = \bigcup_{\alpha \in A} \mathcal{U}_\alpha$.
+              \item A set $\mathcal{A}={(\mathcal{U_\alpha},x_{\alpha})|\alpha \in A}$ is called an atlas of the topological manifold $M$ if $M = \bigcup_{\alpha \in A} \mathcal{U}_\alpha$.
               \item $x:\mathcal{U} \to x(\mathcal{U}) \subseteq \R^d$ is called the chart map.
               \item $x^{i} \mathcal{U} \to \R$ is called the coordinate maps.
               \item $p \in \mathcal{U}$ then $x^{i}$ is the $i$-th coordinate of the point $p$ with respect to the chosen chart $(\mathcal{U},x)$.
@@ -163,7 +154,7 @@
         \begin{example}
            \begin{itemize}
               \item \begin{align*}
-                 \M &= \R^2 \\
+                 M &= \R^2 \\
                  \mathcal{U} &= \R^2 \slash {0,0} \\
                  x: \mathcal{U} &\to \R^2 : x(m,n) \to (-m,-n)
               \end{align*}
@@ -176,7 +167,7 @@
         Because these maps are continuously invertible we can smoothly transition between pages of our atlas: $(y \circ x^{-1})(p) = y(x^{-1}(p))$.
         This map is called the chart transition map. Informally the chart transition map contains the instructions how to $glue$ together the charts of our atlas.
      \subsection{Manifold Philosophy}
-        Often it is desirable (or indeed the way) to define properties ("contiuityt") of real-world objects ("$\R \xrightarrow{\gamma}\M)$ by judging suitible condition not on the real-world object itself but on the chart-representation of the real-world object.
+        Often it is desirable (or indeed the way) to define properties ("contiuity") of real-world objects ("$\R \xrightarrow{\gamma} M)$ by judging suitible condition not on the real-world object itself but on the chart-representation of the real-world object.
         Advantages: You can define continuity in this way.
         Disadvantages: The chart map $x$ is a 'fantasy,' $x$ may be ill defined because the chart chosen is arbitrary.
         Solution: The property must be maintained regardless of the chart.
@@ -186,11 +177,11 @@
         \R &\xrightarrow{\gamma} \mathcal{U}
         \end{align*}
         We are interested in properties of $\gamma$ but must talk about it with respect to $x$ and $y$.
-\section{Lecture 3: Multilinear Algebra}
-        We will not equip space(time) with a vector space structure. There is no such thing as five times Paris or Paris plus Vienna. However, the tangent spaces of $T_p \M$ of smooth manifolds carry a vector space structure.
+\section{Lecture 3: Multilinear Algebra \cite{MultiA}}
+        We will not equip space(time) with a vector space structure. There is no such thing as five times Paris or Paris plus Vienna. However, the tangent spaces of $T_p M$ of smooth manifolds carry a vector space structure.
         It is beneficial to first study vector spaces abstractly for two reasons.
         \begin{itemize}
-           \item For construction of $T_p \M$ one needs an intermediate vector space $C^\infty (\M)$.
+           \item For construction of $T_p M$ one needs an intermediate vector space $C^\infty (M)$.
            \item Tensor techniques are best understood in an abstract setting.
         \end{itemize}
         \subsection{Vector Spaces}
@@ -318,18 +309,18 @@
         \begin{Terminology}
            If we agree to label $T^i_j = T(\epsilon^i,e_j)$ with the up and down components then Einstein summation convention of tensors $:= \phi_i v^j T^i_j$ where we drop $\sum$. This only works over multilinear maps.
         \end{Terminology}
-\section{Lecture 4: Differentiable Manifolds}
-  So far we have topological manifolds $(\M,\mathcal{O})$ dim($\M$)=$d$. We want to talk about velocity vectors on them but this structure is insufficient to do so.
+\section{Lecture 4: Differentiable Manifolds \cite{DiffM}}
+  So far we have topological manifolds $(M,\mathcal{O})$ dim($M$)=$d$. We want to talk about velocity vectors on them but this structure is insufficient to do so.
   Pick a dimension $d \neq 4$ for your manifold. In that dimension the choices of topology are countable, so presumably we can do experiments to discern which one corresponds to our reality.
   In $d=4$ our choices of topology are suddenly uncountable. We need additional structure to talk about differentiable curves on manifolds and between manifolds.
   \begin{enumerate}
-     \item Curves: $\R \to \M$
-     \item Functions: $\M \to \R$
-     \item Maps: $\M_1 \to \M_2$
+     \item Curves: $\R \to M$
+     \item Functions: $M \to \R$
+     \item Maps: $M_1 \to M_2$
   \end{enumerate}
   \subsection{Strategy}
      $\gamma: \R \to \mathcal{U}$ and choose a chart $(\mathcal{U},x)$. $\mathcal{U} \xrightarrow{x} x(\mathcal{U}) \subseteq \R^d$.
-     Try and 'lift' the undergraduate notion of differentiableity of a curve in $\R^d$ to a notion of differentiability on a curve on $\M$.
+     Try and 'lift' the undergraduate notion of differentiableity of a curve in $\R^d$ to a notion of differentiability on a curve on $M$.
      Problem: Is this well defined under a change of chart? We don't want it to depend on our taste.
      \begin{align}
         \gamma: \R \to\mathcal{U} \cap \mathcal{V} \neq 0 \\
@@ -352,7 +343,7 @@
            An atlas $\mathcal{A}_\square$ is a $\square$ - compatible atlas if any two charts in $\mathcal{A}_\square$ are $\square$ - compatible.
         \end{defn}
         \begin{defn}
-           A $\square$ - manifold is a triple $(\M, \mathcal{O}, \mathcal{A}_\square)$
+           A $\square$ - manifold is a triple $(M, \mathcal{O}, \mathcal{A}_\square)$
         \end{defn}
      Undergraduate $\square$. $C^0$: $C^0 (\R^d \to \R^d)$ Continuous maps. $C^1$: $\C^1 (\R^d \to \R^d)$ Differentiable Once. $C^k$: $k$-times continuous differentiable.
      $D^k$: $k$-times differentiable. $C^\infty$: $\C^\infty (\R^d \to \R^d)$ infinitely continuously infinitly continously differentiable. $C^\omega$: $\exists$ multidimensional Taylor Expansion.
@@ -362,10 +353,10 @@
      \end{thm}
      Thus we will consider $C^\infty$ manifolds or "smooth manifolds" unless we wish to define taylor expansions or complex differentiable.
      \begin{defn}
-        A smooth manifold is a tripple $(\M,\mathcal{O}, \mathcal{A})$ where $\mathcal{A}$ is a $C^\infty$ - atlas.
+        A smooth manifold is a tripple $(M, \mathcal{O}, \mathcal{A})$ where $\mathcal{A}$ is a $C^\infty$ - atlas.
      \end{defn}
   \subsection{Diffeororphisms}
-     Take a map: $\M \xrightarrow{\phi} \mathcal{N}$. If $\M$ and $\mathcal{N}$ are naked sets then the structure preserving maps are the bijections. If $\exists \phi$ is a bijection $\M \cong \mathcal{N}$.
+     Take a map: $M \xrightarrow{\phi} N$. If $M$ and $N$ are naked sets then the structure preserving maps are the bijections. If $\exists \phi$ is a bijection $M \cong N$.
      \begin{example}
      \begin{align*}
         \N \cong \Z \\
@@ -375,32 +366,32 @@
      \end{example}
      Linear bijections between vector spaces are the structure preserving maps between vector spaces.
      \begin{defn}
-        Two $C^\infty$ manifolds are said to be diffeomorphic $\iff \exists$ bijection $\phi: \M \to \mathcal{N}$ such that $\phi, \phi^{-1}$ are both $C^\infty$ maps.
+        Two $C^\infty$ manifolds are said to be diffeomorphic $\iff \exists$ bijection $\phi: M \to N$ such that $\phi, \phi^{-1}$ are both $C^\infty$ maps.
      \end{defn}
      \begin{thm}
         The number of $C^\infty$ manifolds that can be constructed from a given $C^0$ - manifold up to diffeomorphism by the More-Radon Theorems in $d = 1,2,3$ dimension are 1. In $d > 4$ the number is finite. In $d=4 \exists$ uncountably infinitely many such manifolds.
      \end{thm}
-\section{Lecture 5: Tangent Spaces}
+\section{Lecture 5: Tangent Spaces \cite{Tangent}}
      Lead question: "What is the velocity of a curve $\gamma$ at a point $p$?"
   \subsection{Velocitites}
      \begin{defn}
-        Take a $(\M,\mathcal{O}, \mathcal{A})$ smooth manifold. Take a curve: $\gamma: \R \to \M$ of at least $C^1$. Suppose $\gamma(\lambda_0) = p$.
-        The velocity of $\gamma$ at $p$ is the linear map: $v_{\gamma,p}: C^{\infty}(\M) \xrightarrow{\sim} \R$. $C^\infty (\M) := \{f:\M \to \R | f $ smooth function $\}$ equipped with $(f \oplus g)(p) := f(p) +_{\R} g(p), (\lambda \oplus g)(p):=\lambda \cdot g(p)$.
+        Take a $(M,\mathcal{O}, \mathcal{A})$ smooth manifold. Take a curve: $\gamma: \R \to M$ of at least $C^1$. Suppose $\gamma(\lambda_0) = p$.
+        The velocity of $\gamma$ at $p$ is the linear map: $v_{\gamma,p}: C^{\infty}(M) \xrightarrow{\sim} \R$. $C^\infty (M) := \{f:M \to \R | f $ smooth function $\}$ equipped with $(f \oplus g)(p) := f(p) +_{\R} g(p), (\lambda \oplus g)(p):=\lambda \cdot g(p)$.
         So velocity is a linear map: $f \rightarrowtail v_{\gamma,p} (f) := (f \circ \gamma)'(\lambda_0)$.
      \end{defn}
   \subsection{Tangent Vector Space}
      \begin{defn}
-        For each point $p \in \M$ we define the set "tangent space to $\M$ at p" as $\\T_p \M := \{v{\gamma,p} | \gamma \text{ smooth curve } \}$.
+        For each point $p \in M$ we define the set "tangent space to $M$ at p" as $\\T_p M := \{v{\gamma,p} | \gamma \text{ smooth curve } \}$.
      \end{defn}
-     Observe that $T_p \M$ can be made into a vector space.
+     Observe that $T_p M$ can be made into a vector space.
      \begin{defn}
         We need to define $\oplus$ and $\otimes$.
         \begin{align*}
-           \oplus: T_p \M \times T_p \M &\to \text{Hom}(C^\infty(\M),\R) \\
-           (v_{\gamma,p} \oplus v_{\delta,p})(f) &:= v_{\gamma,p}(f) +_{\R} v_{\delta,p} (f), f \in C^\infty (\M)
+           \oplus: T_p M \times T_p M &\to \text{Hom}(C^\infty(M),\R) \\
+           (v_{\gamma,p} \oplus v_{\delta,p})(f) &:= v_{\gamma,p}(f) +_{\R} v_{\delta,p} (f), f \in C^\infty (M)
         \end{align*}
         \begin{align*}
-           \otimes: \R \times T_p \M \to \text{Hom}(C^\infty(\M,\R)) \\
+           \otimes: \R \times T_p \ \to \text{Hom}(C^\infty(M,\R)) \\
            (\alpha \otimes v_{\gamma,p})(f) &:= \alpha \cdot_{\R} v_{\gamma,p} (f), \alpha \in \R
         \end{align*}
         Remains to be shown that:
@@ -411,7 +402,7 @@
         \begin{proof}
            Construct:
            \begin{align*}
-              \tau: \R &\to \M \\
+              \tau: \R &\to M \\
               &\rightarrowtail \tau(\lambda) := \gamma(\alpha \lambda \cdot \lambda_0) = (\gamma \circ \mu_{\alpha})(\lambda) \\
               \mu_\alpha: \R &\to \R \\
               \triangle &\rightarrowtail \triangle \cdot \alpha
@@ -429,7 +420,7 @@
            \end{align*}
            Make a choice of chart $(\mathcal{U},x)$ with $p \in \mathcal{U}$ and define:
            \begin{align*}
-              \sigma_x: \R \to \M \\
+              \sigma_x: \R \to M \\
               \sigma_x(\lambda) := x^{-1} ((x \circ \gamma)(\lambda_0 + \lambda)+ (x \circ \gamma)(\lambda_0))
            \end{align*}
            Then:
@@ -444,7 +435,7 @@
               &= (x \circ \sigma_x)^i(0) \cdot (\partial_i (f \circ x^{-1}))(x(\sigma_x(0))) (x \circ \gamma)^i (\lambda_0) + (x \circ \delta)^i (\lambda_0)\\
               &= (x \circ \gamma)^i(\lambda_0)(\partial_i(f \circ x^{-1}))(x(p)) + (x \circ \delta)^i(\lambda_0)(\partial_i(f \circ x^{-1}))(x(p)) \\
               &= (f \circ \gamma)'(\lambda_0) + (f \circ \delta)' (\lambda_0) \\
-              &= v_{\gamma,p}(f) + v_{\delta,p}(f), \forall f \in C^\infty (\M) \\
+              &= v_{\gamma,p}(f) + v_{\delta,p}(f), \forall f \in C^\infty (M) \\
               v_{\sigma,p} &= v_{\gamma,p} \oplus v_{\delta,p}
            \end{align*}
            And we are done.
@@ -456,15 +447,15 @@
      \begin{align*}
         v_{\gamma,p}(f)&:= (f \circ \gamma)'(0) = ((f \circ x^{-1})\circ(x\circ \gamma))'(0) \\
         &= (x \circ \gamma)^i (0) \cdot(\partial_i(f \circ x^{-1}))(x(p)) \\
-        &= \dot{\gamma}_x^i (0) \cdot(\frac{\partial}{\partial x^i})_p f, \forall f \in C^{\infty}(\M)
+        &= \dot{\gamma}_x^i (0) \cdot(\frac{\partial}{\partial x^i})_p f, \forall f \in C^{\infty}(M)
      \end{align*}
-     This is the components of the velocity vector from the chart induced basis of the vector from $T_p \M$.
+     This is the components of the velocity vector from the chart induced basis of the vector from $T_p M$.
   \end{defn}
   \subsection{Chart-induced Basis}
   \begin{defn}
      Take $(\mathcal{U},x) \in \mathcal{A}_{smooth}$. Then
      \begin{align*}
-        (\frac{\partial}{\partial x^1})_p, ..., (\frac{\partial}{\partial x^d})_p \in T_p \M
+        (\frac{\partial}{\partial x^1})_p, ..., (\frac{\partial}{\partial x^d})_p \in T_p M
      \end{align*}
      Constitute a basis of $T_p \mathcal{U}$.
   \end{defn}
@@ -476,13 +467,13 @@
         \lambda^i \partial_i (x^j \circ x^{-1})(x(p)) &=  \\
         \lambda^i \delta_i^j &= \lambda^j
      \end{align*}
-     Corollarary $\text{dim}T_\phi \M = d = \text{dim}(\M)$.
+     Corollarary $\text{dim}T_\phi M = d = \text{dim}(M)$.
   \end{proof}
   \begin{Terminology}
-     $X \in T_p \M \implies \exists \gamma: \R \to \M: X= v_{\gamma,p}$ and $\exists x^1, ..., x^d: X = x^i(\frac{\partial}{\partial x^i})_p$
+     $X \in T_p M \implies \exists \gamma: \R \to M: X= v_{\gamma,p}$ and $\exists x^1, ..., x^d: X = x^i(\frac{\partial}{\partial x^i})_p$
   \end{Terminology}
   \subsection{Change of Vector Components Under a Change of Chart}
-  The physical vector in the real world doesn't change under change of chart. The vector components change under change of chart.  Let $(\mathcal{U},x), (\mathcal{V},y) \in \mathcal{A}_{smooth}, p \in \mathcal{U} \cap \mathcal{V} \neq \emptyset$. Let $X \in T_p \M$ then
+  The physical vector in the real world doesn't change under change of chart. The vector components change under change of chart.  Let $(\mathcal{U},x), (\mathcal{V},y) \in \mathcal{A}_{smooth}, p \in \mathcal{U} \cap \mathcal{V} \neq \emptyset$. Let $X \in T_p M$ then
   \begin{align*}
      X^i_{(y)}\cdot (\frac{\partial}{\partial y^i})_p =_{(\mathcal{V},y)} X =_{(\mathcal{U},x)} (\frac{\partial}{\partial x^i})_p
   \end{align*}
@@ -498,14 +489,14 @@
      X^j_{(y)} &= (\frac{\partial y^j}{\partial x^i})_p X^i_{(x)}
   \end{align*}
   \subsection{Cotangent Spaces}
-  Trivial $(T_p^* \M) := \{\phi: T_p \M \xrightarrow{\sim} \R \}$.
+  Trivial $(T_p^* M) := \{\phi: T_p M \xrightarrow{\sim} \R \}$.
   \begin{example}
-  $f \in C^{\infty}(\M)$
+  $f \in C^{\infty}(M)$
   \begin{align*}
-     (df)_p : T_p \M &\xrightarrow{\sim} \R \\
+     (df)_p : T_p M &\xrightarrow{\sim} \R \\
      X &\rightarrowtail (df)_p (X):= X f
   \end{align*}
-  So $(df)_p $ is called the gradient of $f$ at $p \in \M$. Calculate the components of the gradient. (0,1)- tensor of the vector space with respect to a chart $(\mathcal{U},x)$.
+  So $(df)_p $ is called the gradient of $f$ at $p \in M$. Calculate the components of the gradient. (0,1)- tensor of the vector space with respect to a chart $(\mathcal{U},x)$.
   \begin{align*}
      ((df)_p)_j &:= (df)_p (\frac{\partial }{\partial x^j})_p  \\
      &= (\frac{\partial f}{\partial x^j})_p  \\
@@ -513,86 +504,86 @@
   \end{align*}
   \end{example}
   \begin{thm}
-     Consider a chart $(\mathcal{U},x) \implies x^i : \mathcal{U} \to \R$. Claim: $(dx^i)_p$ is the basis of $T_p^* \M$ or dual basis. $(dx^a)_p (\frac{\partial}{\partial x^b})_p =\delta^a_b$
+     Consider a chart $(\mathcal{U},x) \implies x^i : \mathcal{U} \to \R$. Claim: $(dx^i)_p$ is the basis of $T_p^* M$ or dual basis. $(dx^a)_p (\frac{\partial}{\partial x^b})_p =\delta^a_b$
   \end{thm}
   \subsection{Change of Components of A Covector with Respect to a Chart}
-  $\omega \in T_p^* \M$ then $\omega_{((x)i)} (dx^i)_p \implies \omega_{(y)j}= (\frac{\partial x^j}{\partial y^i}) \omega_{(x)j}$.
-\section{Lecture 6: Fields}
+  $\omega \in T_p^* M$ then $\omega_{((x)i)} (dx^i)_p \implies \omega_{(y)j}= (\frac{\partial x^j}{\partial y^i}) \omega_{(x)j}$.
+\section{Lecture 6: Fields \cite{Fields}}
   We want to assign to every point on a manifold a vector. To do this we need Theory of Bundles.
   \subsection{Bundles}
   \begin{defn}
-     A bundle is a triple $E \xrightarrow{\pi} \M$ where $E$ is the 'total space' and is a smooth manifold. $\pi$ is a smooth surjective map called the 'projective map'. And $\M$ is our smooth manifold called the 'base space.'
+     A bundle is a triple $E \xrightarrow{\pi} M$ where $E$ is the 'total space' and is a smooth manifold. $\pi$ is a smooth surjective map called the 'projective map'. And $M$ is our smooth manifold called the 'base space.'
   \end{defn}
   \begin{defn}
-     Take bundle with $p \in \M$ we define the Fibre over $p$ as the $\text{preim}_{\pi} (\{p\})$.
+     Take bundle with $p \in M$ we define the Fibre over $p$ as the $\text{preim}_{\pi} (\{p\})$.
   \end{defn}
   \begin{defn}
-     A section $\sigma$ of a bundle is the $\text{preim}_{\pi}(\M)$ where we require $\pi \circ \sigma = \text{id}_{\M}$.
+     A section $\sigma$ of a bundle is the $\text{preim}_{\pi}(M)$ where we require $\pi \circ \sigma = \text{id}_{M}$.
   \end{defn}
-  As an aside in quantum mechanics we take a wave function of a position space $\psi: \M \to \C$. They are actually sections of $\C$-line bundle of the phase-space.
+  As an aside in quantum mechanics we take a wave function of a position space $\psi: M \to \C$. They are actually sections of $\C$-line bundle of the phase-space.
   \subsection{Tangent Bundle of a Smooth Manifold}
-  Take a smooth manifold $(\M,\mathcal{O},\mathcal{A})$.
+  Take a smooth manifold $(M,\mathcal{O},\mathcal{A})$.
   \begin{itemize}
-     \item The tangent bundle is a set: $TM := \dot{\bigcup_{p \in \M}} T_p \M$.
-     \item $\pi: T \M \to \M: X \rightarrowtail p$ where $p$ is the unqiue ppoint in $\M$ such that $X \in T_p \M$.
-     \item We want the coursest topology such that $\pi$ is continuous. This is called the 'initial topology.' $\mathcal{O}_{T \M}:= \{\text{preim}_{\pi} (\mathcal{U})| \mathcal{U} \in \mathcal{O} \}$. 
+     \item The tangent bundle is a set: $TM := \dot{\bigcup_{p \in M}} T_p M$.
+     \item $\pi: T M \to M: X \rightarrowtail p$ where $p$ is the unqiue ppoint in $M$ such that $X \in T_p M$.
+     \item We want the coursest topology such that $\pi$ is continuous. This is called the 'initial topology.' $\mathcal{O}_{T M}:= \{\text{preim}_{\pi} (\mathcal{U})| \mathcal{U} \in \mathcal{O} \}$. 
   \end{itemize}
-  Construction of a $C^\infty$ atlas on $T \M$ from the $C^\infty$ atlas on $\M$. $\mathcal{A}_{T \M} := \{ (T\mathcal{U},\psi_x) | (\mathcal{U},x) \in \mathcal{A} \}$ with $\psi_x: T \mathcal{U} \rightarrow \R^{2\cdot \text{dim}(\M)}: X \in T_{\pi (x)} \M$ with $X \rightarrowtail ((x^1 \circ \pi)(X),\cdots,(x^d \circ \pi)(X),(dx^1)_{\pi(x)}(X), \cdots, (dx^d)_{\pi (x)}(X))$.
+  Construction of a $C^\infty$ atlas on $T M$ from the $C^\infty$ atlas on $M$. $\mathcal{A}_{T M} := \{ (T\mathcal{U},\psi_x) | (\mathcal{U},x) \in \mathcal{A} \}$ with $\psi_x: T \mathcal{U} \rightarrow \R^{2\cdot \text{dim}(M)}: X \in T_{\pi (x)} M$ with $X \rightarrowtail ((x^1 \circ \pi)(X),\cdots,(x^d \circ \pi)(X),(dx^1)_{\pi(x)}(X), \cdots, (dx^d)_{\pi (x)}(X))$.
   Note we need to reconstruct $\psi^{-1}$ from our data. So we have $(\alpha^i,\beta^j)\in \R^{2d}$ such that we have $\beta^i (\frac{\partial}{\partial x^i})_{x^{-1}(\alpha^j)}$. Alphas are the point and the betas are the components.
   Check that this map is smooth by change of atlas!
   \subsection{Vector Fields}
   \begin{defn}
      A smooth vector field is a $\chi$ is a smooth map that is a section.
   \end{defn}
-  \subsection{The $C^\infty (\M)$ - module $\Gamma (T \M)$}
-  $(C^{\infty} (\M), +, \cdot)$ This satisfies the notion of a ring. It is the ring of smooth function on a manifold. $\Gamma (T \M) = \{ \chi : T \M \to \M \| \text{smooth sections} \}$. This is a vector space module over the ring. The set of all smooth vector fields can be made into such a module structure. This is important because we cannot guarantee that there exists a basis. There is no way to generate a basis for a vector field over a sphere (Harry Ball Theorem).
+  \subsection{The $C^\infty (M)$ - module $\Gamma (T M)$}
+  $(C^{\infty} (M), +, \cdot)$ This satisfies the notion of a ring. It is the ring of smooth function on a manifold. $\Gamma (T M) = \{ \chi : T M \to M \| \text{smooth sections} \}$. This is a vector space module over the ring. The set of all smooth vector fields can be made into such a module structure. This is important because we cannot guarantee that there exists a basis. There is no way to generate a basis for a vector field over a sphere (Harry Ball Theorem).
   \subsection{Tensor Fields}
   \begin{defn}
-     An $(r,s)$ - tensor field $T$ is a $C^{\infty} (\M)$ multilinear map between modules.
+     An $(r,s)$ - tensor field $T$ is a $C^{\infty} (M)$ multilinear map between modules.
   \end{defn}
   \begin{example}
-     Define $df := \Gamma(T \M) \to C^\infty (\M): \chi \rightarrowtail df(\chi) := \chi (f)$ with $(\chi f)(p) := \chi (p) f $ with $p \in \M$ and $\chi(p) \in T_p \M$. This is a covector field.
+     Define $df := \Gamma(T M) \to C^\infty (M): \chi \rightarrowtail df(\chi) := \chi (f)$ with $(\chi f)(p) := \chi (p) f $ with $p \in M$ and $\chi(p) \in T_p M$. This is a covector field.
   \end{example}
-\section{Lecture 7: Connections}
+\section{Lecture 7: Connections \cite{Connections}}
  So far we saw that a vector field $X$ can be used to provide a directional derivative.
  \begin{align*}
      \nabla_X f := Xf
  \end{align*}
- of a $f \in C^\infty (\M)$.
+ of a $f \in C^\infty (M)$.
  \begin{remark}
   From now on we will mostly consider vector fields. Seems like notational overkill? $\nabla_X f = Xf = (df)(X)$. Not quite the same thing.
   \begin{align*}
-     X: C^{\infty} (\M) &\to C^{\infty} (\M) \\
-     df: \Gamma(T \M) &\to C^\infty (\M) \\
-     \nabla_X: C^\infty (\M) &\to C^\infty (\M)
+     X: C^{\infty} (M) &\to C^{\infty} (M) \\
+     df: \Gamma(T M) &\to C^\infty (M) \\
+     \nabla_X: C^\infty (M) &\to C^\infty (M)
   \end{align*}
   But we want to extend $\nabla_X$ to $(p,q) \to (p,q)$ -tensor fields. This is not free.
  \end{remark}
  \subsection{Directional Derivatives of Tensor Fields}
-  We formulate a wish list of properties which the $\nabla_X$ acting on a tensor field should have. Any remaining freedom in choice $\nabla$ will need to be provided as additional structure beyond our smooth manifold $(\M, \mathcal{O}, \mathcal{A})$.
+  We formulate a wish list of properties which the $\nabla_X$ acting on a tensor field should have. Any remaining freedom in choice $\nabla$ will need to be provided as additional structure beyond our smooth manifold $(M, \mathcal{O}, \mathcal{A})$.
  \begin{defn}
   A connection $\nabla$ on a smooth manifold is a map that takes a pair consisting of a vector (field) $X$ and a $(p,q)$ - tensor (field) $T$ and yields a $(p,q)$ - tensor (field) $\nabla_X T$ satisfying four properties:
   \begin{enumerate}
-     \item $\nabla_X f = X f, \forall f \in C^\infty (\M)$
+     \item $\nabla_X f = X f, \forall f \in C^\infty (M)$
      \item $\nabla_X (T + S) = \nabla_X T + \nabla_X S$
      \item $\nabla_X(T(\omega,Y))= (\nabla_X T)(\omega, Y)+T(\nabla_X \omega,Y)+T(\omega,\nabla_X Y)$ (Liebnitz rule)\footnote{For $(1,1)$ tensor field T, but analogously for any $(p,q)$ - TF}
-     \item $\nabla_{f X +Z} T = f \nabla_X T +\nabla_X T, \forall f \in C^\infty (\M)$
+     \item $\nabla_{f X +Z} T = f \nabla_X T +\nabla_X T, \forall f \in C^\infty (M)$
   \end{enumerate}
-  A manifold with connection is a quadruple of structures $(\M, \mathcal{O},\mathcal{A}, \nabla)$.
+  A manifold with connection is a quadruple of structures $(M, \mathcal{O},\mathcal{A}, \nabla)$.
   \end{defn}
   \begin{remark}
      $\nabla_X$ is the extension of $X$. So $\nabla_.$ is the extension of d.
   \end{remark}
-  \subsection{New Structure on $(\M, \mathcal{O}, \mathcal{A})$ Required to Fix $\nabla$}
+  \subsection{New Structure on $(M, \mathcal{O}, \mathcal{A})$ Required to Fix $\nabla$}
      Consider $X,Y$ vector fields.
      \begin{align*}
         \nabla_X Y &=_{(\mathcal{U},x)} \nabla_{X^i \frac{\partial}{\partial x^i}} (Y^m \cdot \frac{\partial}{\partial x^m}) \\
         &=_{(iii)} X^i (\nabla_{\frac{\partial}{\partial x^i}} Y^m) \cdot \frac{\partial}{\partial x^m} + X^i Y^m \cdot_{\frac{\partial}{\partial x^i}}(\frac{\partial}{\partial y^m}) \\
         &=_{(i)} X^i (\frac{\partial}{\partial x^i} Y^m) \cdot \frac{\partial}{\partial x^m} X^i Y^m \cdot \Gamma^q_{m i} \frac{\partial}{\partial x^q}
      \end{align*}
-     $\Gamma$ is the connection coefficient functions (on $\M$) of $\nabla$ with respect to the chart $(\mathcal{U},x)$
+     $\Gamma$ is the connection coefficient functions (on $M$) of $\nabla$ with respect to the chart $(\mathcal{U},x)$
      \begin{defn}
-        $(\M,\mathcal{O},\mathcal{A},\nabla)$, $(\mathcal{U},x) \in \mathcal{A}$ then the connection coefficient functions ("$\Gamma$s) with respect to our chart $(\mathcal{U},x)$ are the $(\text{dim}(\M))^3$ many functions:
+        $(M,\mathcal{O},\mathcal{A},\nabla)$, $(\mathcal{U},x) \in \mathcal{A}$ then the connection coefficient functions ("$\Gamma$s) with respect to our chart $(\mathcal{U},x)$ are the $(\text{dim}(M))^3$ many functions:
         \begin{align*}
            \Gamma_(x)^i_{jk}: \mathcal{U} &\to \R \\
            p & \rightarrowtail (dx^i)(\nabla_{\frac{\partial}{\partial x^k}} \frac{\partial}{\partial x^j})(p)
@@ -600,7 +591,7 @@
      \end{defn}
      Thus $(\nabla_X Y)^i = X^m (\frac{\partial}{\partial x^m} Y^j)+\Gamma^i_{nm} \cdot Y^n \cdot X^m$
      \begin{remark}
-        On a chart domain $\mathcal{U}$ the choice of the $(\text{dim}(\M))^3$ functions $\Gamma^i_{n m}$ functions suffices to fix the action $\nabla$ on a vector field. Those same functions fix the action of $\nabla$ on any tensor field.
+        On a chart domain $\mathcal{U}$ the choice of the $(\text{dim}(M))^3$ functions $\Gamma^i_{n m}$ functions suffices to fix the action $\nabla$ on a vector field. Those same functions fix the action of $\nabla$ on any tensor field.
      \end{remark}
      \begin{remark}
         $\nabla_{\frac{\partial}{\partial x^m}} (dx^i) = \Sigma^i_{jm} dx^j$. But now
@@ -622,7 +613,7 @@
          &= \frac{\partial y^i}{\partial x^q} \frac{\partial x^p}{\partial y^k}\frac{\partial}{\partial x^p} (\frac{\partial x^s}{\partial y^j}) \delta^q_s + \frac{\partial y^i}{\partial x^q} \frac{\partial x^p}{\partial y^k} \frac{\partial x^s}{\partial y^j} \frac{\partial x^p}{\partial y^k} \Gamma_{(x),sp}^q 
          \end{align*}
    \subsection{Normal Coordinates}
-   Let $p \in \M$ of $(\M, \mathcal{O},\mathcal{A},\nabla)$. Then one can construct a chart $(\mathcal{U},x)$ with $p \in \mathcal{U}$ such that $\Gamma_{(x) jk}^i (p)=0$ at $p$. Not necessarily in any neighborhood.
+   Let $p \in M$ of $(M, \mathcal{O},\mathcal{A},\nabla)$. Then one can construct a chart $(\mathcal{U},x)$ with $p \in \mathcal{U}$ such that $\Gamma_{(x) jk}^i (p)=0$ at $p$. Not necessarily in any neighborhood.
    \begin{proof}
    Let $(\mathcal{V},y)$ be any chart with $p \in mathcal{V}$. This in general the $\gamma_{(y)jk}^i \neq 0$. The consider the new chart $(\mathcal{U},x)$ to which one transitions.
    \begin{align*}
@@ -638,18 +629,18 @@
       &= 0
    \end{align*}
    \end{proof}
-\section{Lecture 8: Parallel Transport}
+\section{Lecture 8: Parallel Transport \cite{Parallel}}
    \subsection{Parallelity of Vector Fields}
-   $(\M,\mathcal{O},\mathcal{A},\nabla)$ manifold with connection.
+   $(M,\mathcal{O},\mathcal{A},\nabla)$ manifold with connection.
    \begin{defn}
-      A vector field $X$ on $\M$ is said to be parallely transported along a smooth curve $\gamma: \R \to \M$ if $\nabla_{v_\gamma} X = 0$ i.e. $(\nabla_{v_{\gamma, \gamma(\lambda)}}X)_{\gamma (\lambda)}$
+      A vector field $X$ on $M$ is said to be parallely transported along a smooth curve $\gamma: \R \to M$ if $\nabla_{v_\gamma} X = 0$ i.e. $(\nabla_{v_{\gamma, \gamma(\lambda)}}X)_{\gamma (\lambda)}$
    \end{defn}
    \begin{defn}
       A slightly weaker condition then parallely transported is parallel: $(\nabla_{v_{\gamma,\gamma (\lambda)}} X)_{\gamma (\lambda)} = \mu (\lambda) X_{\gamma (\lambda)}$ for $\mu: \R \to \R$
    \end{defn}
    \subsection{(self) Autoparalley Transported Curves}
    \begin{defn}
-   A curve $\gamma: \R \to \M$ is called autoparallely transported if $\nabla_{v_\gamma} v_\gamma = 0 \iff \nabla_{v_\gamma,\gamma (\lambda)} v_{\gamma_{\gamma(\lambda)}} = 0$.
+   A curve $\gamma: \R \to M$ is called autoparallely transported if $\nabla_{v_\gamma} v_\gamma = 0 \iff \nabla_{v_\gamma,\gamma (\lambda)} v_{\gamma_{\gamma(\lambda)}} = 0$.
    \end{defn}
    \begin{remark}
       Define the notion of an autoparalel curve $\nabla_{v_\gamma} v_\gamma = \mu v_\gamma$.
@@ -670,7 +661,7 @@
       \end{itemize}
       \end{example}
    \subsection{Torsion}
-   Question: Can we use $\nabla$ to define tensors on $(\M,\mathcal{O},\mathcal{A},\nabla)$?
+   Question: Can we use $\nabla$ to define tensors on $(M,\mathcal{O},\mathcal{A},\nabla)$?
    \begin{defn}
    The torsion of a connection $\nabla$ is the (1,2)-tensor field. Use lie algebra commutators. $T(\omega,X,Y):= \omega(\nabla_X Y - \nabla_Y X - [X,Y])$.
    \end{defn}   
@@ -685,7 +676,7 @@
       \end{align*}
    \end{proof}
    \begin{defn}
-   A $(\M,\mathcal{O},\mathcal{A},\nabla)$ is called torsion-free if $T=0$. In a chart: $T^i_{ab} := T(dx^i,\frac{\partial}{\partial x^a},\frac{\partial}{\partial x^b}) = dx^i (\cdots)$.
+   A $(M,\mathcal{O},\mathcal{A},\nabla)$ is called torsion-free if $T=0$. In a chart: $T^i_{ab} := T(dx^i,\frac{\partial}{\partial x^a},\frac{\partial}{\partial x^b}) = dx^i (\cdots)$.
    \end{defn}
    \subsection{Curvative}
    \begin{defn}
@@ -696,7 +687,7 @@
       (\nabla_a \nabla_b Z) - (\nabla_b \nabla_a Z) = Riem^m_{n ab} Z^n + \nabla_{[\frac{\partial}{\partial x^a},\frac{\partial}{\partial x^b}]Z}
    \end{align*}
    Geometric Signifigance of Riem: if $[X,Y] \not = 0$ or commutes then the geometry is not closed. 
-\section{Lecture 9: Newtonian Spacetime is Curved}
+\section{Lecture 9: Newtonian Spacetime is Curved \cite{CurvedNewton}}
   \begin{itemize}
   \item Newton I: A body on which no force acts moves uniformly along a straight line.
   \item Newton II: Deviation of a body's motion from such uniform straight motion is effected by a force, reduced by a factor of the body's reciprocal mass.
@@ -754,14 +745,14 @@
      Question: What about the transformation behavior of LHS of $\ddot{X}^\alpha + \Gamma^a_{b c} \dot{X}^b \dot{X}^c = 0 = (\nabla_{v_{x}} v_{x} )^a := \text{acceleration}^a$.
      \subsection{The Foundations of the Geometric FOrmulation of Newton's Axioms}
      \begin{defn}
-     A Newtonian spacetime is a quintuple of structures $(\M,\mathcal{O},\mathcal{A},\nabla,t)$ where $(\M,\mathcal{O},\mathcal{A})$ is a 4-dimensional manifold. And absolute time $t$ is a smooth function $t:\M \to \R$. Satisfying:
+     A Newtonian spacetime is a quintuple of structures $(M,\mathcal{O},\mathcal{A},\nabla,t)$ where $(M,\mathcal{O},\mathcal{A})$ is a 4-dimensional manifold. And absolute time $t$ is a smooth function $t:M \to \R$. Satisfying:
      \begin{itemize}
-        \item "There is an absolute space" $(dt)_p \not = 0, \forall p \in \M \implies S_\tau := {p \in \M | t(p) = \tau} \implies \M =_{dt\not = 0} \dot{\bigcup} S_\tau$
-        \item "(absolute) Time flows uniformly" $\nabla dt = 0, \forall p \in \M$
+        \item "There is an absolute space" $(dt)_p \not = 0, \forall p \in M \implies S_\tau := {p \in M | t(p) = \tau} \implies M =_{dt\not = 0} \dot{\bigcup} S_\tau$
+        \item "(absolute) Time flows uniformly" $\nabla dt = 0, \forall p \in M$
      \end{itemize}
      \end{defn}
      \begin{defn}
-     A vector $X \in T_p \M$ is called:
+     A vector $X \in T_p M$ is called:
      \begin{itemize}
      \item Future-directed if $dt(x) > 0$
      \item Spatial if $dt(X) = 0$
@@ -784,5 +775,300 @@
         X^{0''} + \Gamma^0_{cd} X^{a'} X^{b'} &= 0 \\
         X^{\alpha''} + \Gamma^\alpha_{\gamma \delta} X^{\gamma'} X^{\delta'} + \Gamma^\alpha_{00} X^{0'} X^{0'} + 2 \Gamma^\alpha_{\gamma 0} X^{\gamma'} X^{0'} & = \frac{F^\alpha}{m}
      \end{align*}
+\section{Lecture 10: Metric Manifold \cite{MetricManifolds}}
+We establish a structure on a smooth manifold that allows us to assign vectors in each tangent space a length and an angle between vectors in the same tangent space. From this structure, one can then define a notion of length of a curve. Then we can look at shortest curves (Geodesics).
+Requiring then that the shortest curves coincide with the straightest curves (with respect to $\nabla$) will result in $\nabla$ being determined by the metric structure.
+\subsection{Metrics}
+\begin{defn}
+  A metric $g$ on a smooth manifold $(M, \mathcal{O}, \mathcal{A})$ is a (0,2)- tensor field satisfying:
+  \begin{itemize}
+     \item Symmetry $g(X,Y) = g(Y,X)$
+     \item Non-degeneracy: the musical map \musFlat{}: $\Gamma(TM) \to \Gamma(T*M), X \to $\musFlat$(X)$ where \musFlat$(X) (Y) := g(X,Y)$ is a $C^\infty$ isomorphism. In otherwards it is invertible.
+  \end{itemize}
+\end{defn}
+\begin{defn}
+The (2,0) - tensor field $g^{-1}$ with respect to a metric $g$ is the symmetric $g^{-1}: \Gamma(T*M) \times \Gamma(T*M) \xrightarrow[]{~} \C^\infty(M) (\omega, \sigma) \to \omega($\musFlat$^{-1}(\sigma))$.
+\end{defn}
+\begin{example}
+The chart $(S^2,\mathcal{O},\mathcal{A})$ with chart $(\mathcal{U},x)\colon \phi \in (0, 2 \pi), \theta \in (0, \pi)$ has metric tensor components:
+\[ g_{ij}(x^{-1} (\theta, \phi)) = \begin{pmatrix}
+R^2 & 0 \\
+0 & R^2 \sin^2(\theta)
+\end{pmatrix}_{ij}, \quad R \in \R^+
+\]
+This represents the metric of the round sphere of radius $R$.
+\end{example}
+
+
+\subsection{Signature}
+In linear algebra, we have $A^a v^m = \lambda v^a$ and $g_{am} v^m = \lambda \cdot v^a$.
+A (1,1)-tensor has eigenvalues, while a (0,2)-tensor has signature.
+
+
+\begin{defn}
+A metric is called \emph{Riemannian} if its signature is either all positive or all negative.
+\end{defn}
+
+
+\begin{defn}
+A metric is called \emph{Lorentzian} (or pseudo-Riemannian) if its signature has exactly one positive or one negative eigenvalue.
+\end{defn}
+
+
+\subsection{Length of a Curve}
+Let $\gamma$ be a smooth curve with velocity $v_{\gamma, \gamma(\lambda)}$ at each $\gamma(\lambda) \in M$.
+
+
+\begin{defn}
+On a Riemannian manifold $(M, \mathcal{O},\mathcal{A},g)$, the speed of a curve $\gamma(\lambda)$ is:
+\[ s(\lambda) = \sqrt{g(v_{\gamma},v_{\gamma})}_{\gamma (\lambda)}
+\]
+\end{defn}
+
+
+\begin{defn}
+Let $\gamma\colon (0,1) \to M$ be a smooth curve. The length of $\gamma$ is:
+\[ L[\gamma] := \int_{0}^{1} d\lambda\, s(\lambda) = \int_{0}^{1} d\lambda \sqrt{g(v_{\gamma},v_{\gamma})}_{\gamma (\lambda)} \in \R
+\]
+\end{defn}
+\begin{example}
+Reconsider the round sphere of radius R. Consider its equator: $\theta(\lambda) = (x' \circ \gamma)(\lambda) := \frac{\pi}{2}, \phi (\lambda) := (x^2 \circ \gamma)(\lambda) = 2 \pi \lambda^3 \\$
+then
+\begin{align*}
+L[\gamma] &= \int_{0}^{1}d \lambda \sqrt{g_{ij} (x^{-1}(\theta(\lambda),\phi(\lambda)))(x^i \circ \gamma)' (\lambda)(x^j \circ \gamma)'(\lambda)} \\
+&= \int_{0}^{1} d \lambda \sqrt{R^2 \cdot 0 + R^2 \sin^2(\theta(\lambda)) 36 \pi^2 \lambda^4}\\
+&= 6 \pi R \int_{0}^{1}d \lambda \lambda^2 \\
+&= 6 \pi R[\frac{1}{3} \lambda^3]^{1}_{0} \\
+&= 2 \pi R
+\end{align*}
+\end{example}
+\begin{thm}
+$\gamma: (0,1) \to M$ and $\sigma: (0,1) \to (0,1)$ smooth bijection and increasing then the "reparameterizition" implies $L[\gamma] = L[\gamma \circ \sigma]$.
+\end{thm}
+\subsection{Geodesics}
+\begin{defn}
+A curve $\gamma: (0,1) \to M$ is called a geodesic on a Riemannian manifold $(M,\mathcal{O},\mathcal{A},g)$ if it a stationary curve with respect to the length functional $L$.
+\end{defn}
+\begin{thm}
+$\gamma$ is called a geodesic iff it satisfies the Euler-Lagrange equations for the lagrangian $\mathcal{L} : TM \to \R X\ to \sqrt{g(X,X)'}$ in a chart the Euler-Lagrange equations take the form:
+\begin{align*}
+  (\frac{\partial\mathcal{L}}{\partial \dot{X}^m})^. - \frac{\partial \mathcal{L}}{\partial x^m} = 0
+\end{align*}
+Here $\mathcal{L}(\gamma^i, \dot{\gamma}^i)= \sqrt{g_{ij}(\gamma^i(\lambda))\dot{\gamma}^i(\lambda)\dot{\gamma}^j(\lambda)}$
+\end{thm}
+Euler-Lagrange equations:
+\begin{align*}
+  \frac{\partial \mathcal{L}}{\partial \dot{\gamma}^m} &= \frac{1}{\sqrt{\dots}} g_{mj}(\gamma(\lambda))\dot{\gamma}^j(\lambda) \\
+  (\frac{\partial \mathcal{L}}{\partial \dot{\gamma}^m})^. &= (\frac{}{ \sqrt{\dots}}^. g_{mj} (\gamma(\lambda)) \cdot \dot{\gamma}^j(\lambda) + \frac{1}{\sqrt{\dots}}(g_{mj}(\gamma(\lambda))\ddot{\gamma}^j(\lambda)+\dot{\gamma}^s(\partial_s g_{mj})\dot{\gamma}^j (\lambda))) \\
+  \frac{\partial \mathcal{L}}{\partial \gamma^m} &= \frac{1}{2} \partial_m g_{ij} (\gamma(\lambda))\dot{\gamma}^i (\lambda) \dot{\gamma}^j (\lambda)
+\end{align*}
+Reparameterize $g(\dot{\gamma},\dot{\gamma})=1$.
+\begin{align*}
+g_{mj} \ddot{\gamma}^j + \partial_s g_{mj} \dot{\gamma}^s \dot{\gamma}^j - \frac{1}{2} \partial_m g_{ij} \dot{\gamma}^i \dot{\gamma}^j &= 0 \quad ||(g^{-1})^{qm} \\
+  \ddot{\gamma}^q + (g^{-1})^{qm} \left(\partial_i g_{mj} - \frac{1}{2} \partial_m g_{ij} \right) \dot{\gamma}^i \dot{\gamma}^j &= 0 \\
+  \ddot{\gamma}^q + (g^{-1})^{qm} \frac{1}{2}(\partial_i g_{mj} + \partial_{j} g_{mi} -\partial_m g_{ij}) \dot{\gamma}^i \dot{\gamma}^j &= 0
+\end{align*}
+Geodesic equation for $\gamma$ in a chart.
+\begin{defn}
+$^{L.C}\Gamma$ are the connection coefficient functions of the so called Levi-Civita connection $^{L.C}\nabla$
+\end{defn}
+We generally make this choice oof $\nabla$ when $g$ is given. $(M, \mathcal{O},\mathcal{A},g) \to (M, \mathcal{O}, \mathcal{A}, g,^{L.C}\nabla)$ abstract way: $\nabla g =0$ and $T = 0$ (form) $\implies \nabla =^{L.C}\nabla$
+\begin{defn}
+  \begin{itemize}
+  \item The Riemann-Christoffel curvature is defined by: $R_{abcd} := g_{am}R^m_{bcd}$
+  \item Ricci $R_{ab} = R^m_{amb}$ defined by $^{L.C} \nabla$
+  \item Ricci scalar curvature: $R=(g^{-1}){ab} R_{ab}$ defined by $^{L.C} \nabla$.
+  \end{itemize}
+\end{defn}
+\begin{defn}
+Einstein curvature: $G_{ab} := R_{ab} - \frac{1}{2} g_{ab} R \\$
+Convention: $g^{ab} := (g^{-1})^{ab}$
+\end{defn}
+\section{Lecture 11: Symmetry \cite{Symmetry}}
+Recall your feeling that the round sphere $(S^2,\mathcal{O},\mathcal{A},g^{\text{round}})$ has rotational symmetry while the potato $(S^2,\mathcal{O},\mathcal{A},g^{\text{potato}})$ does not.
+The metric defines the symmetry. How do we describe symmetries of a metric?
+\subsection{Push-Forward Map}
+Let $\phi M \to N$ both be smooth.
+\begin{defn}
+The push-forward $\phi_*$ iss the map $TM \xrightarrow[]{\phi_*} TN$ defined by $X \to \phi_*(X)$ where $\phi_* (X) f:=
+X(f \circ \phi)$ for any $f \in C^\infty (N)$.
+\end{defn}
+Note: $\phi_*(T_p M) \subseteq T_{\phi(p)} N$, vectors are pushed forward. Components of $\phi_*$ with respect to two charts $(\mathcal{U},x) \in \mathcal{A}_M$ and $(\mathcal{V},y)\in \mathcal{A}_N$.
+\begin{align*}
+  dy^a(\phi_*((\frac{\partial}{\partial x^i})_p)) := \phi_*((\frac{\partial}{\partial x^i})_p)y^a = (\frac{\partial}{\partial x^i})_p(y\circ \phi)^a = (\frac{\partial \hat{\phi}^a}{\partial x^i})_p
+\end{align*}
+Claim: $\phi_*(v_{\gamma, p}) = v_{\phi \circ \gamma,\phi(p)}$ particularly if $\phi: N \to M$ is injective.
+\begin{proof}
+\begin{align*}
+  \phi_*(v_{\gamma,p})f = v_{\gamma,p} (f \circ \phi) &= ((f \circ \phi)\circ \gamma)'(x_0) \\
+  &= (f \circ (\phi \circ \gamma))'(x_0)\\
+  &= v_{\phi \circ \gamma,\phi(p)} f
+\end{align*}
+\end{proof}
+\subsection{Pull-Back}
+\begin{defn}
+Take $\phi: M \to N$ smooth. Define: $\phi^*: T^*N \to T^* M: \omega \to \phi^*(\omega)$ where $\phi^*(\omega)(X):= \omega(\phi_*(X))$.
+\end{defn}
+Components of pull-back with respect to charts.
+\begin{align*}
+  \phi^{*a}&:=\phi^*((dy^a)_{\phi(p)})((\frac{\partial}{\partial x^i})_p) \\
+  &= dy^a(\phi_*(\frac{\partial}{\partial x^i})_p) = \phi_*i^a \\
+  (\phi_*(X))^a &:= \phi_{*i}^a X^i \\
+  (\phi^*(\omega))_i &:= \phi^{*a}_i \omega_a
+\end{align*}
+Covectors are pulled back. Important application. Suppose $\phi$ is injective. And on $N$ lives a metric $g$/
+\begin{example}
+$N=(\R^3,\mathcal{O}_{st},\mathcal{A}), M=(S^2,\mathcal{O},\mathcal{A}) S^2 \xrightarrow{\phi}(\R^3,g_E)$ then the induced metric $g(X,Y):= g(\phi_*(X),\phi_*(Y))$
+\subsection{Flow of a Complete Vector Field}
+Let $(M,\mathcal{O}\mathcal{A})$ be smooth. With $X$ as a vector field on $M$.
+\end{example}
+\begin{defn}
+A curve $\gamma: I \to M$ is called an integral curve of $X$ with $v_{\gamma,\gamma(p)} = X_{\gamma(\lambda)}$
+\end{defn}
+\begin{defn}
+  A vector field $X$ is called complete if all integral curves take $I = \R$
+\end{defn}
+\begin{thm}
+A compactly supported smooth vector field is complete.
+\end{thm}
+\begin{defn}
+The flow of a complete vector field $X$ is a one-parameter family $h^X : \R \times M \to M: (\lambda,p) \to \gamma_p(\lambda)$ where $\gamma_p: \R \to M$ is the integral curve of $X$ with $\gamma(0) = p$. Thus for fixed $\lambda \in \R$ with $h^X_\lambda$ smooth.
+\end{defn}
+Thus for fixed $\lambda \in \R$ we receive $h^X_\lambda: M \to M$ smooth (a particular case of our pushforward map $\phi$).
+\subsection{Lie Subalgebras of the Lie Algebra $(\Gamma(TM),[.,.])$ of Vector Fields}
+\begin{itemize}
+\item $\Gamma(TM) = {\text{Set of all vector fields}} \implies [X,Y] \in \Gamma(TM)$ with $[X,Y]F := X(Yf) - Y(Xf)$. Must be antisymmetric and satisfy Jacobi identity. Any algebra satisfying this is a Lie Algebra.
+\item Let $X_1,\cdots,X_s$ be $s$ many vector fields on $M$ such that $i,j \in 1 \cdots s$ with $[X_i, X_j] = C^K_{ij} X_k \in \R$
+\end{itemize}
+\begin{defn}
+  $(\text{span}{X_1,\cdots,X_s},[.,.]) := L$ is a lie subalgebra.
+\end{defn}
+\begin{example}
+In $S^2$ with $[X_1,X_2] = X_3, [X_2,X_3] = X_1, [X_3,X_1] = X_2$ defines $\mathfrak{so}(3)$ when spanned over $\R$.
+\end{example}
+\subsection{Symmetry}
+\begin{defn}
+An $s$-dim lie subalgebra is said to be a symmetry of a metric tensor field $g$ if $\forall X \in L$ $g ((h_\lambda^X)_*) (X),$
+$(h^*_\lambda)_*(Y) = g(X,Y) \iff (h^X_\lambda)^*g = g$ $\forall \lambda \in \R$.
+\end{defn}
+\subsection{Lie Derivative}
+$X \in L$ if $\mathfrak{L}_X g:=\lim_{\lambda \to 0}\frac{(h_\lambda^X)^*g - g}{\lambda}.$
+\begin{defn}
+The Lie derivative $\mathfrak{L}$ on a smooth manifold sends a pair of a vector field $X$ and a $(p,q)$-tensor fields $T$ to as $(p,q)$-tensor field such that:
+\begin{itemize}
+  \item $\mathfrak{L}_x f = Xf$
+  \item $\mathfrak{L}_x Y = [X,Y]$
+  \item $\mathfrak{L}_X(T+S) \mathfrak{L}_X T \mathfrak{L}_X S$
+  \item $\mathfrak{L}_X (T\omega,Y) = (\mathfrak{L}_X T)(\omega,Y) + T(\mathfrak{L}_X \omega,Y) + T(\omega,\mathfrak{L}_X Y)$
+  \item $\mathfrak{L}_{X+Y} T = \mathfrak{L}_X T + \mathfrak{L}_Y T$
+\end{itemize}
+\end{defn}
+\section{Lecture 12: Integration \cite{IntMan}}
+Completion of our "lift" of analysis on the charts to the manifold level. We want to integrate a function f over the manifold. This requires additional structure, namely a volume form and restriction of the atlas to an orientation.
+\subsection{Review of Integration on $\R^d$}
+\begin{itemize}
+  \item $F: \R \to \R$ assume a notion of integration is known. $\int_{(a,b)} F := \int_{a}^{b} dx F(x)$.
+  \item $F: \R^d \to \R$ on a box shaped domain. $(a,b) \times (c,d) \times \cdots \times (u,v) \subseteq \R^d \\$
+   $\int_{(a,b) \times \cdots \times (u,v)} F := \int_{a}^b dx^1 \cdots \int_{u}^v dx^d F(x^1, \cdots, x^d)$.
+  \item Other domains $G \subseteq \R^d$
+\end{itemize}
+\begin{defn}
+$M_G: \R^d \to \R: x \rightarrowtail {1 \text{ if } x \in G, 0 \text{ otherwise}}$ then we define $\int_G d^d x F(x) := \int_{-\infty}^{\infty} dx^1 \cdots \int_{-\infty}^{\infty}dx^d \mu_g (x) \cdot F(x)$
+\end{defn}
+All of this is assuming existence.
+\begin{thm}
+$\int_G d^d x F(x) = \int_{\text{preimage}_\phi(G)}d^d y |det(\partial \phi)(y) | (F \circ \phi )(y)$
+\end{thm}
+\subsection{Integration on one Chart}
+Take our smooth manifold. With $f: M \to \R$ choose two charts in our atlas $\mathcal{A}$. Consider
+\begin{align*}
+\int_\mathcal{V} f:= \int_{y(\mathcal{V}) \subseteq \R^d} d^d y f_{(y)} (\alpha) &= \int_{x(\mathcal{U})} d^d \alpha |det(\partial_a (y^b \circ x^{-1})) (\alpha)|(f_{(y)} \circ (y \circ x^{-1})) \\
+&= \int_{x(\mathcal{U})} d^d \alpha |det (\frac{\partial y^b}{\partial x^a})_{x^{-1}(\alpha)}| (f \circ y^{-1} \circ y \circ x^{-1})(\alpha) \\
+\not &= \int_{x(\mathcal{U})} d^d \alpha f_{(x)}(\alpha)
+\end{align*}
+Observe: An attempt to define $\int_\mathcal{U} f $ this way fails.
+\subsection{Volume forms}
+\begin{defn}
+  On a smooth manifold a $(0,\text{dim} M)$ - tensor field $\Omega$ is called a volume form if:
+  \begin{itemize}
+  \item $\Omega$ vanishes nowhere.
+  \item Totally antisymmetric.
+  \end{itemize}
+\end{defn}
+\begin{example}
+Given a Riemannian metric manifold we can construct a volume form $\Omega$ from $g$ in any chart.
+\begin{align*}
+  \Omega_{i_{1}, \cdots i_{d}} :=\sqrt{det(g_{(x)ij})} \epsilon_{i_{1} \cdots i_{d}}
+\end{align*}
+So we require that our chart transition maps $y \circ x^{-1}$ have positive determinant jacobians. Such a restricted atlas is called orientated.
+\end{example}
+\begin{defn}
+Let $\Omega$ be a volume form on a smooth manifold with an orientated atlas. Consider a chart, then $\Omega_{(x)} := \Omega_{i_{1}\cdots i_{d} } (p) \epsilon^{i_{1}\cdots i_{d}}, p \in M$
+\end{defn}
+\subsection{Integration on one chart domain $\mathcal{U}$}
+\begin{defn}
+\begin{align*}
+  \int_{\mathcal{U}} f := \int_{x(\mathcal{U})} d^d \alpha  \omega_{(x)}(x^{-1} (\alpha)) f_{(x)} (\alpha)
+\end{align*}
+\end{defn}
+This is well defined under change of chart.
+\begin{align*}
+\int_{\mathcal{U}} f := \int_{x(\mathcal{U})} d^d \alpha \sqrt{ det(g_{(x),ij})(x^{-1} (\alpha))} f_{(x)} (\alpha)
+\end{align*}
+\subsection{Integration on the entire Manifold}
+Idea: Require that the manifold admit a so-called partition of unity.
+Roughly: For any finite subatlas of our orientated atlas $\exists$ continuous functions $\rho_i :\mathcal{U}_i \to \R$ such that $\\ \forall p \in M: \sum_{p \in \mathcal{U}_{i}} \rho_i (p) = 1$/
+\begin{defn}
+Then we define the integral over the full manifold as:
+\begin{align*}
+  \int_{M}f := \sum_{i=1}^{N} \int_{\mathcal{U}_{i}} (\rho_i \cdot f)
+\end{align*}
+\end{defn}
+\section{Lecture 13: Relativistic spacetime \cite{Spacetime}}
+Recall from lecture 9 the definition of Newtonian spacetime $(M,\mathcal{O},\mathcal{A},\nabla,t)$ where $\nabla$ is a torsion free connection, $t \in C^\infty (M)$, $dt \not = 0$, $\nabla dt = 0$.
+The definition of relativistic spacetime also has $g$ a Lorentzian metric, the atlas is orientated, and a time-orientation $T$. 
+\subsection{Time orientation}
+\begin{defn}
+Take a Lorentzian manifold $(M, \mathcal{O}, \mathcal{A}^\uparrow, g)$. Then a time-orientation is given by a vecotr field $T$ that:
+\begin{itemize}
+\item Does not vanish anywhere
+\item $g(T,T) > 0$
+\end{itemize}
+\end{defn}
+This definition of spacetime has been made to enable the following postulates. 
+\begin{itemize}
+\item The worldine $\gamma$ of a massive particle satisfies:
+\begin{itemize}
+\item $g(v_{\gamma,\gamma(\lambda)},v_{\gamma,\gamma(\lambda)})>0$
+\item $g_{\gamma(\lambda)}(T,v_{\gamma,\gamma(\lambda)})>0$
+\end{itemize}
+\item Worldline of massless particles satisfy:
+\begin{itemize}
+\item $g(v_{\gamma,\gamma(\lambda)},v_{\gamma,\gamma(\lambda)})=0$
+\item $g_{\gamma(\lambda)}(T_{\gamma(\lambda)},v_{\gamma,\gamma(\lambda)})>0$
+\end{itemize}
+\end{itemize}
+\subsection{Observers}
+\begin{defn}
+An observer in $(M,\mathcal{O},\mathcal{A}^\uparrow,\nabla,g,T)$ is a worldline $\gamma$ with $g(v_\gamma,v_\gamma)>0, g(T,v_\gamma)>0$ 
+together with a choice of basis: $e_0 (\lambda),e_1 (\lambda),e_2 (\lambda),e_3 (\lambda)$ of each $T_{\gamma(\lambda)} M$ where the overver worldline passes if $g(e_a(\lambda),e_b(\lambda))=\eta_{ab}=diag(1,-1,-1,-1)$.
+Observer is a smooth curve in the frame bundle $LM$ over $M$.
+\end{defn}
+Two additional physical positulates.
+\begin{itemize}
+\item A clock carried by a speciv observer $(\gamma,e)$ will measure a time:
+\begin{align*}
+\tau := \int_{\lambda_0}^{\lambda_1} d \lambda \sqrt{g_{\gamma(\lambda)}(v_{\gamma,\gamma(\lambda)},v_{\gamma,\gamma(\lambda)})}
+\end{align*}
+between the two "events" $\gamma(\lambda_0)$ "start the clock" and $\gamma(\lambda_1)$ "stop the clock".
+\end{itemize}
+\bibliography{references.bib}
+\bibliographystyle{plain}
+\end{document}
+
+
+
+\bibliography{references.bib}
+\bibliographystyle{plain}
 \end{document}
 

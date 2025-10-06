@@ -1026,16 +1026,16 @@ Then we define the integral over the full manifold as:
 \end{defn}
 \section{Lecture 13: Relativistic spacetime \cite{Spacetime}}
 Recall from lecture 9 the definition of Newtonian spacetime $(M,\mathcal{O},\mathcal{A},\nabla,t)$ where $\nabla$ is a torsion free connection, $t \in C^\infty (M)$, $dt \not = 0$, $\nabla dt = 0$.
-The definition of relativistic spacetime also has $g$ a Lorentzian metric, the atlas is orientated, and a time-orientation $T$. 
+The definition of relativistic spacetime also has $g$ a Lorentzian metric, the atlas is orientated, and a time-orientation $T$.
 \subsection{Time orientation}
 \begin{defn}
-Take a Lorentzian manifold $(M, \mathcal{O}, \mathcal{A}^\uparrow, g)$. Then a time-orientation is given by a vecotr field $T$ that:
+Take a Lorentzian manifold $(M, \mathcal{O}, \mathcal{A}^\uparrow, g)$. Then a time-orientation is given by a vector field $T$ that:
 \begin{itemize}
 \item Does not vanish anywhere
 \item $g(T,T) > 0$
 \end{itemize}
 \end{defn}
-This definition of spacetime has been made to enable the following postulates. 
+This definition of spacetime has been made to enable the following postulates.
 \begin{itemize}
 \item The worldine $\gamma$ of a massive particle satisfies:
 \begin{itemize}
@@ -1050,18 +1050,33 @@ This definition of spacetime has been made to enable the following postulates.
 \end{itemize}
 \subsection{Observers}
 \begin{defn}
-An observer in $(M,\mathcal{O},\mathcal{A}^\uparrow,\nabla,g,T)$ is a worldline $\gamma$ with $g(v_\gamma,v_\gamma)>0, g(T,v_\gamma)>0$ 
-together with a choice of basis: $e_0 (\lambda),e_1 (\lambda),e_2 (\lambda),e_3 (\lambda)$ of each $T_{\gamma(\lambda)} M$ where the overver worldline passes if $g(e_a(\lambda),e_b(\lambda))=\eta_{ab}=diag(1,-1,-1,-1)$.
+An observer in $(M,\mathcal{O},\mathcal{A}^\uparrow,\nabla,g,T)$ is a worldline $\gamma$ with $g(v_\gamma,v_\gamma)>0, g(T,v_\gamma)>0$
+together with a choice of basis: $e_0 (\lambda),e_1 (\lambda),e_2 (\lambda),e_3 (\lambda)$ of each $T_{\gamma(\lambda)} M$ where the observer worldline passes if $g(e_a(\lambda),e_b(\lambda))=\eta_{ab}=diag(1,-1,-1,-1)$.
 Observer is a smooth curve in the frame bundle $LM$ over $M$.
 \end{defn}
-Two additional physical positulates.
-\begin{itemize}
-\item A clock carried by a speciv observer $(\gamma,e)$ will measure a time:
+Two additional physical postulates.
+A clock carried by a specific observer $(\gamma,e)$ will measure a time:
 \begin{align*}
 \tau := \int_{\lambda_0}^{\lambda_1} d \lambda \sqrt{g_{\gamma(\lambda)}(v_{\gamma,\gamma(\lambda)},v_{\gamma,\gamma(\lambda)})}
 \end{align*}
-between the two "events" $\gamma(\lambda_0)$ "start the clock" and $\gamma(\lambda_1)$ "stop the clock".
-\end{itemize}
+between the two "events" $\gamma(\lambda_0)$ "start the clock" and $\gamma(\lambda_1)$ "stop the clock".\footnote{We call $\tau$ the proper time. }
+\begin{example}
+  $M=\R^4, \mathcal{O}=\mathcal{O}_{st}, \mathcal{A}^\uparrow = (\R^4,id_{\R^{4}}), g: g_{(x),ij}=\mu_{ij},T^i_{(x)}=(1,0,0,0)^i\\$
+  $\implies \Gamma_{(x),jk}^o = 0 $ everywhere. $\implies$ this space-time is flat. Consider two obersers $\gamma:(0,1) \to M, \gamma_{(x)}^i = (\lambda,0,0,0)^i$ and $\delta:(0,1) \to M, \alpha \in (0,1): \delta_{(x)}^i = (\lambda,\alpha \lambda,0,0)^i, \lambda \leq \frac{1}{2}, (\lambda,(1-\alpha)\lambda,0,0)^i, \lambda > \frac{1}{2}$. Twin paradox. We calclulate:
+  \begin{align*}
+  \tau_\gamma &:= \int_{0}^{1} d \lambda \sqrt{g_{(x)ij}\dot{\gamma}^i_{(x)}\dot{\gamma}_{(x)}^k}= \int_{0}^{1}d \lambda 1 = 1 \\
+  \tau_\delta &:= \int_{0}^{\frac{1}{2}}d \lambda \sqrt{1 - \alpha^2}+\int_{\frac{1}{2}}^{1}d \lambda \sqrt{1- (-\alpha)^2} = \int_{0}^{1}d \lambda \sqrt{1-\alpha^2} = \sqrt{1-\alpha^2}
+  \end{align*}
+\end{example}
+Taking this postulate seriously we need a clock design that takes this into account. Another postulate: Let $(\gamma,e)$ be an observer and $\delta$ be a massive particle worldline that is parameterized such that $g(v_\delta,v_\gamma)=1$. Suppose the observer and the particle meet at some space-time. $\delta(\tau_{2})=p=\gamma(\tau_1)$. This observer measures the 4-velocity (spatial velocity) of this particle as
+\begin{align*}
+  \text{v}_{\delta,\delta(\tau_{2})}:= \epsilon^\alpha(v_{\delta,\delta(\tau_{2})})e_\alpha, \alpha=1,2,3
+\end{align*}
+Where $\epsilon$ are the dual basis of $e$.
+Consequence: An observer $(\gamma,e)$ will extract quantities measurable in his laboratory from objective space-time quantities always like this.
+\subsection{Role of the Lorentz Transformations}
+Lorentz transformations emerge as follows: Let $(\gamma,e)$ and $(\tilde{\delta},\tilde{e})$ be observers with $\gamma(0)=\tilde{\delta}(0)$ thus $\tilde{e}_a =\Lambda^b_a e_b$ now: $\eta_{ab}= g(\tilde{e}_a,\tilde{e}_b)=g(\Lambda^m_a e_m,\Lambda^n_b e_n)= \Lambda^m_a \Lambda^n_b g(e_m,e_n)$. Lorentz transformers relate the frames of any two observers at the same point.
+
 \bibliography{references.bib}
 \bibliographystyle{plain}
 \end{document}

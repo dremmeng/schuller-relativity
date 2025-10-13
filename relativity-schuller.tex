@@ -843,7 +843,7 @@ L[\gamma] &= \int_{0}^{1}d \lambda \sqrt{g_{ij} (x^{-1}(\theta(\lambda),\phi(\la
 \end{align*}
 \end{example}
 \begin{thm}
-$\gamma: (0,1) \to M$ and $\sigma: (0,1) \to (0,1)$ smooth bijection and increasing then the "reparameterizition" implies $L[\gamma] = L[\gamma \circ \sigma]$.
+$\gamma: (0,1) \to M$ and $\sigma: (0,1) \to (0,1)$ smooth bijection and increasing then the "reparameterization" implies $L[\gamma] = L[\gamma \circ \sigma]$.
 \end{thm}
 \subsection{Geodesics}
 \begin{defn}
@@ -1076,7 +1076,55 @@ Where $\epsilon$ are the dual basis of $e$.
 Consequence: An observer $(\gamma,e)$ will extract quantities measurable in his laboratory from objective space-time quantities always like this.
 \subsection{Role of the Lorentz Transformations}
 Lorentz transformations emerge as follows: Let $(\gamma,e)$ and $(\tilde{\delta},\tilde{e})$ be observers with $\gamma(0)=\tilde{\delta}(0)$ thus $\tilde{e}_a =\Lambda^b_a e_b$ now: $\eta_{ab}= g(\tilde{e}_a,\tilde{e}_b)=g(\Lambda^m_a e_m,\Lambda^n_b e_n)= \Lambda^m_a \Lambda^n_b g(e_m,e_n)$. Lorentz transformers relate the frames of any two observers at the same point.
-
+\section{Lecture 14: Matter}
+Two types of matter. Point matter given by $m$, and field matter of a electromagnetic field and is more fundamental from the GR point of view. This is of phenomenological importance. 
+\subsection{Point Matter \cite{Matter}}
+Given our first two postulates they constrain the possible particle world lines. But what is their precise law of motion, possibly in the presence of 'forces.'
+Without external forces: 
+\begin{align*}
+   S_\text{Massive} [\delta] &:= m \int d \lambda \sqrt{g_{\gamma(\lambda)}(v_{\gamma, \gamma(\lambda)},v_{\gamma, \gamma(\lambda)})} 
+\end{align*}
+with $g_{\gamma(\lambda)}(T_{\gamma(\lambda)}v_{\gamma, \gamma(\lambda)}) \geq 0$ 
+Similarly we have:
+\begin{align*}
+   S_\text{Massless} [\delta,\mu] & := \int d \lambda \mu g(v_{\gamma,\gamma(\lambda)},v_{\gamma,\gamma(\lambda)})
+\end{align*}
+$\delta \mu : g(v_{\gamma,gamma(\lambda)},v_{\gamma,\gamma(\lambda)}) = 0 \\$
+$\delta \gamma: $ Equations of motion. 
+Reason for describing equations of motion by actions is that composite systems have an action that is the sum of the actions of the sub systems. Possibly including 'interaction terms.'
+We can look at the presence of external forces or rather the presence of fields to which a particle 'couples.'
+\begin{align*}
+   S[\gamma; A]:=\int d \lambda m \sqrt{g_{\gamma(\lambda)}v_{\gamma,\gamma(\lambda)}v_{\gamma, \gamma (\lambda)}}+q \cdot A(v_{\gamma,\gamma(\lambda)})
+\end{align*}
+Where $A$ is a covector field on $M$. EG: the electromagnetic potential. 
+Consider the Euler-Lagrange equations:
+\begin{align*}
+m \nabla_{v_{\gamma}}v_{\gamma} \frac{\partial L}{\partial \dot{\gamma}^a_{(x)}}-\frac{\partial L}{\partial \gamma^a_{(x)}} &= 0 \\
+\frac{\partial L}{\partial \dot{\gamma}^a} &= q \cdot A_{(x) a}, (\frac{\partial L}{\partial \dot{\gamma}})^\cdot = q \cdot \frac{\partial}{\partial x^m}(A_{(x) a}) \cdot \dot{\gamma}_{(x)}^m \\
+\frac{\partial L}{\partial \gamma^a}&= q \cdot \frac{\partial}{\partial x^a}(A_{(x),m})\dot{\gamma}^m \\
+\frac{\partial L}{\partial \dot{\gamma}^a_{(x)}}-\frac{\partial L}{\partial \gamma^a_{(x)}} &= q (\frac{\partial A_a}{\partial x^m}-\frac{\partial A_m}{\partial x^a}) \dot{\gamma}^m_{(x)} \\
+&= q \cdot F_{(x)} am \dot{\gamma}^m_{(x)} \\
+\implies \\
+m (\nabla_{v_{\gamma}} v_\gamma)^a &= -q F^a_m \dot{\gamma}^m
+\end{align*}
+Lorentz force on a charged particle in a electromagnetic field. But this action is reparameterization invariant. 
+\subsection{Field Matter}
+\begin{defn}
+Classical (non-quantum) field matter is any tensor field on space-time whose equations of motion derive from an action. 
+\end{defn}
+Euler-Lagrange equations for fields:
+\begin{align*}
+   0=\frac{\partial \mathfrak{L}}{\partial A_n} - \frac{\partial}{\partial x^s}(\frac{\partial \mathfrak{L}}{\partial \partial_s A_m})+\frac{\partial}{\partial x^s}\frac{\partial}{\partial x^t}\frac{\partial^s \mathfrak{L}}{\partial \partial_t \partial_s A_m} \cdots
+\end{align*}
+Space-time coordinates will be determined by the matter sitting on them. 
+\subsection{Energy-Momentum Tensor of Matter Fields}
+At some point we want to write down an action for the metric tensor field itself. But then this action $S_{grav}[g]$ will be added to any $S_{matter}[A,\phi,\cdots]$ in order to describe the total system. 
+\begin{defn}
+If $S_{matter}[\phi,g]$ is a matter action, the so-called energy-momentum tensor is:
+\begin{align*}
+   T^{ab} := \frac{2}{\sqrt{-g}}(\frac{\partial \mathfrak{L}_{matter}}{\partial g_{ab}}-\partial_s \frac{\partial \mathfrak{L}_{matter}}{\partial \partial_s g_{ab}}+\cdots)
+\end{align*}
+\end{defn}
 \bibliography{references.bib}
 \bibliographystyle{plain}
 \end{document}
